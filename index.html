@@ -30,6 +30,14 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);bac
 .menu a{color:var(--grey)}.menu a:hover{color:var(--teal)}
 .menu .book{background:var(--teal);color:#fff;padding:8px 16px;border-radius:999px}
 .menu .book:hover{background:var(--teal-d)}
+.dropdown{position:relative}
+.dropdown-toggle{cursor:pointer;color:var(--grey);display:flex;align-items:center;gap:4px}
+.dropdown-toggle:hover{color:var(--teal)}
+.dropdown-toggle::after{content:"▾";font-size:.7rem}
+.dropdown-menu{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:160px;overflow:hidden;z-index:100}
+.dropdown-menu a{display:block;padding:10px 18px;color:var(--ink);font-size:.88rem;white-space:nowrap}
+.dropdown-menu a:hover{background:#e7f6f4;color:var(--teal)}
+.dropdown:hover .dropdown-menu{display:block}
 
 .hero{background:linear-gradient(135deg,#0e7c7b 0%,#14b8a6 100%);color:#fff;border:0;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:30px;align-items:center;padding:52px 20px}
@@ -101,6 +109,12 @@ footer{background:#052e2d;color:#9fb6b4;text-align:center;padding:24px 20px;font
       <a href="#about">關於凱程</a>
       <a href="#services">診療項目</a>
       <a href="#weight">減重門診</a>
+      <div class="dropdown">
+        <span class="dropdown-toggle">衛教專頁</span>
+        <div class="dropdown-menu">
+          <a href="https://cometchang98.github.io/kc-weightloss/ckd.html" target="_blank" rel="noopener">慢性腎臟病衛教</a>
+        </div>
+      </div>
       <a href="#doctor">醫師介紹</a>
       <a href="#contact">門診・地址</a>
       <a class="book" href="https://www.iheal.tw/clinicWebsite/3531045765" target="_blank" rel="noopener">線上預約</a>
@@ -149,13 +163,13 @@ footer{background:#052e2d;color:#9fb6b4;text-align:center;padding:24px 20px;font
     <h2><span class="en">About us</span>關於凱程診所</h2>
     <p class="lead">凱程診所致力於<b>基層醫療慢性病的預防與治療</b>，積極參與各項慢性病照護計畫，並從事肥胖諮詢與戒菸等行為治療門診，以實證醫療陪伴社區民眾守護健康。</p>
     <h3>參與共同照護網</h3>
-    <p class="lead">糖尿病共照網 ・ 氣喘共照網 ・ 初期腎臟病共照網 ・ B/C 型肝炎追蹤共照網 ・ 新北市憂鬱症共照網</p>
+    <p class="lead">糖尿病共照網 ・ 氣喘共照網 ・ <a href="https://cometchang98.github.io/kc-weightloss/ckd.html" target="_blank" rel="noopener">初期慢性腎臟病共照網</a> ・ B/C 型肝炎追蹤共照網 ・ 新北市憂鬱症共照網</p>
     <h3>品質肯定與認證</h3>
     <div class="awards">
       <div class="award"><b>🏆 108～114 年</b>　糖尿病品質卓越獎</div>
       <div class="award"><b>🏆 109・111・112・113 年</b>　家庭醫師整合性照護計畫績優等級</div>
       <div class="award"><b>🥉 114 年</b>　診所及衛生所糖尿病健康促進機構品質評核　銅獎</div>
-      <div class="award"><b>🏅 績優診所</b>　氣喘共照網、初期腎臟病共照網</div>
+      <div class="award"><b>🏅 績優診所</b>　氣喘共照網、初期慢性腎臟病共照網</div>
       <div class="award"><b>✅ 111 年起</b>　初期慢性腎臟病健康促進機構認證</div>
       <div class="award"><b>✅ 112 年起</b>　糖尿病健康促進機構認證</div>
     </div>

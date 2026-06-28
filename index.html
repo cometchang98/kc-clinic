@@ -34,10 +34,12 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);bac
 .dropdown-toggle{cursor:pointer;color:var(--grey);display:flex;align-items:center;gap:4px}
 .dropdown-toggle:hover{color:var(--teal)}
 .dropdown-toggle::after{content:"▾";font-size:.7rem}
-.dropdown-menu{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:160px;overflow:hidden;z-index:100}
+/* 透明橋接區：填補按鈕與選單之間的縫隙，讓滑鼠移過去不會中斷 hover */
+.dropdown::after{content:"";position:absolute;top:100%;left:0;width:100%;height:14px}
+.dropdown-menu{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:160px;overflow:hidden;z-index:100}
 .dropdown-menu a{display:block;padding:10px 18px;color:var(--ink);font-size:.88rem;white-space:nowrap}
 .dropdown-menu a:hover{background:#e7f6f4;color:var(--teal)}
-.dropdown:hover .dropdown-menu{display:block}
+.dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:block}
 
 .hero{background:linear-gradient(135deg,#0e7c7b 0%,#14b8a6 100%);color:#fff;border:0;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:30px;align-items:center;padding:52px 20px}
@@ -110,7 +112,7 @@ footer{background:#052e2d;color:#9fb6b4;text-align:center;padding:24px 20px;font
       <a href="#services">診療項目</a>
       <a href="#weight">減重門診</a>
       <div class="dropdown">
-        <span class="dropdown-toggle">衛教專頁</span>
+        <span class="dropdown-toggle" tabindex="0">衛教專頁</span>
         <div class="dropdown-menu">
           <a href="hypertension.html">高血壓衛教</a>
           <a href="https://cometchang98.github.io/kc-weightloss/ckd.html" target="_blank" rel="noopener">慢性腎臟病衛教</a>

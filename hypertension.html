@@ -110,6 +110,9 @@ h2.line{display:flex;align-items:baseline;gap:10px}
 .promo a{background:#fff;color:var(--teal-d);font-weight:700;padding:13px 26px;border-radius:999px;white-space:nowrap}
 
 .disc{font-size:.83rem;color:#6b7b7a;background:#eef4f3;padding:16px 20px;border-radius:12px;margin-top:22px}
+.backhome-sec{background:#fff;padding:36px 0}
+.backhome{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:900;font-size:1.05rem;padding:15px 38px;border-radius:999px;box-shadow:var(--shadow);transition:transform .15s,background .15s}
+.backhome:hover{background:var(--teal-d);transform:translateY(-2px)}
 footer{background:#052e2d;color:#9fb6b4;text-align:center;padding:24px 20px;font-size:.82rem;line-height:1.7}
 footer a{color:#9fb6b4;text-decoration:underline}
 
@@ -184,34 +187,20 @@ footer a{color:#9fb6b4;text-decoration:underline}
 <section id="diagnose">
   <div class="wrap">
     <h2><span class="en">Definition & diagnosis</span>血壓怎麼分級？多少才算高血壓？</h2>
-    <p class="lead">以下為診間血壓的分級（單位 mmHg，依較高的一項判定）。一般成人診間血壓 <b>≥ 140/90 mmHg</b> 即達高血壓標準。</p>
+    <p class="lead"><b>2022 年台灣高血壓治療指引</b>有重大更新：改以標準化的<b>居家血壓（依 722 量測）</b>作為診斷與治療目標的<b>主要依據</b>，而不再以診間血壓為準。新標準下，<b>居家血壓 ≥ 130/80 mmHg 即達高血壓</b>；分級也簡化為下列四類（<b>不再有過去的「第三期 / Stage 3」分類</b>）。</p>
     <table class="tbl">
-      <thead><tr><th>分類</th><th>收縮壓 (mmHg)</th><th></th><th>舒張壓 (mmHg)</th></tr></thead>
+      <thead><tr><th>分類（依居家血壓）</th><th>收縮壓 (mmHg)</th><th></th><th>舒張壓 (mmHg)</th></tr></thead>
       <tbody>
-        <tr class="opt"><td class="lab">理想血壓 Optimal</td><td>&lt; 120</td><td>且</td><td>&lt; 80</td></tr>
-        <tr><td class="lab">正常 Normal</td><td>120–129</td><td>且/或</td><td>80–84</td></tr>
-        <tr><td class="lab">正常偏高 High normal</td><td>130–139</td><td>且/或</td><td>85–89</td></tr>
-        <tr><td class="lab warn">第一期高血壓 Grade 1</td><td>140–159</td><td>且/或</td><td>90–99</td></tr>
-        <tr><td class="lab warn">第二期高血壓 Grade 2</td><td>160–179</td><td>且/或</td><td>100–109</td></tr>
-        <tr><td class="lab warn">第三期高血壓 Grade 3</td><td>≥ 180</td><td>且/或</td><td>≥ 110</td></tr>
-        <tr><td class="lab">單純收縮期高血壓</td><td>≥ 140</td><td>且</td><td>&lt; 90</td></tr>
+        <tr class="opt"><td class="lab">正常 Normal</td><td>&lt; 120</td><td>且</td><td>&lt; 80</td></tr>
+        <tr><td class="lab">升高 Elevated（正常偏高）</td><td>120–129</td><td>且</td><td>&lt; 80</td></tr>
+        <tr><td class="lab warn">第一期高血壓 Stage 1</td><td>130–139</td><td>或</td><td>80–89</td></tr>
+        <tr><td class="lab warn">第二期高血壓 Stage 2</td><td>≥ 140</td><td>或</td><td>≥ 90</td></tr>
       </tbody>
     </table>
-    <p class="note">資料來源：2018 ESC/ESH 高血壓治療指引。本表適用於 16 歲以上族群。</p>
+    <p class="note">資料來源：2022 台灣高血壓治療指引（Wang TD, et al. Acta Cardiol Sin. 2022;38(3):225-325）。以居家血壓（722 標準化量測）的較高一項判定。</p>
 
-    <h3>診間血壓 vs. 居家血壓——標準不一樣！</h3>
-    <p class="lead">很多人「白袍高血壓」——在診所緊張時血壓偏高，回家卻正常；也有人相反（隱性高血壓）。因此<b>居家自我量測</b>是診斷與追蹤的重要依據。不同量測情境的高血壓標準如下：</p>
-    <table class="tbl">
-      <thead><tr><th>量測情境</th><th>收縮壓 (mmHg)</th><th></th><th>舒張壓 (mmHg)</th></tr></thead>
-      <tbody>
-        <tr><td class="lab">診間血壓</td><td>≥ 140</td><td>且/或</td><td>≥ 90</td></tr>
-        <tr><td class="lab">居家血壓（平均）</td><td>≥ 135</td><td>且/或</td><td>≥ 85</td></tr>
-        <tr><td class="lab">24 小時動態（白天平均）</td><td>≥ 135</td><td>且/或</td><td>≥ 85</td></tr>
-        <tr><td class="lab">24 小時動態（夜間平均）</td><td>≥ 120</td><td>且/或</td><td>≥ 70</td></tr>
-        <tr><td class="lab">24 小時動態（全天平均）</td><td>≥ 130</td><td>且/或</td><td>≥ 80</td></tr>
-      </tbody>
-    </table>
-    <p class="note">居家血壓的「達標門檻」是 135/85，比診間的 140/90 更嚴格——因為在家量通常較放鬆、數值較低。</p>
+    <h3>為什麼以「居家血壓」為標準？</h3>
+    <p class="lead">很多人有「白袍高血壓」——在診所緊張時血壓偏高，回家卻正常；也有人相反（隱性高血壓），診間正常但居家偏高。診間只是偶爾一次的量測，<b>居家血壓更能真實反映您平日的狀況</b>，因此 2022 台灣指引把標準化居家血壓訂為診斷與追蹤的主要依據。下一段就教您怎麼用「722」把居家血壓量對。</p>
   </div>
 </section>
 
@@ -219,15 +208,15 @@ footer a{color:#9fb6b4;text-decoration:underline}
 <section id="722">
   <div class="wrap">
     <h2><span class="en">Home BP monitoring</span>量對血壓：落實「722」居家量測法</h2>
-    <p class="lead">醫師常說血壓要量「722」，您做對了嗎？居家血壓比偶爾一次的診間血壓，更能真實反映您平日的健康狀況。記住這三個數字：</p>
+    <p class="lead">2022 台灣高血壓指引的高血壓定義與血壓目標，都是以「722 準則」量出的標準化居家血壓為基準。做對這三個數字，您的血壓數據才準：</p>
     <div class="bignum">
       <div class="big">7・2・2</div>
-      <p>連續 7 天　・　早晚各量 2 回合　・　每回合間隔 1 分鐘量 2 次取平均</p>
+      <p>連續量 7 天　・　每天早晚各 1 回　・　每回量 2 次以上（間隔至少 1 分鐘）</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="num">7</div><div class="st">連續量 7 天</div><p>連續測量 7 天，掌握一週的血壓趨勢，而不是只看單一天。</p></div>
-      <div class="step"><div class="num">2</div><div class="st">早晚各 2 回</div><p>早上起床後 1 小時內、排尿後、服藥及早餐前各量一回；晚上睡前再量一回。</p></div>
-      <div class="step"><div class="num">2</div><div class="st">每回量 2 次</div><p>每一回合連續量 2 次、間隔約 1 分鐘，取 2 次的平均值記錄下來。</p></div>
+      <div class="step"><div class="num">7</div><div class="st">連續量 7 天</div><p>連續測量 7 天（至少 4 天），掌握一週的血壓趨勢，而不是只看單一天。</p></div>
+      <div class="step"><div class="num">2</div><div class="st">每天 2 回</div><p>早上：起床後 1 小時內、排尿後、服藥及進食前各量一回；晚上：睡前 1 小時內再量一回。</p></div>
+      <div class="step"><div class="num">2</div><div class="st">每回 2 次</div><p>每一回合連續量 2 次以上、中間間隔至少 1 分鐘，取平均值記錄（若有心房顫動則量 ≥ 3 次）。</p></div>
     </div>
     <div class="tips">
       <b>📋 量測前後的小撇步（讓數字更準）</b>
@@ -239,7 +228,7 @@ footer a{color:#9fb6b4;text-decoration:underline}
         <li>第一次就醫前，可先量好 7 天記錄帶來，幫助醫師更準確診斷。</li>
       </ul>
     </div>
-    <p class="note">居家血壓目標一般為 &lt; 135/85 mmHg（實際目標請依您的年齡與共病，由醫師個別評估）。</p>
+    <p class="note">依 2022 台灣指引，居家血壓 ≥ 130/80 mmHg 即達高血壓；多數病患的治療目標為居家血壓 &lt; 130/80 mmHg（實際目標仍請由醫師依您的共病個別評估）。</p>
   </div>
 </section>
 
@@ -277,16 +266,12 @@ footer a{color:#9fb6b4;text-decoration:underline}
 <section id="treat">
   <div class="wrap">
     <h2><span class="en">Treatment goal</span>管對血壓：治療目標與生活型態</h2>
-    <p class="lead">控制高血壓不只是「吃藥」，而是<b>生活型態調整＋（必要時）藥物治療</b>雙管齊下。第一階段目標是讓所有病患血壓低於 <b>140/90 mmHg</b>；若能耐受，多數病患建議進一步控制到 <b>130/80 mmHg</b> 左右。</p>
-    <table class="tbl">
-      <thead><tr><th>年齡層</th><th>收縮壓目標 (mmHg)</th><th>舒張壓目標 (mmHg)</th></tr></thead>
-      <tbody>
-        <tr><td class="lab">18–65 歲</td><td>盡量到 130，可耐受則更低（但不低於 120）</td><td>70–79</td></tr>
-        <tr><td class="lab">65–79 歲</td><td>盡量到 130–139（如可耐受）</td><td>70–79</td></tr>
-        <tr><td class="lab">≥ 80 歲</td><td>盡量到 130–139（如可耐受）</td><td>70–79</td></tr>
-      </tbody>
-    </table>
-    <p class="note">合併糖尿病、慢性腎臟病、冠心病或中風病史者，目標可能不同，需由醫師個別評估。</p>
+    <p class="lead">控制高血壓不只是「吃藥」，而是<b>生活型態調整＋（必要時）藥物治療</b>雙管齊下。依 2022 台灣高血壓指引，多數病患的血壓目標是<b>居家血壓低於 130/80 mmHg</b>（以 722 標準化量測為準）。</p>
+    <div class="bignum" style="background:linear-gradient(135deg,#0a5e5d,#14b8a6)">
+      <div class="big" style="letter-spacing:2px">居家血壓 &lt; 130/80</div>
+      <p>2022 台灣高血壓指引——多數病患的治療目標</p>
+    </div>
+    <p class="note">2022 台灣指引將大多數族群（含一般成人、糖尿病、慢性腎臟病、冠心病、中風病史者）的目標統一訂為居家血壓 &lt; 130/80 mmHg；年長或衰弱者由醫師視耐受度個別調整。資料來源：Wang TD, et al. Acta Cardiol Sin. 2022;38(3):225-325。</p>
 
     <h3>生活型態調整（高血壓的第一線治療）</h3>
     <div class="grid g3">
@@ -327,14 +312,14 @@ footer a{color:#9fb6b4;text-decoration:underline}
     <p class="lead">當生活型態調整仍無法達標，或血壓較高、心血管風險較高時，醫師會搭配<b>降血壓藥物</b>。降血壓藥有多種類別，各有特性，醫師會依您的血壓型態、年齡與共病（如糖尿病、腎臟病、心臟病）量身選擇，常見會以<b>單顆複方、一天一次</b>的方式來提升服藥方便性與順從性。</p>
     <div class="grid g2">
       <div class="card">
-        <div class="ic">💊</div><h3>常見的降血壓藥物類別</h3>
+        <div class="ic">💊</div><h3>一線藥物（2022 台灣指引）</h3>
         <ul>
-          <li>ARB（血管收縮素受體阻斷劑）、ACEi（血管收縮素轉化酶抑制劑）</li>
-          <li>CCB（鈣離子通道阻斷劑）</li>
-          <li>利尿劑（thiazide 類）</li>
-          <li>乙型阻斷劑（β-blocker）等</li>
+          <li>A：ACEi／ARB（血管張力素轉化酶抑制劑／受體阻斷劑）</li>
+          <li>B：β 受體阻斷劑（乙型阻斷劑）</li>
+          <li>C：鈣離子通道阻斷劑（CCB）</li>
+          <li>D：利尿劑</li>
         </ul>
-        <p class="note" style="margin-top:10px">多數病患需要 2 種以上藥物併用才能達標，這是正常且有實證支持的做法，並非「病情變嚴重」。</p>
+        <p class="note" style="margin-top:10px">2022 台灣指引將上述 A、B、C、D 四類均列為首選一線藥物；血壓超標較多者可直接以兩種藥物（複方）起始。若使用 3 種以上仍未達標，醫師會考慮 MRA、ARNI、SGLT-2i 等進一步調整。多種藥物併用是正常且有實證支持的做法。</p>
       </div>
       <div class="card">
         <div class="ic">🌅</div><h3>為什麼醫師重視「長效」藥物？</h3>
@@ -384,14 +369,21 @@ footer a{color:#9fb6b4;text-decoration:underline}
       <a href="https://www.iheal.tw/clinicWebsite/3531045765" target="_blank" rel="noopener">線上預約掛號 →</a>
     </div>
     <div class="disc">
-      <b>溫馨提醒：</b>本頁為衛教用途，內容參考 2018 ESC/ESH 高血壓治療指引等實證資料整理，<b>不能取代醫師的診斷與處方</b>。每位病患的血壓目標與用藥皆需個別評估；如有不適或血壓異常，請及時就醫並與您的醫師討論。
+      <b>溫馨提醒：</b>本頁為衛教用途，內容參考 2022 台灣高血壓治療指引（Wang TD, et al. Acta Cardiol Sin. 2022）等實證資料整理，<b>不能取代醫師的診斷與處方</b>。每位病患的血壓目標與用藥皆需個別評估；如有不適或血壓異常，請及時就醫並與您的醫師討論。
     </div>
+  </div>
+</section>
+
+<!-- 回首頁 -->
+<section class="backhome-sec">
+  <div class="wrap" style="text-align:center;border-bottom:0">
+    <a class="backhome" href="index.html">← 返回凱程診所首頁</a>
   </div>
 </section>
 
 <footer>
   © 凱程診所 KC Family Clinic ・ 新北市中和區員山路150-8號1樓 ・ (02) 2223-1868<br>
-  <a href="index.html">← 回診所首頁</a>　|　家庭醫學・老年醫學・糖尿病健康促進機構
+  家庭醫學・老年醫學・糖尿病健康促進機構
 </footer>
 
 <script>

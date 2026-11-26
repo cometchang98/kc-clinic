@@ -1008,8 +1008,8 @@
               <span class="meta-value">全國 600 家基層診所（邀請制）</span>
             </div>
             <div class="meta-item">
-              <span class="meta-label">衛教補助機制</span>
-              <span class="meta-value">每份數位衛教問卷 80 元（每家上限 60 份，最高 4,800 元）</span>
+              <span class="meta-label">收案份數上限</span>
+              <span class="meta-value">每家診所數位衛教問卷上限 60 份</span>
             </div>
           </div>
         </div>
@@ -1229,7 +1229,7 @@
               <div class="timeline-node">
                 <span class="timeline-date">2027/03/31</span>
                 <strong>專案截止收案</strong>
-                <span class="kpi-caption">結算數位衛教補助份數</span>
+                <span class="kpi-caption">結算數位衛教問卷份數</span>
               </div>
             </div>
           </div>
@@ -1615,7 +1615,7 @@
         <section id="sec-workflow" class="section-block" aria-labelledby="heading-workflow">
           <div class="section-header" data-accent="blue">
             <span class="section-kicker">MODULE 04 · 診所實務執行、物資工具包與數位登錄指南</span>
-            <h2 id="heading-workflow" class="section-heading">完整導入四步驟與補助試算：從診間衛教到獨立後台即時追蹤</h2>
+            <h2 id="heading-workflow" class="section-heading">完整導入四步驟：從診間衛教到獨立後台即時追蹤</h2>
           </div>
 
           <!-- 寄送物資大補帖 (工具包四大內容) -->
@@ -1699,34 +1699,10 @@
             </article>
           </div>
 
-          <!-- 衛教補助金互動試算器 -->
-          <div class="calc-panel" aria-labelledby="calc-title">
-            <div>
-              <span class="chip" data-tone="ok">衛教補助金機制</span>
-              <h3 id="calc-title" class="sub-heading" style="margin-top: var(--space-xs);">診所衛教補助金計算器（每份 80 元，上限 60 份）</h3>
-              <p class="kpi-caption" style="margin-top: var(--space-xs); margin-bottom: var(--space-md);">
-                每完成並送出一份數位衛教問卷，學會即提供衛教補助金 80 元；每家診所補助上限為 60 份，鼓勵診所團隊達成滿額收案。
-              </p>
-
-              <div class="input-row">
-                <div class="field-group">
-                  <label for="subsidy-slider" class="field-label">拖曳調整預計完成數位問卷份數 (0 – 60 份)</label>
-                  <input id="subsidy-slider" type="range" class="range-input" min="0" max="60" value="45" oninput="syncSubsidyFromSlider(this.value)">
-                </div>
-                <div class="field-group">
-                  <label for="subsidy-number" class="field-label">問卷份數</label>
-                  <input id="subsidy-number" type="number" class="num-input" min="0" max="60" value="45" oninput="syncSubsidyFromNumber(this.value)">
-                </div>
-              </div>
-            </div>
-
-            <div class="subsidy-output" aria-live="polite">
-              <span class="meta-label" style="color: var(--on-tertiary-container);">預估可獲衛教補助金總額</span>
-              <div id="subsidy-total" class="subsidy-amount">NT$ 3,600</div>
-              <p id="subsidy-status-text" style="font-size: 0.9375rem; color: var(--on-tertiary-container); font-weight: 600;">
-                已完成 45 / 60 份（達成率 75%，距離上限尚餘 15 份）
-              </p>
-            </div>
+          <!-- 收案份數上限說明 -->
+          <div class="callout">
+            <strong style="font-size: 0.9375rem;">收案份數上限：每家診所 60 份</strong>
+            <span style="font-size: 0.875rem;">每家診所以 60 份數位衛教問卷為上限，份數以診所專屬網站「確認送出之數位問卷筆數」為準。</span>
           </div>
 
           <!-- 常見問答 (FAQ) & 專案客服窗口 -->
@@ -1746,11 +1722,11 @@
 
                 <div class="faq-item">
                   <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" onclick="toggleFaq(this)">
-                    <span>Q2：可撕式紙本問卷填寫完需要寄回嗎？補助計算標準為何？</span>
+                    <span>Q2：可撕式紙本問卷填寫完需要寄回嗎？份數如何計算？</span>
                     <i data-lucide="chevron-down" aria-hidden="true"></i>
                   </button>
                   <div id="faq-ans-2" class="faq-panel" hidden>
-                    紙本衛教問卷僅供診所院內輔助衛教與預先收集資料使用，<strong>不需要寄回</strong>。計畫計分與每份 80 元之衛教補助金核算，一律以診所專屬網站「<strong>確認送出之數位問卷筆數</strong>」為準。
+                    紙本衛教問卷僅供診所院內輔助衛教與預先收集資料使用，<strong>不需要寄回</strong>。計畫份數核算（每家診所上限 60 份），一律以診所專屬網站「<strong>確認送出之數位問卷筆數</strong>」為準。
                   </div>
                 </div>
 
@@ -2061,45 +2037,6 @@
       if (title) title.textContent = data.title;
       if (body) body.textContent = data.body;
       if (note) note.textContent = data.note;
-    }
-
-    // 6. Subsidy Calculator (Dual-input sync)
-    function updateSubsidyDisplay(rawVal) {
-      var count = parseInt(rawVal, 10);
-      if (isNaN(count) || count < 0) count = 0;
-      if (count > 60) count = 60;
-      var total = count * 80;
-      var pct = Math.round((count / 60) * 100);
-      var remain = 60 - count;
-
-      var totalEl = document.getElementById('subsidy-total');
-      var statusEl = document.getElementById('subsidy-status-text');
-      if (totalEl) {
-        totalEl.textContent = `NT$ ${total.toLocaleString('zh-TW')}`;
-      }
-      if (statusEl) {
-        if (count === 60) {
-          statusEl.textContent = `已達每家診所最高上限 60 / 60 份（達成率 100%，全額補助 4,800 元）`;
-        } else {
-          statusEl.textContent = `已完成 ${count} / 60 份（達成率 ${pct}%，距離上限尚餘 ${remain} 份）`;
-        }
-      }
-    }
-
-    function syncSubsidyFromSlider(val) {
-      var numInput = document.getElementById('subsidy-number');
-      if (numInput) numInput.value = val;
-      updateSubsidyDisplay(val);
-    }
-
-    function syncSubsidyFromNumber(val) {
-      var clamped = parseInt(val, 10);
-      if (isNaN(clamped)) clamped = 0;
-      if (clamped < 0) clamped = 0;
-      if (clamped > 60) clamped = 60;
-      var slider = document.getElementById('subsidy-slider');
-      if (slider) slider.value = clamped;
-      updateSubsidyDisplay(clamped);
     }
 
     // 7. FAQ Accordion

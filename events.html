@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>活動訊息｜凱程診所</title>
+<meta name="description" content="凱程診所活動訊息：依身分選擇醫護版或民眾版，查看最新衛教活動與計畫資訊。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0e7c7b;--teal-d:#0a5e5d;--mint:#14b8a6;--mint-l:#5eead4;--ink:#1f2a37;--grey:#5b6b72;--line:#e3ebea;--bg:#f5f9f8;--card:#fff;--shadow:0 6px 24px rgba(14,124,123,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans TC',system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--teal-d);font-size:1.05rem}
+.brand .dot{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--teal),var(--mint));display:grid;place-items:center;color:#fff}
+.menu{display:flex;gap:18px;font-size:.9rem;font-weight:500;align-items:center}
+.menu a{color:var(--grey)}.menu a:hover{color:var(--teal)}
+.menu .book{background:var(--teal);color:#fff;padding:8px 16px;border-radius:999px}
+.menu .book:hover{background:var(--teal-d)}
+
+.hero{background:linear-gradient(135deg,#0e7c7b 0%,#14b8a6 100%);color:#fff;padding:52px 0 46px;text-align:center}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.18);padding:5px 14px;border-radius:999px;font-size:.8rem;margin-bottom:14px}
+.hero h1{font-size:2rem;font-weight:900;line-height:1.4;margin-bottom:8px}
+.hero p{opacity:.96;max-width:560px;margin:0 auto}
+
+main{padding:46px 0 60px}
+.choose-title{text-align:center;font-size:1.15rem;font-weight:700;color:var(--teal-d);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.choice{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px;box-shadow:var(--shadow);color:var(--ink);transition:transform .15s,border-color .15s}
+a.choice:hover{transform:translateY(-3px);border-color:var(--mint)}
+.choice .ic{width:56px;height:56px;border-radius:14px;background:#e7f6f4;display:grid;place-items:center;font-size:1.9rem;margin-bottom:12px}
+.choice h2{font-size:1.35rem;font-weight:900;color:var(--teal-d);margin-bottom:4px}
+.choice p{font-size:.92rem;color:var(--grey);margin:0}
+.choice .go{display:inline-block;margin-top:14px;font-weight:700;color:var(--teal)}
+.choice.soon{background:#f1f5f4;box-shadow:none;cursor:default}
+.choice.soon .ic{background:#e6ecea}
+.choice.soon h2{color:var(--grey)}
+.choice.soon .go{color:var(--grey);font-weight:500}
+
+.backhome-sec{background:#073e3d;padding:40px 0;text-align:center}
+.backhome{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);color:#fff;font-weight:700;font-size:1.05rem;padding:15px 40px;border-radius:999px;border:1px solid rgba(255,255,255,.28);transition:transform .15s,background .15s}
+.backhome:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+footer{background:#052e2d;color:#9fb6b4;text-align:center;padding:24px 20px;font-size:.82rem;line-height:1.7}
+
+@media(max-width:760px){
+ .menu a:not(.book){display:none}
+ .grid{grid-template-columns:1fr}.hero h1{font-size:1.6rem}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand"><span class="dot">凱</span>凱程診所</div>
+    <nav class="menu">
+      <a href="index.html#about">關於凱程</a>
+      <a href="index.html#services">診療項目</a>
+      <a href="index.html#education">衛教專頁</a>
+      <a href="index.html#contact">門診・地址</a>
+      <a class="book" href="https://www.iheal.tw/clinicWebsite/3531045765" target="_blank" rel="noopener">線上預約</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="tag">Events</span>
+    <h1>活動訊息</h1>
+    <p>凱程診所的衛教活動與計畫資訊，請先選擇適合您的版本。</p>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <p class="choose-title">請選擇您的身分</p>
+    <div class="grid">
+      <a class="choice" href="events/pro/tacd-cardiorenal.html">
+        <div class="ic">🩺</div>
+        <h2>醫護版</h2>
+        <p>給醫師、藥師、護理與衛教人員：計畫內容、臨床實證與指引整理。</p>
+        <span class="go">進入醫護版 →</span>
+      </a>
+      <div class="choice soon" aria-disabled="true">
+        <div class="ic">👪</div>
+        <h2>民眾版</h2>
+        <p>給病友與家屬：淺顯易懂的活動說明與衛教重點。</p>
+        <span class="go">即將推出</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="backhome-sec">
+  <div class="wrap">
+    <a class="backhome" href="index.html">← 回診所首頁</a>
+  </div>
+</section>
+
+<footer>
+  © 凱程診所 KC Family Clinic ・ 新北市中和區員山路150-8號1樓 ・ (02) 2223-1868
+</footer>
+
+</body>
+</html>

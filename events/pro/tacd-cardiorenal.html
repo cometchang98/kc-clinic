@@ -5,82 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="artifact-type" content="narrative">
   <meta name="design-style" content="vitals">
-  <title>守住糖友的心與腎：認識「TACD 心腎預防先鋒計畫」與早期器官保護</title>
+  <title>TACD 糖友心腎預防先鋒計畫與心腎保護全攻略</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Figtree:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
   <style>
     :root {
       color-scheme: light;
 
-      /* Page and surfaces (Vitals) */
+      /* Page and surfaces (White + Soft Indigo-Blue medical wash) */
       --background: #ffffff;
-      --surface-container-low: #f1f7f8;
-      --surface-container: #e3f1f3;
-      --surface-container-high: #d5e9ec;
+      --surface-container-low: #f5f6fb;
+      --surface-container: #eaedf8;
+      --surface-container-high: #dde2f4;
 
-      /* Text */
-      --on-surface: #1b2b33;
-      --on-surface-variant: #46585f;
+      /* Ink */
+      --on-surface: #171d36;
+      --on-surface-variant: #47506e;
 
       /* Rules */
-      --outline: #7b9198;
-      --outline-variant: #d5e3e5;
+      --outline: #737d9c;
+      --outline-variant: #d6dcf0;
 
-      /* Accents */
-      --primary: #0f7c8a;
+      /* Accents (Purple, Clinical Blue, White) */
+      --primary: #4338ca;
+      --primary-hover: #3730a3;
       --on-primary: #ffffff;
-      --primary-container: #e3f1f3;
-      --on-primary-container: #0a5560;
-      --secondary: #1d5e3a;
-      --tertiary: #2e7d4f;
-      --error: #b3261e;
+      --primary-container: #ede9fe;
+      --on-primary-container: #3730a3;
+
+      --secondary: #1d4ed8;
+      --secondary-hover: #1e40af;
+      --on-secondary: #ffffff;
+      --secondary-container: #e0f2fe;
+      --on-secondary-container: #0369a1;
+
+      --tertiary: #15803d;
+      --tertiary-container: #dcfce7;
+      --on-tertiary-container: #14532d;
+
+      --error: #b91c1c;
+      --error-container: #fee2e2;
       --on-error: #ffffff;
 
-      /* Data series */
-      --data-1: #0f7c8a;
-      --data-2: #2e7d4f;
-      --data-3: #b86e00;
-      --data-4: #5c5fb0;
-      --data-context: #b8c7ca;
+      /* Semantic */
+      --positive: #15803d;
+      --warning: #b45309;
+      --warning-container: #fef3c7;
+      --focus: #4338ca;
 
-      /* Fonts (Non-Latin first per design_foundation.md) */
+      /* Data series */
+      --data-1: #4338ca;
+      --data-2: #0284c7;
+      --data-3: #15803d;
+      --data-4: #7c3aed;
+      --data-context: #94a3b8;
+
+      /* Fonts (Non-Latin first) */
       --font-headline: 'Noto Sans TC', 'Figtree', sans-serif;
-      --font-body: 'Noto Sans TC', 'Atkinson Hyperlegible', sans-serif;
+      --font-body: 'Noto Sans TC', 'Figtree', sans-serif;
       --font-label: 'Noto Sans TC', 'Figtree', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Noto Sans TC', monospace;
+
+      /* Type scale (Narrative) */
+      --display-size: clamp(2rem, 1.4rem + 2.4vw, 3.125rem);
+      --headline-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.125rem);
+      --subhead-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.35rem);
+      --body-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+      --label-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
 
       /* Shape */
       --rounded: 0.625rem;
       --rounded-lg: 0.875rem;
       --rounded-full: 9999px;
 
-      /* Style effects */
+      /* Effects */
       --top-bar: 6px solid var(--primary);
       --status-bar-width: 4px;
       --card-border: 1px solid var(--outline-variant);
-      --card-lift: 0 1px 2px rgb(27 43 51 / 0.05), 0 6px 16px rgb(27 43 51 / 0.05);
+      --card-lift: 0 2px 6px rgb(23 29 54 / 0.05), 0 10px 24px rgb(67 56 202 / 0.07);
+      --hero-glow: linear-gradient(135deg, var(--surface-container-low) 0%, var(--background) 60%, var(--secondary-container) 100%);
+      --btn-shadow: 0 2px 8px rgb(67 56 202 / 0.22);
 
-      /* Shared semantic & focus tokens */
-      --positive: var(--tertiary);
-      --warning: var(--data-3);
-      --focus: var(--primary);
-
-      /* Narrative type scale */
-      --display-size: clamp(2rem, 1.4rem + 2.4vw, 3.125rem);
-      --headline-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem);
-      --subhead-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
-      --body-size: clamp(1rem, 0.96rem + 0.2vw, 1.09375rem);
-      --label-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.84375rem);
-
-      /* Spacing scale */
+      /* Spacing scale (4pt base) */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
       --space-lg: 1.5rem;
       --space-xl: 2.5rem;
       --space-2xl: 4rem;
-      --space-3xl: 5.5rem;
+      --space-3xl: 6rem;
 
       /* Motion */
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -96,18 +111,20 @@
       overflow-x: clip;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
       background-color: var(--background);
       color: var(--on-surface);
       font-family: var(--font-body);
       font-size: var(--body-size);
       line-height: 1.65;
-      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
     }
     header { position: static !important; }
 
     button, input, select, textarea {
       font-family: inherit;
-      font-size: inherit;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
     :focus-visible {
@@ -115,280 +132,81 @@
       outline-offset: 2px;
     }
 
+    /* Page container */
     .page-shell {
       border-top: var(--top-bar);
       min-height: 100vh;
     }
 
-    .container {
-      max-width: 1120px;
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-xl);
+      padding: var(--space-lg);
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 0 var(--space-lg);
     }
-    .container * { min-width: 0; }
-
-    /* Top nav bar inside header */
-    .top-nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-md);
-      padding: var(--space-lg) 0 var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
-    }
-
-    .brand-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-family: var(--font-label);
-      font-weight: 700;
-      font-size: var(--label-size);
-      color: var(--on-primary-container);
-      background-color: var(--primary-container);
-      padding: var(--space-xs) var(--space-md);
-      border-radius: var(--rounded-full);
-    }
-
-    .nav-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-md);
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      font-family: var(--font-label);
-      font-weight: 600;
-      font-size: var(--label-size);
-      color: var(--on-surface-variant);
-      text-decoration: none;
-      padding: var(--space-sm) var(--space-xs);
-      border-bottom: 2px solid transparent;
-      transition: color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-    }
-    .nav-links a:hover {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-sm);
-      min-height: 44px;
-      padding: var(--space-sm) var(--space-lg);
-      border-radius: var(--rounded);
-      font-family: var(--font-label);
-      font-weight: 600;
-      font-size: var(--label-size);
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: background-color var(--dur-micro) var(--ease-out),
-                  color var(--dur-micro) var(--ease-out),
-                  box-shadow var(--dur-micro) var(--ease-out);
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: var(--on-primary);
-    }
-    .btn-primary:hover {
-      background-color: var(--on-primary-container);
-    }
-
-    .btn-outline {
-      background-color: var(--background);
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-    .btn-outline:hover {
-      background-color: var(--surface-container-low);
-    }
-
-    .btn-ghost {
-      background-color: var(--surface-container-low);
-      color: var(--on-surface);
-      border-color: var(--outline-variant);
-    }
-    .btn-ghost:hover {
-      background-color: var(--surface-container);
-    }
+    .page-grid * { min-width: 0; }
 
     /* Typography */
-    .title {
+    h1, h2, h3, h4 {
       font-family: var(--font-headline);
-      font-weight: 800;
+      color: var(--on-surface);
+      margin: 0;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0;
+      color: var(--on-surface);
+    }
+
+    .display-title {
       font-size: var(--display-size);
-      line-height: 1.15;
-      color: var(--on-surface);
-      margin: 0;
-    }
-
-    .section-title {
-      font-family: var(--font-headline);
       font-weight: 800;
+      line-height: 1.18;
+      margin-top: var(--space-sm);
+    }
+
+    .section-heading {
       font-size: var(--headline-size);
-      line-height: 1.2;
-      color: var(--on-surface);
-      margin: 0;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: var(--space-xs);
     }
 
-    .subhead {
-      font-family: var(--font-headline);
-      font-weight: 700;
+    .sub-heading {
       font-size: var(--subhead-size);
-      line-height: 1.3;
-      color: var(--on-surface);
-      margin: 0;
-    }
-
-    .kicker {
-      font-family: var(--font-label);
       font-weight: 700;
-      font-size: var(--label-size);
-      color: var(--primary);
-      margin: 0 0 var(--space-xs);
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
+      line-height: 1.35;
     }
 
     .lede {
-      font-size: 1.08rem;
+      font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.2rem);
       line-height: 1.65;
       color: var(--on-surface-variant);
-      max-width: 65ch;
-      margin: var(--space-md) 0 0;
+      max-width: 68ch;
+      margin-top: var(--space-md);
     }
 
     .prose {
       max-width: 65ch;
       color: var(--on-surface);
+      line-height: 1.7;
     }
 
-    /* Hero section */
-    .hero {
-      padding: var(--space-2xl) 0 var(--space-xl);
+    .mono-num {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .hero-cta-row {
+    /* Chips & Kickers */
+    .chip-row {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-md);
-      margin-top: var(--space-lg);
-    }
-
-    .share-feedback {
-      font-size: var(--label-size);
-      color: var(--secondary);
-      font-weight: 600;
-      min-height: 1.4em;
-      margin-top: var(--space-sm);
-    }
-
-    .hero-summary-panel {
-      background-color: var(--surface-container-low);
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-lg);
-    }
-
-    .hero-summary-list {
-      margin: var(--space-md) 0 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-
-    .hero-summary-list li {
-      display: flex;
-      align-items: flex-start;
       gap: var(--space-sm);
-      font-size: 0.96rem;
-      color: var(--on-surface);
+      align-items: center;
     }
 
-    .hero-summary-list i {
-      color: var(--primary);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    /* Key figures row */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-      gap: var(--space-lg);
-      margin-top: var(--space-xl);
-    }
-
-    /* Vitals Status Card (Treatment 1) */
-    .status-card {
-      background-color: var(--background);
-      border: var(--card-border);
-      border-left: var(--status-bar-width) solid var(--primary);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-md) var(--space-lg);
-      box-shadow: var(--card-lift);
-    }
-    .status-card[data-status="ok"] { border-left-color: var(--tertiary); }
-    .status-card[data-status="alert"] { border-left-color: var(--error); }
-    .status-card[data-status="watch"] { border-left-color: var(--warning); }
-
-    .metric-label {
-      font-family: var(--font-label);
-      font-weight: 600;
-      font-size: var(--label-size);
-      color: var(--on-surface-variant);
-      display: block;
-    }
-
-    .metric-value {
-      font-family: var(--font-headline);
-      font-weight: 800;
-      font-size: clamp(1.75rem, 1.4rem + 1vw, 2.25rem);
-      font-variant-numeric: tabular-nums;
-      line-height: 1.15;
-      color: var(--on-surface);
-      margin: var(--space-xs) 0;
-    }
-
-    .metric-caption {
-      font-size: 0.92rem;
-      color: var(--on-surface-variant);
-      margin: 0;
-    }
-    .status-card[data-status="ok"] .metric-caption { color: var(--secondary); }
-    .status-card[data-status="alert"] .metric-caption { color: var(--error); }
-
-    /* Reassurance Chip (Treatment 4) */
     .chip {
       display: inline-flex;
       align-items: center;
@@ -398,266 +216,107 @@
       font-size: var(--label-size);
       padding: var(--space-xs) var(--space-md);
       border-radius: var(--rounded-full);
-      background: color-mix(in srgb, var(--tertiary) 14%, var(--background));
-      color: var(--secondary);
-    }
-    .chip[data-status="info"] {
       background: var(--primary-container);
       color: var(--on-primary-container);
     }
-    .chip[data-status="alert"] {
-      background: color-mix(in srgb, var(--error) 10%, var(--background));
-      color: var(--error);
+    .chip[data-tone="blue"] {
+      background: var(--secondary-container);
+      color: var(--on-secondary-container);
     }
-    .chip[data-status="watch"] {
-      background: color-mix(in srgb, var(--warning) 14%, var(--background));
-      color: var(--on-surface);
+    .chip[data-tone="ok"] {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
     }
-
-    /* Section bands */
-    .band {
-      padding: var(--space-2xl) 0;
-    }
-    .band-wash {
-      background-color: var(--surface-container-low);
-      border-top: 1px solid var(--outline-variant);
-      border-bottom: 1px solid var(--outline-variant);
+    .chip[data-tone="warn"] {
+      background: var(--warning-container);
+      color: var(--warning);
     }
 
-    .section-header {
-      margin-bottom: var(--space-xl);
-    }
-
-    /* Cards & Grids */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-      gap: var(--space-lg);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .asymmetric-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .white-card {
-      background-color: var(--background);
+    /* Hero Banner */
+    .hero-panel {
+      background: var(--hero-glow);
       border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-lg);
-      box-shadow: var(--card-lift);
-    }
-
-    .callout {
-      background-color: var(--primary-container);
       border-left: var(--status-bar-width) solid var(--primary);
       border-radius: var(--rounded-lg);
-      padding: var(--space-md) var(--space-lg);
-      color: var(--on-primary-container);
+      padding: var(--space-xl);
+      box-shadow: var(--card-lift);
     }
 
-    /* Interactive Organ Progression Lab */
-    .interactive-panel {
-      background-color: var(--background);
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--outline-variant);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .meta-label {
+      font-size: var(--label-size);
+      font-weight: 600;
+      color: var(--on-surface-variant);
+    }
+    .meta-value {
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+
+    /* Top Navigation & Direct Progression Jump Buttons */
+    .nav-dock {
+      background: var(--surface-container-low);
       border: var(--card-border);
       border-radius: var(--rounded-lg);
-      padding: var(--space-lg);
-      box-shadow: var(--card-lift);
-      margin-top: var(--space-xl);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
     }
 
-    .tab-row {
+    .nav-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
       gap: var(--space-sm);
-      border-bottom: 1px solid var(--outline-variant);
-      padding-bottom: var(--space-md);
-      margin-bottom: var(--space-lg);
     }
 
-    .tab-btn {
+    .nav-btn {
       display: inline-flex;
       align-items: center;
-      gap: var(--space-sm);
-      min-height: 44px;
-      padding: var(--space-sm) var(--space-lg);
-      border-radius: var(--rounded);
-      background-color: var(--surface-container-low);
-      color: var(--on-surface-variant);
-      border: 1px solid var(--outline-variant);
-      font-weight: 600;
-      font-size: var(--label-size);
-      cursor: pointer;
-      transition: background-color var(--dur-micro) var(--ease-out),
-                  color var(--dur-micro) var(--ease-out),
-                  box-shadow var(--dur-micro) var(--ease-out);
-    }
-    .tab-btn:hover {
-      background-color: var(--surface-container);
-      color: var(--on-surface);
-    }
-    .tab-btn[aria-selected="true"] {
-      background-color: var(--primary);
-      color: var(--on-primary);
-      border-color: var(--primary);
-    }
-
-    .stage-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .stage-buttons {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr));
-      gap: var(--space-sm);
-      margin-bottom: var(--space-md);
-    }
-
-    .stage-pill {
-      min-height: 48px;
-      padding: var(--space-sm) var(--space-md);
-      border-radius: var(--rounded);
-      border: 1px solid var(--outline-variant);
-      background-color: var(--surface-container-low);
-      color: var(--on-surface);
-      font-weight: 600;
-      font-size: var(--label-size);
-      text-align: left;
-      cursor: pointer;
-      transition: background-color var(--dur-micro) var(--ease-out),
-                  box-shadow var(--dur-micro) var(--ease-out);
-    }
-    .stage-pill:hover {
-      background-color: var(--surface-container);
-    }
-    .stage-pill[aria-pressed="true"] {
-      background-color: var(--primary-container);
-      color: var(--on-primary-container);
-      box-shadow: inset 0 0 0 2px var(--primary);
-    }
-
-    .svg-frame {
-      background-color: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-md);
-      min-height: 270px;
-    }
-
-    .range-band {
-      fill: var(--tertiary);
-      fill-opacity: 0.14;
-      stroke: none;
-    }
-
-    /* Eligibility Self-Checker */
-    .checker-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-      gap: var(--space-xl);
-      align-items: start;
-    }
-
-    .field-group {
-      margin-bottom: var(--space-lg);
-    }
-
-    .field-label {
-      display: block;
-      font-family: var(--font-label);
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--on-surface);
-      margin-bottom: var(--space-sm);
-    }
-
-    .choice-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
-    }
-
-    .choice-btn {
+      justify-content: center;
+      gap: var(--space-xs);
       min-height: 44px;
       padding: var(--space-sm) var(--space-md);
       border-radius: var(--rounded);
-      border: 1px solid var(--outline);
-      background-color: var(--background);
-      color: var(--on-surface);
-      font-weight: 600;
-      font-size: var(--label-size);
-      cursor: pointer;
-      transition: background-color var(--dur-micro) var(--ease-out),
-                  color var(--dur-micro) var(--ease-out),
-                  box-shadow var(--dur-micro) var(--ease-out);
-    }
-    .choice-btn:hover {
-      background-color: var(--surface-container-low);
-    }
-    .choice-btn[aria-pressed="true"] {
-      background-color: var(--primary);
-      color: var(--on-primary);
-      border-color: var(--primary);
-    }
-
-    .risk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(185px, 100%), 1fr));
-      gap: var(--space-sm);
-    }
-
-    .risk-chip {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      min-height: 46px;
-      padding: var(--space-sm) var(--space-md);
-      border-radius: var(--rounded);
       border: 1px solid var(--outline-variant);
-      background-color: var(--surface-container-low);
+      background: var(--background);
       color: var(--on-surface);
-      font-size: 0.88rem;
+      font-size: 0.9375rem;
       font-weight: 600;
-      text-align: left;
       cursor: pointer;
-      transition: background-color var(--dur-micro) var(--ease-out),
-                  box-shadow var(--dur-micro) var(--ease-out);
+      transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
     }
-    .risk-chip:hover {
-      background-color: var(--surface-container);
-    }
-    .risk-chip[aria-pressed="true"] {
-      background-color: var(--primary-container);
-      color: var(--on-primary-container);
-      box-shadow: inset 0 0 0 2px var(--primary);
-    }
-
-    .risk-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: var(--rounded-full);
-      border: 2px solid var(--outline);
-      flex-shrink: 0;
-      background-color: var(--background);
-    }
-    .risk-chip[aria-pressed="true"] .risk-dot {
-      background-color: var(--primary);
+    .nav-btn:hover {
+      background: var(--surface-container);
       border-color: var(--primary);
+      color: var(--primary);
+    }
+    .nav-btn:active {
+      transform: translateY(1px);
     }
 
-    .preset-bar {
+    .jump-highlight-bar {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -666,72 +325,527 @@
       border-top: 1px solid var(--outline-variant);
     }
 
-    /* Tables */
-    .table-wrap {
-      overflow-x: auto;
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      background-color: var(--background);
-      box-shadow: var(--card-lift);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.94rem;
-    }
-
-    thead th {
-      background-color: var(--surface-container-low);
-      font-family: var(--font-label);
-      font-weight: 700;
+    .jump-label {
       font-size: var(--label-size);
-      color: var(--on-surface);
-      padding: var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
-      white-space: nowrap;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      margin-right: var(--space-xs);
     }
 
-    tbody td {
-      padding: var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
-      vertical-align: middle;
-    }
-    tbody tr:last-child td { border-bottom: none; }
-
-    .col-highlight {
-      background-color: color-mix(in srgb, var(--primary-container) 45%, var(--background));
-    }
-
-    /* Steps flow */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: var(--space-md);
-      margin-top: var(--space-lg);
-    }
-
-    .step-card {
-      background-color: var(--surface-container-low);
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-md) var(--space-lg);
-    }
-
-    .step-num {
+    .btn-primary-jump {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: var(--rounded-full);
-      background-color: var(--primary);
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded);
+      border: 0;
+      background: var(--primary);
       color: var(--on-primary);
-      font-family: var(--font-headline);
-      font-weight: 800;
-      font-size: 0.85rem;
-      margin-bottom: var(--space-sm);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--btn-shadow);
+      transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+    }
+    .btn-primary-jump:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    .btn-primary-jump:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary-jump {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded);
+      border: 0;
+      background: var(--secondary);
+      color: var(--on-secondary);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--btn-shadow);
+      transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+    }
+    .btn-secondary-jump:hover {
+      background: var(--secondary-hover);
+      transform: translateY(-1px);
+    }
+    .btn-secondary-jump:active {
+      transform: translateY(0);
+    }
+
+    /* Section Containers */
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+      padding-top: var(--space-lg);
+      scroll-margin-top: var(--space-lg);
+    }
+
+    .section-band {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      border-left: var(--status-bar-width) solid var(--primary);
+      padding-left: var(--space-md);
+    }
+    .section-header[data-accent="blue"] {
+      border-left-color: var(--secondary);
+    }
+
+    .section-kicker {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .section-header[data-accent="blue"] .section-kicker {
+      color: var(--secondary);
+    }
+
+    /* Card Grids */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .card-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .status-card {
+      background: var(--background);
+      border: var(--card-border);
+      border-left: var(--status-bar-width) solid var(--primary);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .status-card[data-status="blue"] { border-left-color: var(--secondary); }
+    .status-card[data-status="ok"] { border-left-color: var(--tertiary); }
+    .status-card[data-status="alert"] { border-left-color: var(--error); }
+    .status-card[data-status="warn"] { border-left-color: var(--warning); }
+
+    .kpi-value {
+      font-family: var(--font-mono);
+      font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--primary);
+      font-variant-numeric: tabular-nums;
+    }
+    .status-card[data-status="blue"] .kpi-value { color: var(--secondary); }
+    .status-card[data-status="ok"] .kpi-value { color: var(--tertiary); }
+    .status-card[data-status="alert"] .kpi-value { color: var(--error); }
+
+    .kpi-caption {
+      font-size: 0.9375rem;
+      color: var(--on-surface-variant);
+      line-height: 1.5;
+    }
+
+    /* Clean Cards */
+    .info-card {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      box-shadow: var(--card-lift);
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--rounded);
+      background: var(--primary);
+      color: var(--on-primary);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      flex-shrink: 0;
+    }
+    .step-badge[data-tone="blue"] {
+      background: var(--secondary);
+    }
+
+    /* Interactive Risk Screener */
+    .screener-panel {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      box-shadow: var(--card-lift);
+    }
+
+    .prereq-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .toggle-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline);
+      background: var(--background);
+      color: var(--on-surface);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .toggle-pill:hover {
+      background: var(--surface-container-low);
+    }
+    .toggle-pill[aria-pressed="true"] {
+      background: var(--primary-container);
+      border-color: var(--primary);
+      color: var(--on-primary-container);
+      box-shadow: inset 0 0 0 1px var(--primary);
+    }
+    .toggle-pill[data-kind="exclude"][aria-pressed="false"] {
+      background: var(--error-container);
+      border-color: var(--error);
+      color: var(--error);
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(185px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+
+    .risk-chip-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2px;
+      min-height: 54px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline-variant);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      text-align: left;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .risk-chip-btn:hover {
+      background: var(--surface-container);
+    }
+    .risk-chip-btn[aria-pressed="true"] {
+      background: var(--secondary-container);
+      color: var(--on-secondary-container);
+      box-shadow: inset 0 0 0 2px var(--secondary);
+    }
+    .risk-chip-title {
+      font-weight: 700;
+      font-size: 0.9375rem;
+    }
+    .risk-chip-sub {
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+    }
+    .risk-chip-btn[aria-pressed="true"] .risk-chip-sub {
+      color: var(--on-secondary-container);
+    }
+
+    .screener-result {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-md);
+      border: var(--card-border);
+    }
+    .screener-result[data-eligible="true"] {
+      background: var(--tertiary-container);
+      border-color: var(--tertiary);
+    }
+    .screener-result[data-eligible="false"] {
+      background: var(--surface-container-low);
+      border-color: var(--outline-variant);
+    }
+
+    /* Interactive Progression Modules (CKD & HF) */
+    .progression-card {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      box-shadow: var(--card-lift);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+      scroll-margin-top: var(--space-lg);
+    }
+
+    .progression-card.flash-focus {
+      box-shadow: 0 0 0 3px var(--primary), var(--card-lift);
+    }
+
+    .phase-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .phase-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline-variant);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+    }
+    .phase-btn:hover {
+      background: var(--surface-container);
+    }
+    .phase-btn[aria-selected="true"] {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+    .phase-btn[data-theme="blue"][aria-selected="true"] {
+      background: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    .progression-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: stretch;
+    }
+
+    .svg-stage {
+      background: var(--surface-container-low);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-sm);
+    }
+
+    .svg-stage svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .phase-detail-box {
+      background: var(--surface-container-low);
+      border-left: var(--status-bar-width) solid var(--primary);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .phase-detail-box[data-theme="blue"] {
+      border-left-color: var(--secondary);
+    }
+
+    .detail-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-sm);
+    }
+    .detail-metric-tile {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+    }
+
+    /* Callout */
+    .callout {
+      background: var(--primary-container);
+      border-left: var(--status-bar-width) solid var(--primary);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      color: var(--on-primary-container);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .callout[data-tone="blue"] {
+      background: var(--secondary-container);
+      border-left-color: var(--secondary);
+      color: var(--on-secondary-container);
+    }
+
+    /* Chart Container */
+
+    /* Scenario Decision Explorer (Section 3) */
+    .scenario-box {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      box-shadow: var(--card-lift);
+    }
+    .scenario-result {
+      background: var(--surface-container-low);
+      border-left: var(--status-bar-width) solid var(--secondary);
+      border-radius: var(--rounded);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    /* Timeline Strip */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+    .timeline-node {
+      background: var(--background);
+      border: var(--card-border);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .timeline-node[data-active="true"] {
+      background: var(--primary-container);
+      border-color: var(--primary);
+    }
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--primary);
+    }
+
+    /* Subsidy Calculator */
+    .calc-panel {
+      background: var(--background);
+      border: var(--card-border);
+      border-left: var(--status-bar-width) solid var(--tertiary);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: var(--space-xl);
+      align-items: center;
+      box-shadow: var(--card-lift);
+    }
+
+    .input-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      gap: var(--space-md);
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .field-label {
+      font-size: var(--label-size);
+      font-weight: 700;
+      color: var(--on-surface);
+    }
+    .num-input {
+      min-height: 44px;
+      width: 110px;
+      padding: var(--space-xs) var(--space-md);
+      border: 1px solid var(--outline);
+      border-radius: var(--rounded);
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      background: var(--background);
+    }
+    .range-input {
+      width: min(260px, 100%);
+      height: 44px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .subsidy-output {
+      background: var(--tertiary-container);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .subsidy-amount {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 1.6rem + 1.5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--on-tertiary-container);
+      line-height: 1.1;
     }
 
     /* FAQ Accordion */
@@ -739,69 +853,120 @@
       display: flex;
       flex-direction: column;
       gap: var(--space-sm);
-      margin-top: var(--space-xl);
     }
-
-    details.faq-item {
-      background-color: var(--background);
+    .faq-item {
+      background: var(--background);
       border: var(--card-border);
       border-radius: var(--rounded-lg);
-      padding: var(--space-md) var(--space-lg);
+      overflow: hidden;
     }
-
-    details.faq-item summary {
-      font-family: var(--font-headline);
-      font-weight: 700;
-      font-size: 1.02rem;
-      cursor: pointer;
-      color: var(--on-surface);
-      list-style: none;
+    .faq-trigger {
+      width: 100%;
+      min-height: 52px;
+      padding: var(--space-md) var(--space-lg);
+      background: var(--background);
+      border: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-md);
-      min-height: 36px;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out);
     }
-    details.faq-item summary::-webkit-details-marker { display: none; }
-    details.faq-item[open] summary {
-      color: var(--primary);
-      margin-bottom: var(--space-sm);
+    .faq-trigger:hover {
+      background: var(--surface-container-low);
     }
-
-    /* Footer */
-    .site-footer {
-      padding: var(--space-xl) 0 var(--space-2xl);
-      border-top: 1px solid var(--outline-variant);
+    .faq-panel {
+      padding: 0 var(--space-lg) var(--space-lg);
       color: var(--on-surface-variant);
-      font-size: 0.88rem;
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-md);
+    }
+    .faq-panel[hidden] {
+      display: none;
     }
 
-    /* Reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+    /* Copy action feedback */
+    .btn-outline-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded);
+      border: 1px solid var(--primary);
+      background: var(--background);
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out);
     }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
+    .btn-outline-sm:hover {
+      background: var(--primary-container);
     }
 
-    @media (max-width: 860px) {
-      .hero-grid,
-      .two-col,
-      .asymmetric-grid,
-      .stage-grid,
-      .checker-layout {
-        grid-template-columns: 1fr;
+    .footer-note {
+      border-top: 1px solid var(--outline-variant);
+      padding-top: var(--space-lg);
+      padding-bottom: var(--space-2xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      color: var(--on-surface-variant);
+      font-size: 0.875rem;
+    }
+
+    /* Container queries for adaptive cards */
+    .card-wrapper { container-type: inline-size; }
+    @container (min-width: 520px) {
+      .drug-inner-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: var(--space-md);
+      }
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 900px) {
+      .card-grid-3, .card-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .screener-panel,
+      .progression-layout,
+      .calc-panel,
+      .card-grid-2 {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
     @media (max-width: 640px) {
-      .container { padding: 0 var(--space-md); }
-      .hero { padding: var(--space-xl) 0 var(--space-lg); }
-      .band { padding: var(--space-xl) 0; }
-      .nav-links { gap: var(--space-sm); }
+      .page-grid {
+        padding: var(--space-md);
+        gap: var(--space-lg);
+      }
+      .hero-panel,
+      .section-band,
+      .progression-card {
+        padding: var(--space-lg);
+      }
+      .card-grid-3, .card-grid-4 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .nav-links,
+      .jump-highlight-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-btn,
+      .btn-primary-jump,
+      .btn-secondary-jump {
+        width: 100%;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -810,999 +975,1153 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
-      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
   <div class="page-shell">
-    <header class="container">
-      <nav class="top-nav" aria-label="頁面導覽">
-        <span class="brand-tag">
-          <i data-lucide="heart-pulse" width="16" height="16" aria-hidden="true"></i>
-          糖友心腎衛教指南 · TACD 心腎預防先鋒計畫
-        </span>
-        <div class="nav-actions">
-          <a href="../../events.html" class="btn btn-ghost" style="text-decoration: none;">← 活動訊息</a>
-          <ul class="nav-links">
-            <li><a href="#why-early">為何要提早預防</a></li>
-            <li><a href="#program">計畫與自我檢核</a></li>
-            <li><a href="#guidelines">國際指引趨勢</a></li>
-            <li><a href="#sglt2i">SGLT2i 心腎實證</a></li>
-            <li><a href="#safety">用藥安心守則</a></li>
-          </ul>
-          <button type="button" class="btn btn-outline" id="copy-share-btn" onclick="copyShareSummary()">
-            <i data-lucide="share-2" width="16" height="16" aria-hidden="true"></i>
-            複製分享摘要
+    <div class="page-grid">
+
+      <div><a href="../../events.html" class="btn-outline-sm" style="text-decoration: none;">← 活動訊息</a></div>
+
+      <!-- HEADER & NAVIGATION -->
+      <header>
+        <div class="hero-panel">
+          <div class="chip-row">
+            <span class="chip">台灣基層糖尿病學會 (TACD) 主辦</span>
+            <span class="chip" data-tone="blue">家醫 2.0 糖心腎整合照護</span>
+            <span class="chip" data-tone="ok">專案期間：2026/12/04 – 2027/03/31</span>
+          </div>
+
+          <h1 class="display-title">TACD 糖友心腎預防先鋒計畫與心腎保護全攻略</h1>
+          <p class="lede">
+            專為基層診所醫師與醫護團隊設計的臨床行動與衛教指南——在慢性腎臟病 (CKD) 與心衰竭 (HF) 尚未出現症狀前，透過系統化篩檢、醫病共享決策 (SDM) 與早期 SGLT2i 介入，守住糖友關鍵器官功能。
+          </p>
+
+          <div class="hero-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">主辦／贊助／執行單位</span>
+              <span class="meta-value">TACD 主辦 · AstraZeneca 公益贊助 · 荷陽創意行銷執行</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">參與規模與資格</span>
+              <span class="meta-value">全國 600 家基層診所（邀請制）</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">衛教補助機制</span>
+              <span class="meta-value">每份數位衛教問卷 80 元（每家上限 60 份，最高 4,800 元）</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- INTERACTIVE NAVIGATION & PROGRESSION JUMP BAR -->
+      <nav class="nav-dock" aria-label="計畫章節與進程快速導航">
+        <div class="nav-group">
+          <div class="nav-links">
+            <button type="button" class="nav-btn" onclick="jumpToSection('sec-overview')">
+              <i data-lucide="compass" aria-hidden="true"></i>
+              <span>一、計畫緣起與目標族群</span>
+            </button>
+            <button type="button" class="nav-btn" onclick="jumpToSection('sec-prevention')">
+              <i data-lucide="activity" aria-hidden="true"></i>
+              <span>二、初級預防與國際指引</span>
+            </button>
+            <button type="button" class="nav-btn" onclick="jumpToSection('sec-sglt2i')">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+              <span>三、SGLT2i 實證與處方策略</span>
+            </button>
+            <button type="button" class="nav-btn" onclick="jumpToSection('sec-workflow')">
+              <i data-lucide="clipboard-list" aria-hidden="true"></i>
+              <span>四、執行步驟與工具包</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="jump-highlight-bar">
+          <span class="jump-label">互動進程圖解直達：</span>
+          <button type="button" class="btn-primary-jump" onclick="jumpToSection('section-ckd-progression')">
+            <i data-lucide="droplets" aria-hidden="true"></i>
+            <span>腎臟病變進程</span>
+            <i data-lucide="arrow-down-right" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="btn-secondary-jump" onclick="jumpToSection('section-hf-progression')">
+            <i data-lucide="heart-pulse" aria-hidden="true"></i>
+            <span>心衰竭進程 (Stage A 到 Stage D)</span>
+            <i data-lucide="arrow-down-right" aria-hidden="true"></i>
           </button>
         </div>
       </nav>
 
-      <div class="hero">
-        <div class="hero-grid">
-          <div>
-            <p class="kicker">第 2 型糖尿病心腎初級預防</p>
-            <h1 class="title">守住糖友的心與腎：<br>認識「TACD 心腎預防先鋒計畫」</h1>
-            <p class="lede">
-              控制糖尿病，不能只看血糖數字。心臟與腎臟的早期傷害往往安靜無聲，等出現症狀時可能已累積多年。本計畫透過全台基層診所篩檢、衛教與醫病共享決策（SDM），協助尚未出現腎臟病的糖友及早評估心腎風險並啟動保護。
-            </p>
-            <div class="hero-cta-row">
-              <a href="#program" class="btn btn-primary" style="text-decoration: none;">
-                <i data-lucide="clipboard-check" width="18" height="18" aria-hidden="true"></i>
-                30 秒檢核是否符合優先對象
-              </a>
-              <a href="#why-early" class="btn btn-ghost" style="text-decoration: none;">
-                看懂心腎早期警訊
-              </a>
+      <main class="page-grid" style="padding: 0;">
+
+        <!-- MODULE 1: 計畫核心介紹與緣起 -->
+        <section id="sec-overview" class="section-block" aria-labelledby="heading-overview">
+          <div class="section-header">
+            <span class="section-kicker">MODULE 01 · 計畫緣起與基層臨床任務</span>
+            <h2 id="heading-overview" class="section-heading">面對糖尿病心腎併發症攀升，家醫 2.0 搶攻無症狀「初級預防」前線</h2>
+          </div>
+
+          <p class="prose">
+            台灣糖尿病照護已正式從單純降糖邁向「糖、心、腎整合照護」與風險導向的家醫 2.0 時代。衛生福利部 113 年國人死因統計顯示，糖尿病高居十大死因第 5 位，心臟與腎臟相關慢性病亦名列前茅；臺灣糖尿病年鑑數據更揭示 T2D 合併慢性腎臟病 (CKD) 與心衰竭 (HF) 人數在 2000–2014 年間大幅倍增，且臨床仍有超過四成糖友未達個人化 HbA1c 目標。
+          </p>
+
+          <div class="card-grid-4">
+            <article class="status-card" data-status="alert">
+              <span class="meta-label">T2D 合併 CKD 增幅</span>
+              <div class="kpi-value">+407%</div>
+              <p class="kpi-caption">2000–2014 年間臺灣第 2 型糖尿病合併慢性腎臟病人數倍增幅度</p>
+            </article>
+            <article class="status-card" data-status="blue">
+              <span class="meta-label">T2D 合併 HF 增幅</span>
+              <div class="kpi-value">+185%</div>
+              <p class="kpi-caption">同期第 2 型糖尿病合併心衰竭人數倍增，預後風險極高</p>
+            </article>
+            <article class="status-card" data-status="warn">
+              <span class="meta-label">HbA1c 未達標率</span>
+              <div class="kpi-value">45%</div>
+              <p class="kpi-caption">超過 4 成患者未達個人化目標（一般 &lt;7%、≥65 歲 &lt;7.5%）</p>
+            </article>
+            <article class="status-card" data-status="ok">
+              <span class="meta-label">REACTION 亞洲研究拐點</span>
+              <div class="kpi-value">5.5%</div>
+              <p class="kpi-caption">HbA1c 超過 5.5% 後隨血糖升高，白蛋白尿風險明顯上升</p>
+            </article>
+          </div>
+
+          <!-- 三大核心目標 -->
+          <div class="section-band">
+            <h3 class="sub-heading" style="margin-bottom: var(--space-md);">心腎預防先鋒計畫：三大核心目標</h3>
+            <div class="card-grid-3">
+              <article class="info-card">
+                <div class="chip-row">
+                  <span class="step-badge">01</span>
+                  <span class="chip">風險辨識</span>
+                </div>
+                <h4 class="sub-heading">擴大基層高風險個案辨識</h4>
+                <p class="kpi-caption">
+                  協助基層診所從第 2 型糖尿病門診中，系統化找出尚未合併慢性腎臟病 (CKD)、但具心腎風險因子的潛在族群，避免無症狀患者錯失黃金預防期。
+                </p>
+              </article>
+              <article class="info-card">
+                <div class="chip-row">
+                  <span class="step-badge" data-tone="blue">02</span>
+                  <span class="chip" data-tone="blue">健康識能</span>
+                </div>
+                <h4 class="sub-heading">提升病人糖心腎健康識能</h4>
+                <p class="kpi-caption">
+                  透過簡明衛教單張與數位互動問卷，幫助病人理解血糖、血壓、血脂與心腎健康的緊密交互作用，建立「及早保護勝於事後治療」的預防認知。
+                </p>
+              </article>
+              <article class="info-card">
+                <div class="chip-row">
+                  <span class="step-badge">03</span>
+                  <span class="chip" data-tone="ok">SDM 共決</span>
+                </div>
+                <h4 class="sub-heading">賦能醫療團隊促進 SDM 討論</h4>
+                <p class="kpi-caption">
+                  篩檢後搭配「謹腎小心」SDM 衛教單張，由醫師與衛教團隊和病人共同討論治療選擇及早期 SGLT2i 介入，將風險辨識轉化為臨床行動。
+                </p>
+              </article>
             </div>
-            <div id="share-feedback" class="share-feedback" role="status" aria-live="polite"></div>
           </div>
 
-          <aside class="hero-summary-panel" aria-label="給糖友與家屬的三個重點">
-            <h2 class="subhead">三分鐘看懂這份指南</h2>
-            <ul class="hero-summary-list">
-              <li>
-                <i data-lucide="shield-alert" width="18" height="18" aria-hidden="true"></i>
-                <span><strong>沒症狀不等於沒風險：</strong>腎病初期常有「高過濾假象」，而確診第 2 型糖尿病就已屬於心衰竭 Stage A 高風險期。</span>
-              </li>
-              <li>
-                <i data-lucide="stethoscope" width="18" height="18" aria-hidden="true"></i>
-                <span><strong>診所共同把關：</strong>2026 年 12 月至 2027 年 3 月，全台 600 家基層診所提供「謹腎小心」衛教單張與風險評估。</span>
-              </li>
-              <li>
-                <i data-lucide="heart-handshake" width="18" height="18" aria-hidden="true"></i>
-                <span><strong>早期器官保護：</strong>SGLT2i（排糖藥）類藥物在多項大型試驗中，一致顯示能降低心衰竭住院與腎病惡化風險，是糖友早期心腎保護的重要選項之一。</span>
-              </li>
-            </ul>
-          </aside>
-        </div>
-
-        <div class="metrics-grid">
-          <div class="status-card" data-status="info">
-            <span class="metric-label">計畫執行期間與規模</span>
-            <div class="metric-value">600 家診所</div>
-            <p class="metric-caption">2026/12/04 – 2027/03/31 於基層診所同步推進</p>
-          </div>
-          <div class="status-card" data-status="alert">
-            <span class="metric-label">台灣糖友腎病變成長（2000–2014）</span>
-            <div class="metric-value">+407%</div>
-            <p class="metric-caption">T2D 合併慢性腎臟病大幅攀升；合併心衰竭亦增 +185%</p>
-          </div>
-          <div class="status-card" data-status="ok">
-            <span class="metric-label">SGLT2i 類別實證</span>
-            <div class="metric-value">心 ＋ 腎</div>
-            <p class="metric-caption">多項大型試驗顯示可降低心衰竭住院與腎病惡化風險</p>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <!-- Section 1: Why Early Prevention -->
-      <section id="why-early" class="band band-wash">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="kicker">關鍵背景 · CKM 心腎代謝交互作用</p>
-            <h2 class="section-title">為什麼糖尿病患在「沒症狀」時，更要提早預防心腎併發症？</h2>
-            <p class="lede">
-              代謝異常、腎臟與心臟三者互相牽動（稱為 CKM 症候群）。衛生福利部 113 年國人死因統計中，糖尿病位居十大死因第 5 位，心臟疾病、高血壓與腎臟病也名列前茅。加上台灣超過 4 成（45%）糖友尚未達到個人化糖化血色素（HbA1c）目標，血糖波動會悄悄推升蛋白尿與死亡風險。
-            </p>
-          </div>
-
-          <div class="card-grid reveal">
-            <div class="status-card" data-status="alert">
-              <span class="chip" data-status="alert">血糖與腎損傷連動</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">HbA1c 5.5% 起風險即緩步上升</h3>
-              <p style="margin-bottom: 0; color: var(--on-surface-variant);">
-                亞洲大型 REACTION 研究（8,932 位受試者）觀察到，當糖化血色素升高，白蛋白尿指數（Log ACR）也隨之上升；血糖控制不佳同時增加全因性死亡與突發心因性死亡（SCD）風險。
+          <!-- 目標族群與互動快篩檢核器 -->
+          <div class="screener-panel" aria-labelledby="screener-title">
+            <div>
+              <h3 id="screener-title" class="sub-heading" style="margin-bottom: var(--space-xs);">互動門診篩檢檢核：目標族群三項條件評估</h3>
+              <p class="kpi-caption" style="margin-bottom: var(--space-md);">
+                收案糖友必須「同時符合」兩項基本前提，並至少合併一項心腎風險因子。點擊下方條件模擬診間個案篩檢：
               </p>
-            </div>
-            <div class="status-card" data-status="watch">
-              <span class="chip" data-status="watch">腎臟的「高過濾假象」</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">抽血數值正常，不代表腎臟沒超載</h3>
-              <p style="margin-bottom: 0; color: var(--on-surface-variant);">
-                糖尿病腎病變（DKD）初期毫無痛感，腎絲球過濾率（eGFR）甚至會先出現異常偏高的「高過濾假象」。等到真正出現明顯蛋白尿或腎功能跌破 60，往往已錯過最佳初級預防時機。
-              </p>
-            </div>
-            <div class="status-card" data-status="info">
-              <span class="chip" data-status="info">心衰竭 Stage A 起跑線</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">糖友確診即屬 Stage A 高風險</h3>
-              <p style="margin-bottom: 0; color: var(--on-surface-variant);">
-                心衰竭常被醫界稱為「心臟的癌症」。多數患者直到出現「喘、腫、累」才就醫，其實那已是 Stage C。若患病超過 5 年，心室結構與壓力可能已悄悄改變（Stage B 門診未爆彈）。
-              </p>
-            </div>
-          </div>
 
-          <!-- Interactive Organ Progression Explorer -->
-          <div class="interactive-panel reveal" aria-labelledby="organ-lab-title">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-md);">
+              <p class="field-label" style="margin-bottom: var(--space-xs);">條件 1 &amp; 2｜必要前提（皆須符合）</p>
+              <div class="prereq-row">
+                <button type="button" id="req-t2d" class="toggle-pill" aria-pressed="true" onclick="togglePrereq('t2d')">
+                  <i data-lucide="check-circle-2" aria-hidden="true"></i>
+                  <span>1. 確診為第 2 型糖尿病 (T2D)</span>
+                </button>
+                <button type="button" id="req-nockd" class="toggle-pill" data-kind="exclude" aria-pressed="true" onclick="togglePrereq('nockd')">
+                  <i data-lucide="shield" aria-hidden="true"></i>
+                  <span>2. 尚未合併慢性腎臟病 (非 CKD / DKD)</span>
+                </button>
+              </div>
+
+              <p class="field-label" style="margin-bottom: var(--space-xs);">條件 3｜至少合併一項心腎風險因子（可複選 9 項）</p>
+              <div class="risk-grid" id="risk-factor-grid">
+                <button type="button" class="risk-chip-btn" aria-pressed="true" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">高血壓</span>
+                  <span class="risk-chip-sub">&gt; 130/80 mmHg</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">高血脂</span>
+                  <span class="risk-chip-sub">LDL ≥ 100 mg/dL</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">肥胖</span>
+                  <span class="risk-chip-sub">BMI ≥ 27 kg/m²</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">高齡族群</span>
+                  <span class="risk-chip-sub">年齡 ≥ 65 歲</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">腎臟病家族史</span>
+                  <span class="risk-chip-sub">具遺傳易感風險</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">抽菸習慣</span>
+                  <span class="risk-chip-sub">加速血管與腎損傷</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">高尿酸血症</span>
+                  <span class="risk-chip-sub">男 &gt;7.0 / 女 &gt;6.0 mg/dL</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">心血管病史</span>
+                  <span class="risk-chip-sub">ASCVD 或心腦血管事件</span>
+                </button>
+                <button type="button" class="risk-chip-btn" aria-pressed="false" onclick="toggleRisk(this)">
+                  <span class="risk-chip-title">長期服用止痛藥</span>
+                  <span class="risk-chip-sub">NSAIDs 潛在腎負擔</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="screener-output" class="screener-result" data-eligible="true" aria-live="polite">
               <div>
-                <h3 id="organ-lab-title" class="subhead">互動圖解：無聲的器官倒數——看懂何時介入最關鍵</h3>
-                <p style="margin: var(--space-xs) 0 0; color: var(--on-surface-variant); font-size: 0.94rem;">
-                  切換下方「腎臟」或「心臟」分頁，並點選不同病程階段，了解早期預防與晚期治療的差異。
+                <span class="chip" data-tone="ok" id="screener-badge">符合計畫收案資格</span>
+                <h4 id="screener-headline" class="sub-heading" style="margin-top: var(--space-sm);">建議納入先鋒計畫進行衛教與 SDM</h4>
+                <p id="screener-desc" class="kpi-caption" style="margin-top: var(--space-xs);">
+                  個案為尚未合併 CKD 之 T2D 患者，且已檢出 1 項心腎風險因子。極適合搭配「謹腎小心」SDM 單張討論早期心腎保護介入。
                 </p>
               </div>
-              <span class="chip" data-status="ok">淺綠區間＝初級預防黃金期</span>
+              <div class="callout" style="margin-top: var(--space-sm);">
+                <strong style="font-size: 0.9375rem;">臨床提醒：切勿重複收案或納入已知 CKD/HF 患者</strong>
+                <span style="font-size: 0.875rem;">本計畫聚焦「非 DKD/CKD」初級預防族群；若已確診 DKD 或心衰竭，應依現有 CKD/HF 治療規範照護，不列入本篩檢衛教收案。</span>
+              </div>
             </div>
+          </div>
 
-            <div class="tab-row" role="tablist" aria-label="器官病程模擬切換">
-              <button type="button" class="tab-btn" role="tab" id="tab-kidney" aria-selected="true" onclick="switchOrganMode('kidney')">
-                <i data-lucide="droplets" width="16" height="16" aria-hidden="true"></i>
-                腎臟病變進程（高過濾假象與蛋白尿）
+          <!-- 重要專案時程 -->
+          <div class="info-card">
+            <h3 class="sub-heading">專案關鍵時程一覽 (2026 – 2027)</h3>
+            <div class="timeline-grid">
+              <div class="timeline-node">
+                <span class="timeline-date">10/30 · 11/04 · 11/06</span>
+                <strong>第 1–3 場線上說明會</strong>
+                <span class="kpi-caption">基層診所計畫導覽</span>
+              </div>
+              <div class="timeline-node" data-active="true">
+                <span class="timeline-date">2026/11/25</span>
+                <strong>第 4 場線上說明會</strong>
+                <span class="kpi-caption">臨床啟動最後整備</span>
+              </div>
+              <div class="timeline-node" data-active="true">
+                <span class="timeline-date">2026/12/04</span>
+                <strong>計畫正式開跑</strong>
+                <span class="kpi-caption">開放專屬網站數位登錄</span>
+              </div>
+              <div class="timeline-node">
+                <span class="timeline-date">12/04 – 12/19</span>
+                <strong>寄送物資大補帖</strong>
+                <span class="kpi-caption">依意願回覆順序陸續送達</span>
+              </div>
+              <div class="timeline-node">
+                <span class="timeline-date">2027/03/31</span>
+                <strong>專案截止收案</strong>
+                <span class="kpi-caption">結算數位衛教補助份數</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MODULE 2: 為何要及早初級預防心腎併發症 -->
+        <section id="sec-prevention" class="section-block" aria-labelledby="heading-prevention">
+          <div class="section-header" data-accent="blue">
+            <span class="section-kicker">MODULE 02 · 早期病生理進程與國際權威指引</span>
+            <h2 id="heading-prevention" class="section-heading">為何必須在症狀出現前啟動「初級預防」？拆解腎臟與心臟的無聲惡化</h2>
+          </div>
+
+          <p class="prose">
+            心血管－腎臟－代謝 (CKM) 症候群彼此緊密牽動。在第二型糖尿病早期，腎臟與心臟常呈現「表面檢驗正常或無明顯不適」的假象，等到蛋白尿或喘腫累症狀浮現時，實質器官損傷與結構重塑已大幅推進。點擊下方分期互動控制器，掌握兩個關鍵的早篩介入窗口。
+          </p>
+
+          <!-- 2A. 腎臟病變進程 (Interactive CKD & Hyperfiltration Explorer) -->
+          <article id="section-ckd-progression" class="progression-card" tabindex="-1">
+            <div class="chip-row" style="justify-content: space-between;">
+              <div>
+                <span class="chip">腎臟病變進程詳解</span>
+                <h3 class="sub-heading" style="margin-top: var(--space-xs);">警惕「腎絲球高過濾率 (Hyperfiltration) 假象」：守住完整腎元</h3>
+              </div>
+              <button type="button" class="btn-outline-sm" onclick="jumpToSection('section-hf-progression')">
+                <span>前往心衰竭進程</span>
+                <i data-lucide="arrow-down" aria-hidden="true"></i>
               </button>
-              <button type="button" class="tab-btn" role="tab" id="tab-heart" aria-selected="false" onclick="switchOrganMode('heart')">
-                <i data-lucide="heart" width="16" height="16" aria-hidden="true"></i>
-                心衰竭進程（Stage A 至 Stage D）
+            </div>
+
+            <div class="phase-tabs" role="tablist" aria-label="腎臟病變進程階段選擇">
+              <button type="button" id="ckd-tab-0" class="phase-btn" role="tab" aria-selected="true" onclick="selectCkdPhase(0)">
+                <span>1. 高過濾假象期（初級預防黃金窗）</span>
+              </button>
+              <button type="button" id="ckd-tab-1" class="phase-btn" role="tab" aria-selected="false" onclick="selectCkdPhase(1)">
+                <span>2. 微量白蛋白尿期（次級預防）</span>
+              </button>
+              <button type="button" id="ckd-tab-2" class="phase-btn" role="tab" aria-selected="false" onclick="selectCkdPhase(2)">
+                <span>3. 顯著蛋白尿與 ESRD（三級預防）</span>
               </button>
             </div>
 
-            <!-- Kidney Mode -->
-            <div id="organ-panel-kidney" class="stage-grid">
-              <div>
-                <div class="stage-buttons" role="group" aria-label="腎臟病變階段選擇">
-                  <button type="button" class="stage-pill" aria-pressed="true" onclick="selectKidneyStage(0)">1. 高過濾假象期<br><small>約 0–5 年 · 無症狀</small></button>
-                  <button type="button" class="stage-pill" aria-pressed="false" onclick="selectKidneyStage(1)">2. 微量蛋白尿期<br><small>約 5–10 年 · 初現警訊</small></button>
-                  <button type="button" class="stage-pill" aria-pressed="false" onclick="selectKidneyStage(2)">3. 顯著腎病變<br><small>約 10–15 年 · GFR 下降</small></button>
-                  <button type="button" class="stage-pill" aria-pressed="false" onclick="selectKidneyStage(3)">4. 末期腎病風險<br><small>約 20 年+ · 面臨洗腎</small></button>
-                </div>
-                <div class="svg-frame">
-                  <svg viewBox="0 0 560 250" width="100%" height="auto" role="img" aria-label="糖尿病腎病變 eGFR 與蛋白尿變化曲線圖">
-                    <!-- Target / Primary Prevention Band (Vitals Treatment 5) -->
-                    <rect x="48" y="20" width="145" height="185" class="range-band"></rect>
-                    <text x="120" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="var(--secondary)">初級預防黃金期</text>
+            <div class="progression-layout">
+              <div class="svg-stage">
+                <svg viewBox="0 0 640 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="糖尿病腎臟病變與腎絲球高過濾率進程曲線圖">
+                  <!-- Grid lines -->
+                  <line x1="65" y1="40" x2="610" y2="40" stroke="var(--outline-variant)" stroke-width="1"/>
+                  <line x1="65" y1="100" x2="610" y2="100" stroke="var(--outline-variant)" stroke-width="1"/>
+                  <line x1="65" y1="160" x2="610" y2="160" stroke="var(--outline-variant)" stroke-width="1"/>
+                  <line x1="65" y1="220" x2="610" y2="220" stroke="var(--outline-variant)" stroke-width="1"/>
+                  <line x1="65" y1="260" x2="610" y2="260" stroke="var(--outline)" stroke-width="1.5"/>
 
-                    <!-- Grid lines -->
-                    <line x1="48" y1="65" x2="530" y2="65" stroke="var(--outline-variant)" stroke-width="1"></line>
-                    <line x1="48" y1="115" x2="530" y2="115" stroke="var(--outline-variant)" stroke-width="1" stroke-dasharray="4 4"></line>
-                    <line x1="48" y1="165" x2="530" y2="165" stroke="var(--outline-variant)" stroke-width="1"></line>
-                    <line x1="48" y1="205" x2="530" y2="205" stroke="var(--outline)" stroke-width="1.2"></line>
-                    <line x1="48" y1="20" x2="48" y2="205" stroke="var(--outline)" stroke-width="1.2"></line>
+                  <!-- Phase highlight zones -->
+                  <rect id="ckd-zone-0" x="65" y="24" width="175" height="236" rx="6" fill="var(--primary)" fill-opacity="0.11"/>
+                  <rect id="ckd-zone-1" x="240" y="24" width="175" height="236" rx="6" fill="var(--data-2)" fill-opacity="0.0"/>
+                  <rect id="ckd-zone-2" x="415" y="24" width="195" height="236" rx="6" fill="var(--error)" fill-opacity="0.0"/>
 
-                    <!-- Y Axis labels -->
-                    <text x="42" y="69" text-anchor="end" font-size="10" fill="var(--on-surface-variant)">120</text>
-                    <text x="42" y="119" text-anchor="end" font-size="10" fill="var(--on-surface-variant)">60</text>
-                    <text x="42" y="169" text-anchor="end" font-size="10" fill="var(--on-surface-variant)">30</text>
-                    <text x="14" y="118" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)" transform="rotate(-90 14 118)">eGFR (mL/min)</text>
+                  <!-- Primary Prevention Boundary -->
+                  <line x1="240" y1="24" x2="240" y2="260" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="5 4"/>
+                  <text x="152" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--on-primary-container)">初級預防期</text>
+                  <text x="327" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--on-surface-variant)">次級預防期</text>
+                  <text x="512" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--on-surface-variant)">三級預防 (CKD/ESRD)</text>
 
-                    <!-- X Axis labels -->
-                    <text x="70" y="224" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">確診初期</text>
-                    <text x="200" y="224" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">5–10 年</text>
-                    <text x="345" y="224" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">15 年</text>
-                    <text x="495" y="224" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">20–25 年</text>
+                  <!-- Y Axis labels -->
+                  <text x="56" y="45" text-anchor="end" font-size="11" fill="var(--on-surface-variant)">160</text>
+                  <text x="56" y="105" text-anchor="end" font-size="11" fill="var(--on-surface-variant)">110</text>
+                  <text x="56" y="165" text-anchor="end" font-size="11" fill="var(--on-surface-variant)">60</text>
+                  <text x="56" y="225" text-anchor="end" font-size="11" fill="var(--on-surface-variant)">20</text>
+                  <text x="14" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="var(--on-surface-variant)" transform="rotate(-90 14 150)">eGFR (mL/min)</text>
 
-                    <!-- eGFR curve -->
-                    <path d="M 55 82 C 95 45, 145 48, 195 78 C 255 110, 340 142, 515 192" fill="none" stroke="var(--data-1)" stroke-width="3" stroke-linecap="round"></path>
-                    <!-- Proteinuria curve -->
-                    <path d="M 55 198 C 165 198, 225 186, 285 148 C 350 105, 425 58, 515 36" fill="none" stroke="var(--error)" stroke-width="2.5" stroke-dasharray="5 3" stroke-linecap="round"></path>
+                  <!-- X Axis labels -->
+                  <text x="70" y="282" text-anchor="middle" font-size="11" fill="var(--on-surface-variant)">發病 0年</text>
+                  <text x="175" y="282" text-anchor="middle" font-size="11" fill="var(--on-surface-variant)">5年</text>
+                  <text x="285" y="282" text-anchor="middle" font-size="11" fill="var(--on-surface-variant)">10年</text>
+                  <text x="395" y="282" text-anchor="middle" font-size="11" fill="var(--on-surface-variant)">15年</text>
+                  <text x="500" y="282" text-anchor="middle" font-size="11" fill="var(--on-surface-variant)">20年</text>
+                  <text x="595" y="282" text-anchor="middle" font-size="11" fill="var(--on-surface-variant)">25年</text>
 
-                    <!-- Threshold label -->
-                    <text x="528" y="111" text-anchor="end" font-size="10" fill="var(--on-surface-variant)">CKD 門檻 (eGFR 60)</text>
+                  <!-- Functional Nephron Mass declining dashed line -->
+                  <path d="M 70 115 C 160 128, 250 155, 360 190 C 460 220, 540 242, 600 254" fill="none" stroke="var(--tertiary)" stroke-width="2.5" stroke-dasharray="6 4"/>
+                  <text x="455" y="206" font-size="11" font-weight="700" fill="var(--tertiary)">功能性腎元數下降</text>
 
-                    <!-- Direct curve labels -->
-                    <text x="115" y="54" font-size="11" font-weight="700" fill="var(--data-1)">腎絲球過濾率 (eGFR)</text>
-                    <text x="415" y="52" font-size="11" font-weight="700" fill="var(--error)">蛋白尿持續攀升</text>
+                  <!-- eGFR Curve showing Hyperfiltration spike -->
+                  <path d="M 70 105 C 110 72, 145 55, 185 68 C 235 84, 290 120, 360 158 C 440 198, 520 228, 600 248" fill="none" stroke="var(--primary)" stroke-width="3.5" stroke-linecap="round"/>
+                  <circle cx="152" cy="60" r="6" fill="var(--primary)"/>
+                  <text x="152" y="83" text-anchor="middle" font-size="11" font-weight="700" fill="var(--on-primary-container)">高過濾假象 (eGFR↑)</text>
 
-                    <!-- Active Stage Highlight Marker -->
-                    <circle id="kidney-dot-egfr" cx="115" cy="56" r="7" fill="var(--data-1)" stroke="var(--background)" stroke-width="2.5"></circle>
-                    <circle id="kidney-dot-prot" cx="115" cy="197" r="6" fill="var(--error)" stroke="var(--background)" stroke-width="2"></circle>
-                  </svg>
-                </div>
-              </div>
+                  <!-- Proteinuria rising curve -->
+                  <path d="M 70 255 L 235 253 C 295 250, 345 230, 410 185 C 475 140, 535 85, 600 45" fill="none" stroke="var(--error)" stroke-width="3" stroke-linecap="round"/>
+                  <text x="530" y="70" text-anchor="middle" font-size="11" font-weight="700" fill="var(--error)">蛋白尿急遽上升</text>
 
-              <div id="kidney-detail-card" class="status-card" data-status="ok">
-                <span class="chip" data-status="ok" id="kidney-stage-badge">初級預防黃金介入期</span>
-                <h4 class="subhead" id="kidney-stage-heading" style="margin-top: var(--space-sm);">階段 1：腎絲球「高過濾假象」期</h4>
-                <p id="kidney-stage-desc" style="margin: var(--space-sm) 0; color: var(--on-surface);">
-                  糖尿病發病初期，腎臟為了代償高血糖會過度工作，讓抽血看到的 eGFR 數值反而偏高（110–140+ mL/min），尿液也尚未驗出蛋白尿。這讓許多糖友誤以為「腎臟很健康」，其實腎元已經開始承受高壓。
-                </p>
-                <div class="callout" id="kidney-stage-action">
-                  <strong>此刻介入意義：</strong>在 TACD 心腎預防先鋒計畫中，正是鎖定「尚未合併 CKD」的此階段糖友，及早降低腎絲球內壓、守住長遠腎功能。
-                </div>
-              </div>
-            </div>
-
-            <!-- Heart Mode -->
-            <div id="organ-panel-heart" class="stage-grid" hidden>
-              <div>
-                <div class="stage-buttons" role="group" aria-label="心衰竭 Stage A 到 D 選擇">
-                  <button type="button" class="stage-pill" aria-pressed="true" onclick="selectHeartStage(0)">Stage A<br><small>具風險因子（無症狀）</small></button>
-                  <button type="button" class="stage-pill" aria-pressed="false" onclick="selectHeartStage(1)">Stage B<br><small>結構已變（無症狀）</small></button>
-                  <button type="button" class="stage-pill" aria-pressed="false" onclick="selectHeartStage(2)">Stage C<br><small>出現「喘、腫、累」</small></button>
-                  <button type="button" class="stage-pill" aria-pressed="false" onclick="selectHeartStage(3)">Stage D<br><small>難治型心衰竭</small></button>
-                </div>
-                <div class="svg-frame">
-                  <svg viewBox="0 0 560 250" width="100%" height="auto" role="img" aria-label="AHA ACC 心衰竭四階段與早期預防比較示意圖">
-                    <!-- Prevention zone band -->
-                    <rect x="35" y="20" width="245" height="175" class="range-band"></rect>
-                    <text x="157" y="38" text-anchor="middle" font-size="11" font-weight="700" fill="var(--secondary)">早期預防區（Stage A–B 介入延緩心室重塑）</text>
-
-                    <!-- Stage boxes along progression -->
-                    <rect x="42" y="130" width="110" height="52" rx="8" fill="var(--background)" stroke="var(--data-2)" stroke-width="2"></rect>
-                    <text x="97" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="var(--on-surface)">Stage A</text>
-                    <text x="97" y="170" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">T2D / 高血壓</text>
-
-                    <rect x="167" y="108" width="110" height="74" rx="8" fill="var(--background)" stroke="var(--data-1)" stroke-width="2"></rect>
-                    <text x="222" y="134" text-anchor="middle" font-size="12" font-weight="700" fill="var(--on-surface)">Stage B</text>
-                    <text x="222" y="152" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">次臨床心臟變化</text>
-                    <text x="222" y="168" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">表面仍無症狀</text>
-
-                    <rect x="292" y="80" width="110" height="102" rx="8" fill="var(--background)" stroke="var(--warning)" stroke-width="2"></rect>
-                    <text x="347" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="var(--on-surface)">Stage C</text>
-                    <text x="347" y="132" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">喘、腫、累出現</text>
-                    <text x="347" y="148" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">常需轉診心臟科</text>
-
-                    <rect x="417" y="54" width="110" height="128" rx="8" fill="var(--background)" stroke="var(--error)" stroke-width="2"></rect>
-                    <text x="472" y="94" text-anchor="middle" font-size="12" font-weight="700" fill="var(--error)">Stage D</text>
-                    <text x="472" y="114" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">嚴重難治型</text>
-                    <text x="472" y="130" text-anchor="middle" font-size="10" fill="var(--on-surface-variant)">需高階介入治療</text>
-
-                    <!-- Remodeling arrow -->
-                    <line x1="50" y1="212" x2="515" y2="212" stroke="var(--outline)" stroke-width="2"></line>
-                    <text x="282" y="232" text-anchor="middle" font-size="11" font-weight="700" fill="var(--on-surface-variant)">心臟重塑（Remodeling）與惡化程度逐步升高 →</text>
-
-                    <!-- Active indicator ring -->
-                    <rect id="heart-active-ring" x="39" y="127" width="116" height="58" rx="10" fill="none" stroke="var(--primary)" stroke-width="3.5"></rect>
-                  </svg>
+                  <!-- Active Indicator Dot -->
+                  <circle id="ckd-focus-dot" cx="152" cy="60" r="9" fill="none" stroke="var(--primary)" stroke-width="3"/>
+                </svg>
+                <div class="chip-row" style="font-size: 0.8125rem; color: var(--on-surface-variant);">
+                  <span>藍紫實線：eGFR 變化（初期高過濾假象）</span>
+                  <span>· 紅線：尿蛋白排泄量</span>
+                  <span>· 綠虛線：實質腎元存量</span>
                 </div>
               </div>
 
-              <div id="heart-detail-card" class="status-card" data-status="ok">
-                <span class="chip" data-status="ok" id="heart-stage-badge">無症狀高風險期</span>
-                <h4 class="subhead" id="heart-stage-heading" style="margin-top: var(--space-sm);">Stage A：患有糖尿病，就是心衰竭 Stage A</h4>
-                <p id="heart-stage-desc" style="margin: var(--space-sm) 0; color: var(--on-surface);">
-                  依據 2022 AHA/ACC/HFSA 心衰竭治療指引，只要有糖尿病、高血壓或肥胖等危險因子，即使心臟超音波完全正常、也沒有任何不適，在臨床分期上就已經屬於 Stage A 心衰竭。
-                </p>
-                <div class="callout" id="heart-stage-action">
-                  <strong>為何不該等症狀出現：</strong>在 Stage A 就建立護心意識並搭配實證藥物，可避免悄悄步入 Stage B 的心室結構改變與 Stage C 的「喘、腫、累」住院風險。
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 2: Program Overview & Interactive Self-Checker -->
-      <section id="program" class="band">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="kicker">2026/12/04 – 2027/03/31 · 600 家基層診所</p>
-            <h2 class="section-title">「TACD 心腎預防先鋒計畫」內容與對象檢核</h2>
-            <p class="lede">
-              由學會與全台 600 家基層診所攜手推動，專注於在基層第一線找出「尚未合併慢性腎臟病（CKD）、但已有心腎風險因子」的第 2 型糖尿病患者，用淺顯易懂的衛教單張與共享決策（SDM），把器官保護提前到併發症發生之前。
-            </p>
-          </div>
-
-          <!-- 3 Core Goals -->
-          <div class="card-grid reveal">
-            <div class="status-card" data-status="info">
-              <span class="metric-label">核心目標 01</span>
-              <h3 class="subhead" style="margin: var(--space-xs) 0;">擴大基層高風險個案辨識</h3>
-              <p style="margin: 0; color: var(--on-surface-variant);">
-                從基層診所糖友中系統化篩檢出「尚未合併 CKD，但至少具 1 項心腎風險因子」的族群，不漏掉無症狀的潛在風險者。
-              </p>
-            </div>
-            <div class="status-card" data-status="info">
-              <span class="metric-label">核心目標 02</span>
-              <h3 class="subhead" style="margin: var(--space-xs) 0;">提升病人心腎衛教識能</h3>
-              <p style="margin: 0; color: var(--on-surface-variant);">
-                透過「謹腎小心」衛教單張與衛教評測，讓糖友理解血糖、血壓、血脂、腎臟與心臟健康的關聯，主動關心早期保護。
-              </p>
-            </div>
-            <div class="status-card" data-status="ok">
-              <span class="metric-label">核心目標 03</span>
-              <h3 class="subhead" style="margin: var(--space-xs) 0;">醫病共享決策（SDM）</h3>
-              <p style="margin: 0; color: var(--on-surface-variant);">
-                醫護團隊與糖友共同討論現行用藥與生活型態，評估是否及早介入具實證護心腎效益的 SGLT2i 治療。
-              </p>
-            </div>
-          </div>
-
-          <!-- Interactive Eligibility Self-Checker -->
-          <div class="interactive-panel reveal" aria-labelledby="checker-title">
-            <h3 id="checker-title" class="subhead">30 秒自我檢核：我（或家人）符合本計畫優先守護對象嗎？</h3>
-            <p style="margin: var(--space-xs) 0 var(--space-lg); color: var(--on-surface-variant); font-size: 0.95rem;">
-              目標族群需<strong>同時符合下列三項條件</strong>。請依實際狀況點選，下方會即時顯示建議（僅供衛教參考，不儲存任何個資）。
-            </p>
-
-            <div class="checker-layout">
-              <div>
-                <div class="field-group">
-                  <span class="field-label">條件 1：是否已診斷為「第 2 型糖尿病（T2DM）」患者？</span>
-                  <div class="choice-row" role="group" aria-label="是否確診第 2 型糖尿病">
-                    <button type="button" class="choice-btn" id="chk-t2d-yes" aria-pressed="true" onclick="setT2D(true)">是，確診第 2 型糖尿病</button>
-                    <button type="button" class="choice-btn" id="chk-t2d-no" aria-pressed="false" onclick="setT2D(false)">否 / 尚不確定</button>
-                  </div>
-                </div>
-
-                <div class="field-group">
-                  <span class="field-label">條件 2：目前是否「尚未」合併慢性腎臟病（CKD）？</span>
-                  <div class="choice-row" role="group" aria-label="是否尚未合併慢性腎臟病">
-                    <button type="button" class="choice-btn" id="chk-nockd-yes" aria-pressed="true" onclick="setNoCKD(true)">尚未合併 CKD（目前無腎病變）</button>
-                    <button type="button" class="choice-btn" id="chk-nockd-no" aria-pressed="false" onclick="setNoCKD(false)">已診斷為 CKD 腎臟病</button>
-                  </div>
-                </div>
-
-                <div class="field-group">
-                  <span class="field-label">條件 3：是否至少合併以下 1 項心腎風險因子？（可複選 9 項）</span>
-                  <div class="risk-grid" id="risk-factor-grid">
-                    <button type="button" class="risk-chip" aria-pressed="true" data-risk="高血壓（>130/80 mmHg）" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>高血壓（&gt;130/80 mmHg）
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="高血脂（LDL ≥100 mg/dL）" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>高血脂（LDL ≥100 mg/dL）
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="肥胖（BMI ≥27 kg/m²）" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>肥胖（BMI ≥27 kg/m²）
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="65 歲以上" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>65 歲以上
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="腎臟病家族史" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>腎臟病家族史
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="抽菸" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>抽菸習慣
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="高尿酸（男>7.0 / 女>6.0）" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>高尿酸（男&gt;7.0/女&gt;6.0）
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="心血管病史" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>心血管病史
-                    </button>
-                    <button type="button" class="risk-chip" aria-pressed="false" data-risk="長期服用止痛藥" onclick="toggleRisk(this)">
-                      <span class="risk-dot" aria-hidden="true"></span>長期服用止痛藥
-                    </button>
-                  </div>
-                </div>
-
-                <div class="preset-bar">
-                  <span style="font-size: var(--label-size); font-weight: 700; color: var(--on-surface-variant);">常見情境範例：</span>
-                  <button type="button" class="btn btn-ghost" style="min-height: 36px; padding: var(--space-xs) var(--space-md);" onclick="applyPreset('typical')">血糖達標但有血壓血脂</button>
-                  <button type="button" class="btn btn-ghost" style="min-height: 36px; padding: var(--space-xs) var(--space-md);" onclick="applyPreset('senior')">65 歲以上＋肥胖</button>
-                  <button type="button" class="btn btn-ghost" style="min-height: 36px; padding: var(--space-xs) var(--space-md);" onclick="applyPreset('ckd')">已有 CKD 患者</button>
-                </div>
-              </div>
-
-              <div>
-                <div id="checker-result-card" class="status-card" data-status="ok" aria-live="polite">
-                  <span class="chip" data-status="ok" id="checker-badge">符合計畫初級預防對象</span>
-                  <h4 class="subhead" id="checker-title-out" style="margin-top: var(--space-sm);">建議主動啟動心腎初級預防討論</h4>
-                  <p id="checker-summary-out" style="margin: var(--space-sm) 0; color: var(--on-surface);">
-                    您已同時符合：第 2 型糖尿病、尚未合併慢性腎臟病，且具有 1 項心腎風險因子（高血壓）。這正是本計畫最希望提前守住健康的關鍵族群！
+              <div id="ckd-detail-panel" class="phase-detail-box" aria-live="polite">
+                <div>
+                  <span id="ckd-detail-tag" class="chip">初級預防黃金期</span>
+                  <h4 id="ckd-detail-title" class="sub-heading" style="margin-top: var(--space-sm);">腎絲球高過濾假象期 (Hyperfiltration)</h4>
+                  <p id="ckd-detail-body" class="kpi-caption" style="margin-top: var(--space-xs);">
+                    糖尿病發病初期常出現腎絲球內壓升高、eGFR 看似正常甚至偏高（130–160 mL/min）的假象，患者完全沒有不適，常被誤以為腎臟健康；實則功能性腎元已經開始流失與承受壓力。
                   </p>
-                  <div class="callout" id="checker-next-step">
-                    <strong>下一步怎麼做：</strong>下次門診時，可向基層診所醫護人員索取「謹腎小心」衛教單張，了解血壓／血脂／腎臟的關聯，並與醫師進行 SDM 討論早期器官保護用藥。
+                </div>
+
+                <div class="detail-metrics">
+                  <div class="detail-metric-tile">
+                    <span class="meta-label">典型 eGFR 表現</span>
+                    <div id="ckd-metric-egfr" class="mono-num" style="font-weight: 700; color: var(--primary);">110 – 160 mL/min</div>
                   </div>
+                  <div class="detail-metric-tile">
+                    <span class="meta-label">尿白蛋白 (uACR)</span>
+                    <div id="ckd-metric-uacr" class="mono-num" style="font-weight: 700; color: var(--tertiary);">&lt; 30 mg/g (正常)</div>
+                  </div>
+                </div>
+
+                <div class="callout" style="padding: var(--space-sm) var(--space-md);">
+                  <strong style="font-size: 0.875rem;">臨床建議行動</strong>
+                  <span id="ckd-detail-action" style="font-size: 0.875rem;">趁腎元尚完整且未出現白蛋白尿前啟動初級預防（SGLT2i），降低腎絲球高壓並守住長期腎功能。</span>
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Clinic Execution Flow -->
-          <div style="margin-top: var(--space-2xl);" class="reveal">
-            <h3 class="subhead">基層診所如何協助糖友參與？</h3>
-            <p style="margin: var(--space-xs) 0 0; color: var(--on-surface-variant); max-width: 65ch;">
-              參與計畫的 600 家基層診所會配備完整衛教物資與數位評測工具，讓看診衛教流程清楚、透明且不重複打擾糖友。
-            </p>
-            <div class="steps-grid">
-              <div class="step-card">
-                <span class="step-num">1</span>
-                <h4 style="margin: 0 0 var(--space-xs); font-weight: 700;">單張衛教與紙本評估</h4>
-                <p style="margin: 0; font-size: 0.92rem; color: var(--on-surface-variant);">
-                  醫護人員運用「謹腎小心」衛教單張與視覺化紙本問卷，為糖友說明心腎交互風險與預防觀念。
-                </p>
+          <!-- 2B. 心衰竭進程 (Stage A -> Stage D Interactive Explorer) -->
+          <article id="section-hf-progression" class="progression-card" tabindex="-1">
+            <div class="chip-row" style="justify-content: space-between;">
+              <div>
+                <span class="chip" data-tone="blue">心衰竭進程 (Stage A 到 Stage D)</span>
+                <h3 class="sub-heading" style="margin-top: var(--space-xs);">糖尿病確診即屬 Stage A 心衰竭！勿讓無症狀的「未爆彈」演變成心臟癌症</h3>
               </div>
-              <div class="step-card">
-                <span class="step-num">2</span>
-                <h4 style="margin: 0 0 var(--space-xs); font-weight: 700;">專屬數位識能評測</h4>
-                <p style="margin: 0; font-size: 0.92rem; color: var(--on-surface-variant);">
-                  於診所專屬衛教網站輸入病歷號完成識能問卷評測；系統具防呆機制，每位糖友不重複填寫。
-                </p>
-              </div>
-              <div class="step-card">
-                <span class="step-num">3</span>
-                <h4 style="margin: 0 0 var(--space-xs); font-weight: 700;">診所獨立後台追蹤</h4>
-                <p style="margin: 0; font-size: 0.92rem; color: var(--on-surface-variant);">
-                  每家診所皆有獨立後台可追蹤完成問卷數與答題狀況，協助醫療團隊掌握整體衛教成效。
-                </p>
-              </div>
-              <div class="step-card">
-                <span class="step-num">4</span>
-                <h4 style="margin: 0 0 var(--space-xs); font-weight: 700;">衛教補助支持資源</h4>
-                <p style="margin: 0; font-size: 0.92rem; color: var(--on-surface-variant);">
-                  每完成 1 份數位問卷提供診所 80 元衛教補助金（每家上限 60 份），鼓勵診所持續為更多糖友提供衛教。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 3: International Guidelines -->
-      <section id="guidelines" class="band band-wash">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="kicker">2025–2026 國際權威指引共識</p>
-            <h2 class="section-title">全球治療指引方向一致：SGLT2i 躍升糖友第一線關鍵防護</h2>
-            <p class="lede">
-              過去常認為「血糖降下來就好，等腎臟或心臟出問題再換藥」，但近年國際醫學會已經徹底翻轉這項觀念——只要確診第 2 型糖尿病，越早使用具心腎實證的 SGLT2i，長期保護力越好。
-            </p>
-          </div>
-
-          <div class="two-col reveal">
-            <div class="white-card">
-              <span class="chip" data-status="info">2026 美國 ADA 糖尿病指引</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">不論血糖是否達標，具心腎風險即建議介入</h3>
-              <p style="color: var(--on-surface-variant);">
-                2026 ADA 指引指出，針對具心血管疾病（CVD）風險因子的糖友（如年齡 ≥ 55 歲且合併兩項以上肥胖、高血壓、抽菸、高血脂或蛋白尿等——幾乎涵蓋多數糖友），<strong>不論 HbA1c 是否已達標</strong>，都應優先選用有實證保護力的 SGLT2i 或 GLP-1 RA。
-              </p>
-              <ul style="margin: 0; padding-left: 1.25rem; color: var(--on-surface);">
-                <li><strong>高效降糖：</strong>降糖效能評級為「高（High）」，超越「中度（Intermediate）」的 DPP-4i。</li>
-                <li><strong>兼顧體重與代謝：</strong>具中度減重效益（臨床常見減少約 2–5 公斤），助改善胰島素阻抗。</li>
-                <li><strong>2026 ADA/EASD 共識：</strong>更進一步倡議診斷初期即考慮早期合併介入（SGLT2i + GLP-1 RA）。</li>
-              </ul>
+              <button type="button" class="btn-outline-sm" onclick="jumpToSection('section-ckd-progression')">
+                <i data-lucide="arrow-up" aria-hidden="true"></i>
+                <span>回到腎臟病變進程</span>
+              </button>
             </div>
 
-            <div class="white-card">
-              <span class="chip" data-status="ok">2026 英國 NICE NG28 重大更新</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">無心腎共病之糖友，首度將 SGLT2i 列為第一線</h3>
-              <p style="color: var(--on-surface-variant);">
-                2026 英國 NICE 指引針對<strong>「尚無任何心腎共病」</strong>的新診斷第 2 型糖尿病患，首度將 <strong>SGLT2i 與 Metformin 並列為第一線起始治療</strong>。
-              </p>
-              <div class="callout" style="margin-top: var(--space-md);">
-                <strong>NICE 指引核心理由：</strong>第 2 型糖尿病患者本身發生心血管疾病的風險就偏高；即使是表面上風險相對較低的患者，從一開始就使用 SGLT2i 加上緩釋 Metformin 來降低心血管風險，仍然至關重要。
+            <div class="phase-tabs" role="tablist" aria-label="心衰竭 Stage A 到 Stage D 階段選擇">
+              <button type="button" id="hf-tab-0" class="phase-btn" data-theme="blue" role="tab" aria-selected="true" onclick="selectHfStage(0)">
+                <span>Stage A：高風險無症狀（T2D 確診即屬此期）</span>
+              </button>
+              <button type="button" id="hf-tab-1" class="phase-btn" data-theme="blue" role="tab" aria-selected="false" onclick="selectHfStage(1)">
+                <span>Stage B：次臨床結構異常（未爆彈）</span>
+              </button>
+              <button type="button" id="hf-tab-2" class="phase-btn" data-theme="blue" role="tab" aria-selected="false" onclick="selectHfStage(2)">
+                <span>Stage C：出現喘、腫、累症狀</span>
+              </button>
+              <button type="button" id="hf-tab-3" class="phase-btn" data-theme="blue" role="tab" aria-selected="false" onclick="selectHfStage(3)">
+                <span>Stage D：頑固性心衰竭</span>
+              </button>
+            </div>
+
+            <div class="progression-layout">
+              <div class="svg-stage">
+                <svg viewBox="0 0 640 295" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="心衰竭 Stage A 到 Stage D 心臟重塑與功能惡化軌跡圖">
+                  <!-- Stage Zones -->
+                  <rect id="hf-zone-0" x="45" y="24" width="140" height="225" rx="6" fill="var(--secondary)" fill-opacity="0.12"/>
+                  <rect id="hf-zone-1" x="185" y="24" width="140" height="225" rx="6" fill="var(--primary)" fill-opacity="0.0"/>
+                  <rect id="hf-zone-2" x="325" y="24" width="150" height="225" rx="6" fill="var(--warning)" fill-opacity="0.0"/>
+                  <rect id="hf-zone-3" x="475" y="24" width="135" height="225" rx="6" fill="var(--error)" fill-opacity="0.0"/>
+
+                  <!-- Headers -->
+                  <text x="115" y="45" text-anchor="middle" font-size="13" font-weight="800" fill="var(--secondary)">Stage A</text>
+                  <text x="115" y="62" text-anchor="middle" font-size="10.5" fill="var(--on-surface-variant)">高風險・無症狀</text>
+
+                  <text x="255" y="45" text-anchor="middle" font-size="13" font-weight="800" fill="var(--on-primary-container)">Stage B</text>
+                  <text x="255" y="62" text-anchor="middle" font-size="10.5" fill="var(--on-surface-variant)">結構變化・無症狀</text>
+
+                  <text x="400" y="45" text-anchor="middle" font-size="13" font-weight="800" fill="var(--warning)">Stage C</text>
+                  <text x="400" y="62" text-anchor="middle" font-size="10.5" fill="var(--on-surface-variant)">喘・腫・累症狀</text>
+
+                  <text x="542" y="45" text-anchor="middle" font-size="13" font-weight="800" fill="var(--error)">Stage D</text>
+                  <text x="542" y="62" text-anchor="middle" font-size="10.5" fill="var(--on-surface-variant)">頑固性心衰</text>
+
+                  <!-- Dividers -->
+                  <line x1="185" y1="24" x2="185" y2="249" stroke="var(--outline-variant)" stroke-width="1"/>
+                  <line x1="325" y1="24" x2="325" y2="249" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="5 4"/>
+                  <line x1="475" y1="24" x2="475" y2="249" stroke="var(--outline-variant)" stroke-width="1"/>
+                  <line x1="45" y1="249" x2="610" y2="249" stroke="var(--outline)" stroke-width="1.5"/>
+
+                  <!-- Prevention vs Treatment Span -->
+                  <rect x="45" y="256" width="276" height="24" rx="4" fill="var(--secondary-container)"/>
+                  <text x="183" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--on-secondary-container)">心衰竭初級預防介入區 (Stage A / B)</text>
+                  <rect x="329" y="256" width="281" height="24" rx="4" fill="var(--error-container)"/>
+                  <text x="469" y="272" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--error)">心臟科轉診與症狀治療區 (Stage C / D)</text>
+
+                  <!-- Cardiac Functional Reserve / Remodeling Curve -->
+                  <path d="M 55 95 C 125 97, 175 104, 245 126 C 310 148, 355 182, 415 205 C 470 226, 535 234, 600 240" fill="none" stroke="var(--secondary)" stroke-width="3.5" stroke-linecap="round"/>
+
+                  <!-- Acute exacerbation dips at Stage C/D -->
+                  <path d="M 390 194 L 405 224 L 422 204 L 442 232 L 465 214" fill="none" stroke="var(--error)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="418" y="176" text-anchor="middle" font-size="11" font-weight="700" fill="var(--error)">反覆急性惡化住院</text>
+
+                  <!-- Stage Markers -->
+                  <circle cx="115" cy="99" r="6" fill="var(--secondary)"/>
+                  <circle cx="255" cy="129" r="6" fill="var(--primary)"/>
+                  <circle cx="400" cy="199" r="6" fill="var(--warning)"/>
+                  <circle cx="542" cy="235" r="6" fill="var(--error)"/>
+
+                  <!-- Active Ring -->
+                  <circle id="hf-focus-dot" cx="115" cy="99" r="10" fill="none" stroke="var(--secondary)" stroke-width="3"/>
+                </svg>
+                <div class="chip-row" style="font-size: 0.8125rem; color: var(--on-surface-variant);">
+                  <span>藍線：心臟結構與儲備功能軌跡（隨重塑逐漸下滑）</span>
+                  <span>· 虛線右側：臨床症狀顯現才被診斷，往往已錯過最佳逆轉時機</span>
+                </div>
               </div>
-              <p style="margin: var(--space-md) 0 0; font-size: 0.94rem; color: var(--on-surface-variant);">
-                此外，<strong>2025 KDIGO</strong> 強烈建議將 SGLT2i 用於 CKD/DKD；<strong>2026 AHA/ACC/ADA/ASN CKM 指引</strong>在 CKM Stage 2–3 階段，對 SGLT2i 的建議等級甚至超越了 Metformin。
-              </p>
+
+              <div id="hf-detail-panel" class="phase-detail-box" data-theme="blue" aria-live="polite">
+                <div>
+                  <span id="hf-detail-tag" class="chip" data-tone="blue">初級預防最佳起點</span>
+                  <h4 id="hf-detail-title" class="sub-heading" style="margin-top: var(--space-sm);">Stage A：具心衰竭風險，尚無結構變化或症狀</h4>
+                  <p id="hf-detail-body" class="kpi-caption" style="margin-top: var(--space-xs);">
+                    依據 2022 AHA/ACC/HFSA 心衰竭治療指引，只要確診第 2 型糖尿病，患者本身即屬於 Stage A 心衰竭！合併高血壓、肥胖或心血管危險因子時，心臟微環境已開始承受代謝與血流動力學負荷。
+                  </p>
+                </div>
+
+                <div class="detail-metrics">
+                  <div class="detail-metric-tile">
+                    <span class="meta-label">臨床症狀與表現</span>
+                    <div id="hf-metric-symptom" style="font-weight: 700; color: var(--secondary); font-size: 0.9375rem;">完全無症狀</div>
+                  </div>
+                  <div class="detail-metric-tile">
+                    <span class="meta-label">心室重塑與生物指標</span>
+                    <div id="hf-metric-bio" style="font-weight: 700; color: var(--primary); font-size: 0.9375rem;">尚未出現明顯結構異常</div>
+                  </div>
+                </div>
+
+                <div class="callout" data-tone="blue" style="padding: var(--space-sm) var(--space-md);">
+                  <strong style="font-size: 0.875rem;">基層門診關鍵策略</strong>
+                  <span id="hf-detail-action" style="font-size: 0.875rem;">心衰竭素有「心臟的癌症」之稱、五年存活率堪憂。基層診所不需等到轉診心臟科，在 Stage A 即可主動討論並早期導入 SGLT2i 預防心衰竭住院與重塑。</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2C. 國際權威指引推薦 -->
+          <div class="section-band">
+            <h3 class="sub-heading" style="margin-bottom: var(--space-xs);">2025 – 2026 國際權威治療指引一致推薦：及早使用 SGLT2i</h3>
+            <p class="kpi-caption" style="margin-bottom: var(--space-lg);">
+              四大最新國際指引已超越傳統「只看血糖階梯調藥」思維，明確將 SGLT2i 提前至第 2 型糖尿病早期保護位置：
+            </p>
+            <div class="card-grid">
+              <article class="status-card">
+                <span class="chip">2026 ADA 指引</span>
+                <h4 class="sub-heading">控糖效能與器官保護兼備</h4>
+                <p class="kpi-caption">
+                  SGLT2i 具高效降糖能力（降糖效能分級為 High，正式超越列為 Intermediate 的 DPP-4i），針對 ASCVD 高風險、HF 或 CKD 族群強烈建議不考慮 HbA1c 基線即優先導入。
+                </p>
+              </article>
+              <article class="status-card" data-status="blue">
+                <span class="chip" data-tone="blue">2026 ADA / EASD 共識</span>
+                <h4 class="sub-heading">診斷初期即考慮合併治療</h4>
+                <p class="kpi-caption">
+                  倡議於第 2 型糖尿病診斷初期，積極評估早期合併具心腎實證保護之藥物（如 SGLT2i + GLP-1 RA 或搭配 Metformin），全面阻斷早期器官損傷。
+                </p>
+              </article>
+              <article class="status-card" data-status="ok">
+                <span class="chip" data-tone="ok">2026 英國 NICE 指引</span>
+                <h4 class="sub-heading">無共病亦並列一線起始用藥</h4>
+                <p class="kpi-caption">
+                  重大典範轉移：即使尚未合併共病之新診斷 T2D 患者，首度將 <strong>Metformin 與 SGLT2i 並列為第一線起始處方</strong>，全面落實心腎初級預防。
+                </p>
+              </article>
+              <article class="status-card">
+                <span class="chip">2025 KDIGO &amp; 2026 CKM 指引</span>
+                <h4 class="sub-heading">CKM Stage 2/3 核心基石</h4>
+                <p class="kpi-caption">
+                  KDIGO 與 AHA/ACC/ADA/ASN 聯合發布之 CKM 症候群指引一致推薦，於 CKM Stage 2（具代謝風險因子）與 Stage 3 階段早期啟用 SGLT2i。
+                </p>
+              </article>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Section 4: SGLT2i class evidence -->
-      <section id="sglt2i" class="band">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="kicker">SGLT2i 類別實證</p>
-            <h2 class="section-title">SGLT2i（排糖藥）為什麼能保護心與腎？</h2>
-            <p class="lede">
-              SGLT2i 的原理是讓腎臟把多餘的葡萄糖從尿液排出來降血糖。但在大型臨床試驗中，它對心臟與腎臟的好處並不只來自血糖下降，而是同一類藥物共通的保護作用。
-            </p>
+        <!-- MODULE 3: SGLT2i 類別實證與處方策略 -->
+        <section id="sec-sglt2i" class="section-block" aria-labelledby="heading-sglt2i">
+          <div class="section-header">
+            <span class="section-kicker">MODULE 03 · SGLT2i 類別實證、仿單適應症與靈活處方</span>
+            <h2 id="heading-sglt2i" class="section-heading">SGLT2i 為什麼能保護心與腎？類別共通的實證與靈活處方</h2>
           </div>
 
-          <div class="two-col reveal">
-            <div class="white-card">
-              <span class="chip" data-status="info">作用機轉</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">不只是降血糖</h3>
-              <ul style="margin: var(--space-sm) 0 0; padding-left: 1.25rem; color: var(--on-surface);">
+          <div class="card-grid-2">
+            <article class="info-card">
+              <div class="chip-row">
+                <span class="chip">作用機轉</span>
+              </div>
+              <h3 class="sub-heading">不只是降血糖</h3>
+              <ul class="kpi-caption" style="margin: 0; padding-left: 1.25rem;">
                 <li><strong>排糖排鈉：</strong>抑制近端腎小管的 SGLT2，讓葡萄糖與鈉從尿液排出。</li>
                 <li><strong>降低腎絲球內壓：</strong>改善早期「高過濾」狀態，減緩腎功能的長期下滑。</li>
                 <li><strong>減輕心臟負荷：</strong>輕度利尿、降低血壓、體重略減，有助降低心衰竭風險。</li>
                 <li><strong>低血糖風險低：</strong>單用或搭配 Metformin 時不易低血糖。</li>
               </ul>
-            </div>
+            </article>
 
-            <div class="white-card">
-              <span class="chip" data-status="ok">大型試驗</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">類別共通的臨床實證</h3>
-              <ul style="margin: var(--space-sm) 0 0; padding-left: 1.25rem; color: var(--on-surface);">
+            <article class="status-card" data-status="ok">
+              <div class="chip-row">
+                <span class="chip" data-tone="ok">大型試驗</span>
+              </div>
+              <h3 class="sub-heading">類別共通的臨床實證</h3>
+              <ul class="kpi-caption" style="margin: 0; padding-left: 1.25rem;">
                 <li><strong>心血管結果試驗：</strong>EMPA-REG OUTCOME（empagliflozin）、CANVAS Program（canagliflozin）、DECLARE-TIMI 58（dapagliflozin），各試驗收納的病人風險程度不同，但一致觀察到降低心衰竭住院風險。</li>
                 <li><strong>腎臟結果試驗：</strong>CREDENCE（canagliflozin）、DAPA-CKD（dapagliflozin）、EMPA-KIDNEY（empagliflozin），在已有慢性腎臟病的族群顯示可延緩腎功能惡化。</li>
                 <li><strong>心衰竭試驗：</strong>DAPA-HF、EMPEROR-Reduced / Preserved、DELIVER 等，顯示可降低心衰竭惡化與住院。</li>
               </ul>
+            </article>
+          </div>
+
+          <div class="callout">
+            <strong style="font-size: 0.9375rem;">適應症與給付以最新規範為準</strong>
+            <span style="font-size: 0.875rem;">各 SGLT2i 藥品的核准適應症（血糖控制、心血管事件預防、心衰竭、慢性腎臟病等）與健保給付條件並不相同，且會隨時間更新。開立前請查閱最新仿單與健保署給付規範，並與病人進行醫病共享決策。</span>
+          </div>
+
+          <!-- 靈活處方與單錠複方（類別層級） -->
+          <div class="card-grid-3">
+            <article class="info-card card-wrapper">
+              <div class="chip-row">
+                <span class="chip">單方基石</span>
+              </div>
+              <h3 class="sub-heading">SGLT2i 單方錠劑</h3>
+              <p class="kpi-caption">
+                每日一次，不受進食時間影響。可靈活搭配現有 Metformin、GLP-1 RA 或其他控糖及心血管用藥，精準啟動器官初級保護。
+              </p>
+            </article>
+
+            <article class="info-card card-wrapper">
+              <div class="chip-row">
+                <span class="chip" data-tone="blue">一天一錠緩釋複方</span>
+              </div>
+              <h3 class="sub-heading">SGLT2i ＋ 緩釋 Metformin 複方</h3>
+              <p class="kpi-caption">
+                一天一錠簡化藥袋顆數，且緩釋劑型有助降低傳統 Metformin 引起的腸胃道腹瀉或脹氣副作用。
+              </p>
+            </article>
+
+            <article class="info-card card-wrapper">
+              <div class="chip-row">
+                <span class="chip" data-tone="ok">雙機轉單錠複方</span>
+              </div>
+              <h3 class="sub-heading">SGLT2i ＋ DPP-4i 複方</h3>
+              <p class="kpi-caption">
+                雙重互補機制穩定控糖，且實證顯示合併使用有助於降低單用 SGLT2i 的泌尿生殖道感染風險。
+              </p>
+            </article>
+          </div>
+
+          <!-- 健保給付與轉換策略互動決策工具 -->
+          <div class="scenario-box" aria-labelledby="nhi-explorer-title">
+            <div>
+              <span class="chip">健保給付規範與門診轉換策略</span>
+              <h3 id="nhi-explorer-title" class="sub-heading" style="margin-top: var(--space-xs);">選擇門診糖友情境，快速查看健保給付路徑與建議處方</h3>
+            </div>
+
+            <div class="phase-tabs" role="tablist" aria-label="門診糖友用藥轉換情境">
+              <button type="button" id="nhi-tab-0" class="phase-btn" role="tab" aria-selected="true" onclick="selectNhiScenario(0)">
+                情境 A：Metformin 單方未達標
+              </button>
+              <button type="button" id="nhi-tab-1" class="phase-btn" role="tab" aria-selected="false" onclick="selectNhiScenario(1)">
+                情境 B：已用 Metformin + DPP-4i，具心腎風險欲保護
+              </button>
+              <button type="button" id="nhi-tab-2" class="phase-btn" role="tab" aria-selected="false" onclick="selectNhiScenario(2)">
+                情境 C：使用 SGLT2i 半年 HbA1c 仍 &gt;7.5%
+              </button>
+            </div>
+
+            <div id="nhi-result-box" class="scenario-result" aria-live="polite">
+              <h4 id="nhi-result-title" class="sub-heading" style="color: var(--secondary);">情境 A：Metformin 未達標，加上 SGLT2i 或改用複方</h4>
+              <p id="nhi-result-body" class="prose">
+                依現行健保規範，第 2 型糖尿病患者應優先使用 Metformin；若已使用最大耐受劑量仍未達個人化血糖控制目標，即可直接加上第二線藥物 SGLT2i，或直接換用 SGLT2i 與緩釋 Metformin 的單錠複方，兼顧降糖、減重與早發心腎初級保護。</p>
+              <p id="nhi-result-note" style="font-size: 0.875rem; font-weight: 600; color: var(--primary);">
+                給付重點：不需等到蛋白尿或腎功能惡化，符合糖尿病二線給付即可提前啟動心腎防護。
+              </p>
             </div>
           </div>
+        </section>
 
-          <div class="callout reveal" style="margin-top: var(--space-lg);">
-            <strong>適應症與給付以最新規範為準：</strong>各 SGLT2i 藥品的核准適應症（血糖控制、心血管事件預防、心衰竭、慢性腎臟病等）與健保給付條件並不相同，且會隨時間更新。開立前請查閱最新仿單與健保署給付規範，並與病人進行醫病共享決策。
+        <!-- MODULE 4: 計畫執行方式、工具包內容與網站操作步驟 -->
+        <section id="sec-workflow" class="section-block" aria-labelledby="heading-workflow">
+          <div class="section-header" data-accent="blue">
+            <span class="section-kicker">MODULE 04 · 診所實務執行、物資工具包與數位登錄指南</span>
+            <h2 id="heading-workflow" class="section-heading">完整導入四步驟與補助試算：從診間衛教到獨立後台即時追蹤</h2>
           </div>
 
-          <!-- 4C. Interactive NHI & Clinical SDM Pathway -->
-          <div class="interactive-panel reveal" aria-labelledby="sdm-path-title">
-            <h3 id="sdm-path-title" class="subhead">回診討論小幫手：健保規範下，糖友常見的用藥調整路徑</h3>
-            <p style="margin: var(--space-xs) 0 var(--space-md); color: var(--on-surface-variant); font-size: 0.95rem;">
-              點選不同臨床情境，了解如何在台灣健保規範與醫病共享決策（SDM）中銜接 SGLT2i 類藥物：
+          <!-- 寄送物資大補帖 (工具包四大內容) -->
+          <div class="section-band">
+            <h3 class="sub-heading" style="margin-bottom: var(--space-xs);">寄送物資大補帖：診所專屬工具包四大內容</h3>
+            <p class="kpi-caption" style="margin-bottom: var(--space-lg);">
+              2026/12/04 – 12/19 依回覆意願順序陸續寄達參與診所，開箱即可直接融入日常門診衛教動線：
             </p>
-            <div class="tab-row" role="tablist" aria-label="健保用藥情境切換">
-              <button type="button" class="tab-btn" role="tab" id="sdm-tab-0" aria-selected="true" onclick="selectSdmPath(0)">情境 A：Metformin 後血糖未達標</button>
-              <button type="button" class="tab-btn" role="tab" id="sdm-tab-1" aria-selected="false" onclick="selectSdmPath(1)">情境 B：已吃 DPP-4i 達標，但想護心腎</button>
-              <button type="button" class="tab-btn" role="tab" id="sdm-tab-2" aria-selected="false" onclick="selectSdmPath(2)">情境 C：用藥半年 HbA1c 仍 &gt; 7.5%</button>
-            </div>
-            <div id="sdm-output-card" class="status-card" data-status="info">
-              <span class="chip" data-status="info" id="sdm-badge">單方或複方彈性起步</span>
-              <h4 class="subhead" id="sdm-heading" style="margin-top: var(--space-sm);">Metformin 使用後仍未達理想血糖目標</h4>
-              <p id="sdm-desc" style="margin: var(--space-sm) 0 0; color: var(--on-surface);">
-                依台灣健保規定，經最大耐受劑量 Metformin 治療仍未理想控制血糖時，可健保接續使用 <strong>SGLT2i</strong>，或選用 SGLT2i 與 Metformin 的單錠長效複方，一錠同時控糖並啟動心腎初級預防。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 5: Safety & FAQ -->
-      <section id="safety" class="band band-wash">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="kicker">安心用藥衛教與常見問答</p>
-            <h2 class="section-title">糖友日常使用 SGLT2i 的 3 個安全叮嚀</h2>
-            <p class="lede">
-              了解藥物的作用原理與留意事項，能讓早期護心護腎的過程更安穩順利。
-            </p>
-          </div>
-
-          <div class="card-grid reveal">
-            <div class="status-card" data-status="ok">
-              <span class="chip" data-status="ok">守則 1 · 補水與清潔</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">養成多喝水習慣</h3>
-              <p style="margin-bottom: 0; color: var(--on-surface-variant);">
-                藥物會透過尿液排出多餘糖分與水分、鈉離子，請每天補充足夠水分，並留意如廁衛生清潔，有助預防脫水以及泌尿道感染（UTI）或生殖道感染（GTI）。
-              </p>
-            </div>
-            <div class="status-card" data-status="info">
-              <span class="chip" data-status="info">守則 2 · 認識低血糖</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">單用不易低血糖，併用藥物須留意</h3>
-              <p style="margin-bottom: 0; color: var(--on-surface-variant);">
-                SGLT2i 本身（或搭配 Metformin、GLP-1 RA）不太會引發低血糖；但若原本有併用<strong>胰島素或磺醯脲類（SU）</strong>，加上後總降糖力增強，請與醫師討論是否微調劑量。
-              </p>
-            </div>
-            <div class="status-card" data-status="alert">
-              <span class="chip" data-status="alert">守則 3 · 生病與手術前</span>
-              <h3 class="subhead" style="margin-top: var(--space-sm);">遇急性不適或手術前先詢問醫師</h3>
-              <p style="margin-bottom: 0; color: var(--on-surface-variant);">
-                若遇到<strong>需要住院、大型手術前或急性嚴重感染</strong>時，請主動告知醫師目前正在使用 SGLT2i，評估是否暫時停藥，待病情穩定康復後再恢復使用。
-              </p>
+            <div class="card-grid-4">
+              <article class="info-card">
+                <span class="chip">每家診所 60 份</span>
+                <h4 class="sub-heading">「謹腎小心」SDM 衛教單張</h4>
+                <p class="kpi-caption">
+                  以直覺圖解協助患者理解三高一腎關聯，並附「回診溝通兩大關鍵問題」，引導醫病共決討論早期護腎護心用藥。
+                </p>
+              </article>
+              <article class="info-card">
+                <span class="chip" data-tone="blue">每家診所 60 份</span>
+                <h4 class="sub-heading">可撕式紙本衛教問卷</h4>
+                <p class="kpi-caption">
+                  便利診所護理師或衛教師於候診間先請患者預先勾選健康識能題目，事後再於診所電腦集中批次登錄網站。
+                </p>
+              </article>
+              <article class="info-card">
+                <span class="chip" data-tone="ok">診間桌卡指引</span>
+                <h4 class="sub-heading">一頁式專案說明單張</h4>
+                <p class="kpi-caption">
+                  彙整專案緣起、三大核心目標、目標族群條件與執行步驟摘要，置於診間或衛教櫃台方便團隊隨時核對。
+                </p>
+              </article>
+              <article class="info-card">
+                <span class="chip">專屬登入資訊</span>
+                <h4 class="sub-heading">診所專屬篩檢衛教網站</h4>
+                <p class="kpi-caption">
+                  含每家診所獨立網址、QR Code 與預設帳號密碼（位於專屬操作頁，如範例代碼 CL999），供線上登錄與後台追蹤使用。
+                </p>
+              </article>
             </div>
           </div>
 
-          <div class="faq-list reveal" aria-label="糖友常見問題">
-            <details class="faq-item">
-              <summary>
-                <span>Q1：我的糖化血色素已經控制在 6.8% 左右，也沒有蛋白尿，還需要討論這個計畫嗎？</span>
-                <i data-lucide="chevron-down" width="18" height="18" aria-hidden="true"></i>
-              </summary>
-              <p style="margin: 0; color: var(--on-surface-variant);">
-                <strong>非常值得與醫師討論。</strong>只要您同時合併高血壓、高血脂、肥胖或年齡在 65 歲以上等心腎風險因子，即使目前血糖達標且沒有蛋白尿，仍是 2026 ADA 與英國 NICE 指引建議及早保護心腎的族群。若目前使用的是 DPP-4i 搭配 Metformin，透過醫病共享決策（SDM）評估是否改以健保給付的 SGLT2i 接手，能兼顧控糖並多一層心腎保護。
+          <!-- 執行四大步驟 (操作流程) -->
+          <div class="card-grid-2">
+            <article class="status-card">
+              <div class="chip-row">
+                <span class="step-badge">1</span>
+                <h3 class="sub-heading">執行病患衛教與問卷填答</h3>
+              </div>
+              <p class="kpi-caption">
+                醫護人員依條件篩選出非 CKD 但具風險因子的 T2D 糖友，搭配「謹腎小心」SDM 單張進行衛教，並完成問卷填答（可先以紙本小卡收集，每週或門診空檔批次登錄）。
               </p>
-            </details>
+            </article>
 
-            <details class="faq-item">
-              <summary>
-                <span>Q2：如果已經被診斷為慢性腎臟病（CKD）或心衰竭了，還能使用嗎？</span>
-                <i data-lucide="chevron-down" width="18" height="18" aria-hidden="true"></i>
-              </summary>
-              <p style="margin: 0; color: var(--on-surface-variant);">
-                「TACD 心腎預防先鋒計畫」本次篩檢活動主要聚焦於<strong>尚未合併 CKD 的糖友（初級預防）</strong>。但若您已經合併 CKD 或心衰竭，部分 SGLT2i 藥品同樣具備治療 CKD 與心衰竭的仿單適應症與健保給付規範（例如 CKD 需配合初期慢性腎臟病或 Pre-ESRD 照護計畫、穩定使用最大耐受劑量 ACEi/ARB 至少 4 週、eGFR 25–60 且 uACR 200–5000 mg/g 等，實際條件依各藥品最新規範為準），請直接請教您的主治醫師評估。
+            <article class="status-card" data-status="blue">
+              <div class="chip-row">
+                <span class="step-badge" data-tone="blue">2</span>
+                <h3 class="sub-heading">進入診所專屬網站登錄</h3>
+              </div>
+              <p class="kpi-caption">
+                掃描診所專屬 QR Code 或開啟獨立網站連結（cloud.ievent.tw 診所專屬頁），於步驟一輸入病歷號進入問卷；系統內建<strong>防呆機制</strong>避免重複輸入同一病歷號，且每題皆為必填。
               </p>
-            </details>
+            </article>
 
-            <details class="faq-item">
-              <summary>
-                <span>Q3：我有在吃減重／代謝針劑（GLP-1 RA），可以跟 SGLT2i 一起保護心腎嗎？</span>
-                <i data-lucide="chevron-down" width="18" height="18" aria-hidden="true"></i>
-              </summary>
-              <p style="margin: 0; color: var(--on-surface-variant);">
-                兩者機轉不同且皆不易造成低血糖，2026 ADA/EASD 共識亦支持早期合併使用以強化控糖、減重與器官保護。不過台灣健保目前無法同時給付 SGLT2i 與 GLP-1 RA 兩項，臨床上醫師常會依糖友需求與您討論哪一項走健保、另一項是否依個人規劃搭配使用，同時仍須留意補水與各自藥物常見副作用。
+            <article class="status-card">
+              <div class="chip-row">
+                <span class="step-badge">3</span>
+                <h3 class="sub-heading">完成目標設定與藥物討論並送出</h3>
+              </div>
+              <p class="kpi-caption">
+                與病患共同確認「三高一腎」控制目標及早期護腎護心藥物調整意願後，點擊「送出」並確認畫面顯示完成提示，該筆數位問卷即正式計入診所累積份數。
               </p>
-            </details>
+            </article>
+
+            <article class="status-card" data-status="ok">
+              <div class="chip-row">
+                <span class="step-badge" data-tone="blue">4</span>
+                <h3 class="sub-heading">獨立後台紀錄即時追蹤</h3>
+              </div>
+              <p class="kpi-caption">
+                使用物資包內附的診所專屬帳密登入獨立後台，可即時檢視診所累積完成問卷總數與各筆答題狀況明細（於平板或手機檢視後台表格時，支援左右滑動瀏覽完整欄位）。
+              </p>
+            </article>
           </div>
-        </div>
-      </section>
-    </main>
 
-    <footer class="container site-footer">
-      <p style="margin: 0 0 var(--space-sm); font-weight: 700; color: var(--on-surface);">
-        資料來源與衛教聲明
-      </p>
-      <p style="margin: 0 0 var(--space-sm);">
-        內容整理自「TACD 心腎預防先鋒計畫」醫師說明會資料、張凱傑醫師臨床衛教簡報、衛生福利部 113 年國人死因統計、臺灣糖尿病年鑑（中華民國糖尿病衛教學會）、Circulation 2023 CKM 症候群共識、REACTION 研究（Front Endocrinol 2021）、SGLT2i 主要心腎結果試驗（EMPA-REG OUTCOME、CANVAS、DECLARE-TIMI 58、CREDENCE、DAPA-CKD、EMPA-KIDNEY 等）、2026 ADA 糖尿病照護標準、2026 英國 NICE NG28 指引、2025 KDIGO 指引、2022 AHA/ACC/HFSA 心衰竭指引，以及台灣衛福部食藥署（TFDA）藥品仿單與健保署給付規範。
-      </p>
-      <p style="margin: 0;">
-        免責聲明：本網頁內容僅供大眾健康知識與醫病溝通衛教參考，不能取代專業醫師之診斷與處方；實際檢查數值判讀、計畫參與資格與用藥調整，請務必於門診與您的主治醫師共同討論決定。
-      </p>
-    </footer>
+          <!-- 衛教補助金互動試算器 -->
+          <div class="calc-panel" aria-labelledby="calc-title">
+            <div>
+              <span class="chip" data-tone="ok">衛教補助金機制</span>
+              <h3 id="calc-title" class="sub-heading" style="margin-top: var(--space-xs);">診所衛教補助金計算器（每份 80 元，上限 60 份）</h3>
+              <p class="kpi-caption" style="margin-top: var(--space-xs); margin-bottom: var(--space-md);">
+                每完成並送出一份數位衛教問卷，學會即提供衛教補助金 80 元；每家診所補助上限為 60 份，鼓勵診所團隊達成滿額收案。
+              </p>
+
+              <div class="input-row">
+                <div class="field-group">
+                  <label for="subsidy-slider" class="field-label">拖曳調整預計完成數位問卷份數 (0 – 60 份)</label>
+                  <input id="subsidy-slider" type="range" class="range-input" min="0" max="60" value="45" oninput="syncSubsidyFromSlider(this.value)">
+                </div>
+                <div class="field-group">
+                  <label for="subsidy-number" class="field-label">問卷份數</label>
+                  <input id="subsidy-number" type="number" class="num-input" min="0" max="60" value="45" oninput="syncSubsidyFromNumber(this.value)">
+                </div>
+              </div>
+            </div>
+
+            <div class="subsidy-output" aria-live="polite">
+              <span class="meta-label" style="color: var(--on-tertiary-container);">預估可獲衛教補助金總額</span>
+              <div id="subsidy-total" class="subsidy-amount">NT$ 3,600</div>
+              <p id="subsidy-status-text" style="font-size: 0.9375rem; color: var(--on-tertiary-container); font-weight: 600;">
+                已完成 45 / 60 份（達成率 75%，距離上限尚餘 15 份）
+              </p>
+            </div>
+          </div>
+
+          <!-- 常見問答 (FAQ) & 專案客服窗口 -->
+          <div class="progression-layout">
+            <div>
+              <h3 class="sub-heading" style="margin-bottom: var(--space-md);">執行常見問答 (FAQ)</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-ans-1" onclick="toggleFaq(this)">
+                    <span>Q1：線上送出問卷後，診所後台的累積筆數多久會更新？</span>
+                    <i data-lucide="chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="faq-ans-1" class="faq-panel">
+                    原則上送出後即會<strong>即時更新</strong>於診所獨立後台；若遇網路速度稍慢或尖峰時段，約延遲 <strong>3–5 分鐘</strong> 顯示屬正常現象，請稍候重新整理頁面即可確認。
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" onclick="toggleFaq(this)">
+                    <span>Q2：可撕式紙本問卷填寫完需要寄回嗎？補助計算標準為何？</span>
+                    <i data-lucide="chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="faq-ans-2" class="faq-panel" hidden>
+                    紙本衛教問卷僅供診所院內輔助衛教與預先收集資料使用，<strong>不需要寄回</strong>。計畫計分與每份 80 元之衛教補助金核算，一律以診所專屬網站「<strong>確認送出之數位問卷筆數</strong>」為準。
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3" onclick="toggleFaq(this)">
+                    <span>Q3：系統會如何避免同一位病患重複計算或漏填？</span>
+                    <i data-lucide="chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="faq-ans-3" class="faq-panel" hidden>
+                    診所專屬網站於步驟一輸入病歷號時即具備<strong>防呆機制</strong>，同一診所內無法重複輸入已送出之病歷號；且數位問卷每題皆設定為必填，確保每筆紀錄完整無缺漏。
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-4" onclick="toggleFaq(this)">
+                    <span>Q4：未收到邀請名單但想加入計畫，或遺失網站帳密該聯繫誰？</span>
+                    <i data-lucide="chevron-down" aria-hidden="true"></i>
+                  </button>
+                  <div id="faq-ans-4" class="faq-panel" hidden>
+                    本計畫為 600 家基層診所邀請制，名單與參與方式以計畫主辦單位公告為準；已參與診所如遇帳密遺失、物資寄送或操作問題，請聯繫計畫執行單位專案窗口（聯絡方式見診所收到的計畫物資包與說明會資料）。</div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="status-card" data-status="blue" aria-labelledby="contact-card-title">
+              <span class="chip" data-tone="blue">專案執行客服窗口</span>
+              <h3 id="contact-card-title" class="sub-heading">帳號密碼遺失、物資補寄或操作諮詢</h3>
+              <p class="kpi-caption">
+                執行單位：荷陽創意行銷整合有限公司<br>
+                已參與診所的專案窗口聯絡方式，請見計畫物資包與說明會資料；本頁不公開個人聯絡資訊。
+              </p>
+            </aside>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- FOOTER / SOURCES -->
+      <footer class="footer-note">
+        <strong>臨床指引與資料來源說明</strong>
+        <span>
+          台灣基層糖尿病學會 (TACD) 心腎預防先鋒計畫簡報與專案執行說明資料；衛生福利部 113 年國人死因統計結果；臺灣糖尿病年鑑；2026 ADA Standards of Care &amp; ADA/EASD 共識；2026 NICE NG28 更新指引；2025 KDIGO CKD 指引；2026 AHA/ACC/ADA/ASN CKM 症候群指引 (Ndumele CE et al., Circulation 2023)；2022 AHA/ACC/HFSA 心衰竭指引；SGLT2i 主要心腎結果試驗（EMPA-REG OUTCOME、CANVAS、DECLARE-TIMI 58、CREDENCE、DAPA-CKD、EMPA-KIDNEY 等）。
+        </span>
+        <span>本頁面為基層醫護團隊教育與臨床作業導引整理，實際處方與健保申報請依最新衛生福利部核准仿單及健保署給付規定辦理。</span>
+      </footer>
+
+    </div>
   </div>
 
   <script>
-    // Data payloads using backticks
-    const kidneyStages = [
-      {
-        badge: `初級預防黃金介入期`,
-        status: `ok`,
-        heading: `階段 1：腎絲球「高過濾假象」期`,
-        desc: `糖尿病發病初期，腎臟為了代償高血糖會過度工作，讓抽血看到的 eGFR 數值反而偏高（110–140+ mL/min），尿液也尚未驗出蛋白尿。這讓許多糖友誤以為「腎臟很健康」，其實腎元已經開始承受高壓。`,
-        action: `此刻介入意義：在 TACD 心腎預防先鋒計畫中，正是鎖定「尚未合併 CKD」的此階段糖友，及早降低腎絲球內壓、守住長遠腎功能。`,
-        cx: 115,
-        cyEgfr: 56,
-        cyProt: 197
-      },
-      {
-        badge: `早期警訊浮現`,
-        status: `watch`,
-        heading: `階段 2：微量蛋白尿期（Incipient DKD）`,
-        desc: `高過濾持續多年後，腎絲球過濾屏障開始出現微小縫隙，尿液中開始驗出微量白蛋白（UACR 30–300 mg/g），eGFR 則從偏高開始往下回落。此時多半仍無明顯水腫或泡尿感覺。`,
-        action: `此刻介入意義：仍屬於極需把握的保護時機，及早控壓、控糖並納入護腎用藥，有機會大幅延緩進入顯著腎病變。`,
-        cx: 225,
-        cyEgfr: 92,
-        cyProt: 180
-      },
-      {
-        badge: `功能明確衰退`,
-        status: `alert`,
-        heading: `階段 3：顯著糖尿病腎病變（eGFR < 60）`,
-        desc: `出現持續性明顯蛋白尿，腎絲球過濾率跌破 60 mL/min/1.73m²，代表功能性腎元已流失相當比例。此時心血管併發症與住院風險也同步攀升。`,
-        action: `此刻治療重心：已進入次級／三級預防階段，需透過整合照護與最大化器官保護藥物全力減緩衰退速度。`,
-        cx: 350,
-        cyEgfr: 142,
-        cyProt: 108
-      },
-      {
-        badge: `末期風險`,
-        status: `alert`,
-        heading: `階段 4：末期腎病變（ESRD）高風險期`,
-        desc: `蛋白尿顯著且 eGFR 持續逼近或低於 15–20 mL/min/1.73m²，患者可能出現貧血、水腫、疲倦等症狀，並面臨腎臟替代療法（洗腎）的準備。`,
-        action: `為何必須預防於前：提早在階段 1 即啟動心腎初級預防，就是為了讓絕大多數糖友永遠不必走到這一步。`,
-        cx: 485,
-        cyEgfr: 184,
-        cyProt: 43
+    // 1. Smooth Jump & Focus Highlight
+    function jumpToSection(targetId) {
+      var target = document.getElementById(targetId);
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target.classList.contains('progression-card')) {
+        target.classList.add('flash-focus');
+        setTimeout(function() {
+          target.classList.remove('flash-focus');
+        }, 1400);
       }
-    ];
+    }
 
-    const heartStages = [
-      {
-        badge: `無症狀高風險期`,
-        status: `ok`,
-        heading: `Stage A：患有糖尿病，就是心衰竭 Stage A`,
-        desc: `依據 2022 AHA/ACC/HFSA 心衰竭治療指引，只要有糖尿病、高血壓或肥胖等危險因子，即使心臟超音波完全正常、也沒有任何不適，在臨床分期上就已經屬於 Stage A 心衰竭。`,
-        action: `為何不該等症狀出現：在 Stage A 就建立護心意識並搭配實證藥物，可避免悄悄步入 Stage B 的心室結構改變與 Stage C 的「喘、腫、累」住院風險。`,
-        rx: 39,
-        ry: 127,
-        rw: 116,
-        rh: 58
-      },
-      {
-        badge: `門診中的未爆彈`,
-        status: `watch`,
-        heading: `Stage B：表面無症狀，但心臟結構已悄悄改變`,
-        desc: `尤其糖尿病超過 5 年以上的糖友，體內可能已出現次臨床（subclinical）的心室肥厚、舒張功能異常或心室填充壓升高（抽血如 NT-proBNP 可能上升），但日常走路還沒感覺喘。`,
-        action: `此刻介入意義：這是逆轉或延緩「心臟重塑（Remodeling）」惡化的最後無症狀防線，別等到出現喘或水腫才開始保護。`,
-        rx: 164,
-        ry: 105,
-        rw: 116,
-        rh: 80
-      },
-      {
-        badge: `常被稱為「心臟的癌症」`,
-        status: `alert`,
-        heading: `Stage C：出現「喘、腫、累」症狀才就醫`,
-        desc: `當活動容易氣喘、下肢水腫、極度疲累或夜間需墊高枕頭才能呼吸（端坐呼吸）時，多半已進入 Stage C 心衰竭，通常需要轉診心臟專科積極治療，住院與長期預後壓力大增。`,
-        action: `計畫提醒：不要把「年紀大所以容易喘」當成正常老化，更希望在 Stage A/B 就先替心臟減壓。`,
-        rx: 289,
-        ry: 77,
-        rw: 116,
-        rh: 108
-      },
-      {
-        badge: `重度治療期`,
-        status: `alert`,
-        heading: `Stage D：難治型心衰竭`,
-        desc: `即使使用標準藥物治療，症狀仍反覆發作或嚴重影響日常生活，需評估特殊裝置或高階心衰竭介入處置。`,
-        action: `核心觀念：初級預防的價值，在於把多數糖友穩穩留在 Stage A，不讓心臟走向不可逆的重塑。`,
-        rx: 414,
-        ry: 51,
-        rw: 116,
-        rh: 134
-      }
-    ];
-
-    const sdmPaths = [
-      {
-        badge: `單方或複方彈性起步`,
-        status: `info`,
-        heading: `Metformin 使用後仍未達理想血糖目標`,
-        desc: `依台灣健保規定，經最大耐受劑量 Metformin 治療仍未理想控制血糖時，可健保接續使用 SGLT2i，或選用 SGLT2i 與 Metformin 的單錠長效複方，一錠同時控糖並啟動心腎初級預防。`
-      },
-      {
-        badge: `SDM 共決轉換器官保護`,
-        status: `ok`,
-        heading: `已用 DPP-4i + Metformin 血糖達標（如 HbA1c 6.8%），但具心腎風險`,
-        desc: `雖然糖化血色素已小於 7%，但若糖友合併肥胖、高血壓、高血脂等風險因子，經醫病共享決策（SDM）充分討論並認同早期心腎保護的價值後，可依健保規範將 DPP-4i 轉換為 SGLT2i（單方或與 Metformin 的複方），讓控糖同時兼顧護心護腎。`
-      },
-      {
-        badge: `雙效一錠 · 控糖兼降 GTI 風險`,
-        status: `info`,
-        heading: `使用 SGLT2i 持續 6 個月後，HbA1c 仍大於 7.5%`,
-        desc: `依健保給付路徑，使用 SGLT2i 滿 6 個月若 HbA1c 仍大於 7.5%，可與醫師討論改用 SGLT2i 加 DPP-4i 的固定劑量複方（一錠雙效）。併用 DPP-4i 相較單用 SGLT2i 有較低的生殖道感染（GTI）發生風險（提醒：健保規定 SGLT2i 與 DPP-4i 不可分開開立兩顆單方，需改用複方製劑）。`
-      }
-    ];
-
-    // Checker state
-    let checkerState = {
-      hasT2D: true,
-      noCKD: true
+    // 2. Interactive Eligibility Screener (Module 1)
+    var screenerState = {
+      t2d: true,
+      nockd: true
     };
 
-    function switchOrganMode(mode) {
-      const tabK = document.getElementById('tab-kidney');
-      const tabH = document.getElementById('tab-heart');
-      const panelK = document.getElementById('organ-panel-kidney');
-      const panelH = document.getElementById('organ-panel-heart');
-      if (!tabK || !tabH || !panelK || !panelH) return;
-
-      if (mode === 'kidney') {
-        tabK.setAttribute('aria-selected', 'true');
-        tabH.setAttribute('aria-selected', 'false');
-        panelK.hidden = false;
-        panelH.hidden = true;
-      } else {
-        tabK.setAttribute('aria-selected', 'false');
-        tabH.setAttribute('aria-selected', 'true');
-        panelK.hidden = true;
-        panelH.hidden = false;
+    function togglePrereq(key) {
+      screenerState[key] = !screenerState[key];
+      var btn = document.getElementById(key === 't2d' ? 'req-t2d' : 'req-nockd');
+      if (btn) {
+        btn.setAttribute('aria-pressed', screenerState[key] ? 'true' : 'false');
       }
-    }
-
-    function selectKidneyStage(idx) {
-      const stage = kidneyStages[idx];
-      if (!stage) return;
-      const buttons = document.querySelectorAll('#organ-panel-kidney .stage-pill');
-      buttons.forEach(function(btn, i) {
-        btn.setAttribute('aria-pressed', i === idx ? 'true' : 'false');
-      });
-
-      const card = document.getElementById('kidney-detail-card');
-      const badge = document.getElementById('kidney-stage-badge');
-      const heading = document.getElementById('kidney-stage-heading');
-      const desc = document.getElementById('kidney-stage-desc');
-      const action = document.getElementById('kidney-stage-action');
-      const dotEgfr = document.getElementById('kidney-dot-egfr');
-      const dotProt = document.getElementById('kidney-dot-prot');
-
-      if (card) card.setAttribute('data-status', stage.status);
-      if (badge) {
-        badge.setAttribute('data-status', stage.status);
-        badge.textContent = stage.badge;
-      }
-      if (heading) heading.textContent = stage.heading;
-      if (desc) desc.textContent = stage.desc;
-      if (action) action.textContent = stage.action;
-      if (dotEgfr) {
-        dotEgfr.setAttribute('cx', String(stage.cx));
-        dotEgfr.setAttribute('cy', String(stage.cyEgfr));
-      }
-      if (dotProt) {
-        dotProt.setAttribute('cx', String(stage.cx));
-        dotProt.setAttribute('cy', String(stage.cyProt));
-      }
-    }
-
-    function selectHeartStage(idx) {
-      const stage = heartStages[idx];
-      if (!stage) return;
-      const buttons = document.querySelectorAll('#organ-panel-heart .stage-pill');
-      buttons.forEach(function(btn, i) {
-        btn.setAttribute('aria-pressed', i === idx ? 'true' : 'false');
-      });
-
-      const card = document.getElementById('heart-detail-card');
-      const badge = document.getElementById('heart-stage-badge');
-      const heading = document.getElementById('heart-stage-heading');
-      const desc = document.getElementById('heart-stage-desc');
-      const action = document.getElementById('heart-stage-action');
-      const ring = document.getElementById('heart-active-ring');
-
-      if (card) card.setAttribute('data-status', stage.status);
-      if (badge) {
-        badge.setAttribute('data-status', stage.status);
-        badge.textContent = stage.badge;
-      }
-      if (heading) heading.textContent = stage.heading;
-      if (desc) desc.textContent = stage.desc;
-      if (action) action.textContent = stage.action;
-      if (ring) {
-        ring.setAttribute('x', String(stage.rx));
-        ring.setAttribute('y', String(stage.ry));
-        ring.setAttribute('width', String(stage.rw));
-        ring.setAttribute('height', String(stage.rh));
-      }
-    }
-
-    function setT2D(val) {
-      checkerState.hasT2D = val;
-      const yesBtn = document.getElementById('chk-t2d-yes');
-      const noBtn = document.getElementById('chk-t2d-no');
-      if (yesBtn) yesBtn.setAttribute('aria-pressed', val ? 'true' : 'false');
-      if (noBtn) noBtn.setAttribute('aria-pressed', !val ? 'true' : 'false');
-      evaluateEligibility();
-    }
-
-    function setNoCKD(val) {
-      checkerState.noCKD = val;
-      const yesBtn = document.getElementById('chk-nockd-yes');
-      const noBtn = document.getElementById('chk-nockd-no');
-      if (yesBtn) yesBtn.setAttribute('aria-pressed', val ? 'true' : 'false');
-      if (noBtn) noBtn.setAttribute('aria-pressed', !val ? 'true' : 'false');
-      evaluateEligibility();
+      updateScreenerResult();
     }
 
     function toggleRisk(btn) {
       if (!btn) return;
-      const current = btn.getAttribute('aria-pressed') === 'true';
+      var current = btn.getAttribute('aria-pressed') === 'true';
       btn.setAttribute('aria-pressed', current ? 'false' : 'true');
-      evaluateEligibility();
+      updateScreenerResult();
     }
 
-    function applyPreset(type) {
-      const riskBtns = document.querySelectorAll('#risk-factor-grid .risk-chip');
-      riskBtns.forEach(function(b) { b.setAttribute('aria-pressed', 'false'); });
+    function updateScreenerResult() {
+      var riskButtons = document.querySelectorAll('#risk-factor-grid .risk-chip-btn[aria-pressed="true"]');
+      var riskCount = riskButtons.length;
+      var outBox = document.getElementById('screener-output');
+      var badge = document.getElementById('screener-badge');
+      var headline = document.getElementById('screener-headline');
+      var desc = document.getElementById('screener-desc');
+      if (!outBox || !badge || !headline || !desc) return;
 
-      if (type === 'typical') {
-        setT2D(true);
-        setNoCKD(true);
-        if (riskBtns[0]) riskBtns[0].setAttribute('aria-pressed', 'true');
-        if (riskBtns[1]) riskBtns[1].setAttribute('aria-pressed', 'true');
-      } else if (type === 'senior') {
-        setT2D(true);
-        setNoCKD(true);
-        if (riskBtns[2]) riskBtns[2].setAttribute('aria-pressed', 'true');
-        if (riskBtns[3]) riskBtns[3].setAttribute('aria-pressed', 'true');
-      } else if (type === 'ckd') {
-        setT2D(true);
-        setNoCKD(false);
-        if (riskBtns[0]) riskBtns[0].setAttribute('aria-pressed', 'true');
+      if (!screenerState.t2d) {
+        outBox.setAttribute('data-eligible', 'false');
+        badge.setAttribute('data-tone', 'warn');
+        badge.textContent = `未符合收案前提`;
+        headline.textContent = `非第 2 型糖尿病患者`;
+        desc.textContent = `本計畫篩檢對象僅限確診第 2 型糖尿病 (T2D) 之門診病患。`;
+        return;
       }
-      evaluateEligibility();
+
+      if (!screenerState.nockd) {
+        outBox.setAttribute('data-eligible', 'false');
+        badge.setAttribute('data-tone', 'warn');
+        badge.textContent = `屬於已確診 CKD 照護族群`;
+        headline.textContent = `不列入本次初級預防篩檢收案`;
+        desc.textContent = `患者已合併慢性腎臟病 (CKD/DKD)，請依初期 CKD 或 Pre-ESRD 整合照護與相關治療給付規範進行管理，勿納入本計畫篩檢收案。`;
+        return;
+      }
+
+      if (riskCount === 0) {
+        outBox.setAttribute('data-eligible', 'false');
+        badge.setAttribute('data-tone', 'blue');
+        badge.textContent = `尚缺風險因子條件`;
+        headline.textContent = `請檢核是否合併至少 1 項心腎風險因子`;
+        desc.textContent = `目標族群須於「非 CKD 之 T2D」前提下，至少合併高血壓、高血脂、肥胖、≥65 歲等 9 項因子之一。請點選左側對應項目。`;
+        return;
+      }
+
+      outBox.setAttribute('data-eligible', 'true');
+      badge.setAttribute('data-tone', 'ok');
+      badge.textContent = `符合計畫收案資格（已選 ${riskCount} 項風險因子）`;
+      headline.textContent = `建議納入先鋒計畫進行衛教與 SDM`;
+      desc.textContent = `個案為尚未合併 CKD 之 T2D 患者，且具備 ${riskCount} 項心腎風險因子。非常適合以「謹腎小心」單張與患者共決早期 SGLT2i 心腎保護介入，並於網站完成問卷登錄。`;
     }
 
-    function evaluateEligibility() {
-      const selectedRisks = [];
-      document.querySelectorAll('#risk-factor-grid .risk-chip').forEach(function(b) {
-        if (b.getAttribute('aria-pressed') === 'true') {
-          selectedRisks.push(b.getAttribute('data-risk'));
+    // 3. Interactive CKD Progression Explorer (Module 2A)
+    var ckdPhases = [
+      {
+        tag: `初級預防黃金期`,
+        title: `腎絲球高過濾假象期 (Hyperfiltration)`,
+        body: `糖尿病發病初期常出現腎絲球內壓升高、eGFR 看似正常甚至偏高（130–160 mL/min）的假象，患者完全沒有不適，常被誤以為腎臟健康；實則功能性腎元已經開始流失與承受壓力。`,
+        egfr: `110 – 160 mL/min`,
+        uacr: `< 30 mg/g (正常)`,
+        action: `趁腎元尚完整且未出現白蛋白尿前啟動初級預防（SGLT2i），降低腎絲球高壓並守住長期腎功能。`,
+        dotX: 152,
+        dotY: 60,
+        dotColor: `var(--primary)`,
+        zones: [`0.12`, `0`, `0`]
+      },
+      {
+        tag: `次級預防階段`,
+        title: `微量白蛋白尿期 (Incipient Nephropathy)`,
+        body: `隨著高過濾代償失衡與實質腎元持續耗損，尿液開始出現微量白蛋白（uACR 30–300 mg/g），血壓亦常伴隨升高。此時多數 DKD 患者才首次被醫師發現腎損傷，已錯過純初級預防時機。`,
+        egfr: `60 – 105 mL/min`,
+        uacr: `30 – 300 mg/g`,
+        action: `心血管風險已隨腎損傷上升，須積極控制血糖、血壓並使用具腎臟實證保護藥物（SGLT2i ± RASi）延緩衰退。`,
+        dotX: 325,
+        dotY: 139,
+        dotColor: `var(--data-2)`,
+        zones: [`0`, `0.12`, `0`]
+      },
+      {
+        tag: `三級預防與晚期管理`,
+        title: `顯著蛋白尿至末期腎病變 (Overt DKD → ESRD)`,
+        body: `進入大量蛋白尿（uACR >300 mg/g）與 eGFR 加速下滑（<60 甚至 <30 mL/min），同時伴隨高度心血管事件與心衰竭風險，最終可能走向腎臟替代療法（洗腎）。`,
+        egfr: `< 60 → 15 mL/min`,
+        uacr: `> 300 – 5000 mg/g`,
+        action: `須嚴格執行 Pre-ESRD 多團隊照護、依健保 CKD 給付規範合併最大耐受劑量 ACEi/ARB 與 SGLT2i 減緩進入洗腎。`,
+        dotX: 505,
+        dotY: 222,
+        dotColor: `var(--error)`,
+        zones: [`0`, `0`, `0.12`]
+      }
+    ];
+
+    function selectCkdPhase(idx) {
+      var data = ckdPhases[idx];
+      if (!data) return;
+      for (var i = 0; i < 3; i++) {
+        var tab = document.getElementById('ckd-tab-' + i);
+        if (tab) tab.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        var zone = document.getElementById('ckd-zone-' + i);
+        if (zone) zone.setAttribute('fill-opacity', data.zones[i]);
+      }
+      var dot = document.getElementById('ckd-focus-dot');
+      if (dot) {
+        dot.setAttribute('cx', data.dotX);
+        dot.setAttribute('cy', data.dotY);
+        dot.setAttribute('stroke', data.dotColor);
+      }
+      var tag = document.getElementById('ckd-detail-tag');
+      var title = document.getElementById('ckd-detail-title');
+      var body = document.getElementById('ckd-detail-body');
+      var egfr = document.getElementById('ckd-metric-egfr');
+      var uacr = document.getElementById('ckd-metric-uacr');
+      var action = document.getElementById('ckd-detail-action');
+      if (tag) tag.textContent = data.tag;
+      if (title) title.textContent = data.title;
+      if (body) body.textContent = data.body;
+      if (egfr) egfr.textContent = data.egfr;
+      if (uacr) uacr.textContent = data.uacr;
+      if (action) action.textContent = data.action;
+    }
+
+    // 4. Interactive HF Stage A -> D Explorer (Module 2B)
+    var hfStages = [
+      {
+        tag: `初級預防最佳起點`,
+        title: `Stage A：具心衰竭風險，尚無結構變化或症狀`,
+        body: `依據 2022 AHA/ACC/HFSA 心衰竭治療指引，只要確診第 2 型糖尿病，患者本身即屬於 Stage A 心衰竭！合併高血壓、肥胖或心血管危險因子時，心臟微環境已開始承受代謝與血流動力學負荷。`,
+        symptom: `完全無症狀`,
+        bio: `尚未出現明顯結構異常`,
+        action: `心衰竭素有「心臟的癌症」之稱、五年存活率堪憂。基層診所不需等到轉診心臟科，在 Stage A 即可主動討論並早期導入 SGLT2i 預防心衰竭住院與重塑。`,
+        dotX: 115,
+        dotY: 99,
+        dotColor: `var(--secondary)`,
+        zones: [`0.12`, `0`, `0`, `0`]
+      },
+      {
+        tag: `門診中的「未爆彈」`,
+        title: `Stage B：次臨床結構異常但仍無明顯症狀`,
+        body: `許多糖尿病病史超過 5 年的患者已默默進入 Stage B：雖然走平路不喘、雙腳沒腫，但體內已發生左心室肥厚或舒張功能異常、心室填充壓升高（抽血可見 NT-proBNP 或 Troponin 上升）。`,
+        symptom: `日常表面無不適`,
+        bio: `次臨床結構重塑 / 填充壓↑`,
+        action: `此期是防止跨入有症狀心衰的最後防線，若未及早介入控制血壓與使用具心衰預防實證之 SGLT2i，極易因一次感染或負荷誘發急性失代償。`,
+        dotX: 255,
+        dotY: 129,
+        dotColor: `var(--primary)`,
+        zones: [`0`, `0.12`, `0`, `0`]
+      },
+      {
+        tag: `症狀浮現・心臟重塑惡化`,
+        title: `Stage C：出現「喘、腫、累」典型心衰竭症狀`,
+        body: `當門診患者主訴活動會喘、端坐呼吸、下肢水腫或異常疲累時，往往已進展至 Stage C 心衰竭並需轉診心臟科。此時心臟結構重塑 (Remodeling) 已顯著惡化，反覆住院風險大增。`,
+        symptom: `喘、水腫、疲累 (NYHA I–IV)`,
+        bio: `明顯心室擴張與功能受損`,
+        action: `需啟用完整心衰竭標準四聯療法（含 ACEi/ARB 或 ARNI、β-blocker、MRA 與 SGLT2i）並依 LVEF 規範積極治療，防止反覆急性發作。`,
+        dotX: 400,
+        dotY: 199,
+        dotColor: `var(--warning)`,
+        zones: [`0`, `0`, `0.12`, `0`]
+      },
+      {
+        tag: `末期頑固階段`,
+        title: `Stage D：頑固性心衰竭需特殊介入治療`,
+        body: `即使給予最高耐受藥物治療仍持續有嚴重靜息症狀與反覆住院，生活品質與五年存活率極度受限，往往需考慮靜脈強心劑、心室輔助器或心臟移植等末期處置。`,
+        symptom: `靜息呼吸困難・反覆住院`,
+        bio: `不可逆末期心室重塑`,
+        action: `強調基層臨床核心價值：一切努力皆應前移至 Stage A/B，避免任何一位門診糖友走到需要搶救的 Stage C/D。`,
+        dotX: 542,
+        dotY: 235,
+        dotColor: `var(--error)`,
+        zones: [`0`, `0`, `0`, `0.12`]
+      }
+    ];
+
+    function selectHfStage(idx) {
+      var data = hfStages[idx];
+      if (!data) return;
+      for (var i = 0; i < 4; i++) {
+        var tab = document.getElementById('hf-tab-' + i);
+        if (tab) tab.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        var zone = document.getElementById('hf-zone-' + i);
+        if (zone) zone.setAttribute('fill-opacity', data.zones[i]);
+      }
+      var dot = document.getElementById('hf-focus-dot');
+      if (dot) {
+        dot.setAttribute('cx', data.dotX);
+        dot.setAttribute('cy', data.dotY);
+        dot.setAttribute('stroke', data.dotColor);
+      }
+      var tag = document.getElementById('hf-detail-tag');
+      var title = document.getElementById('hf-detail-title');
+      var body = document.getElementById('hf-detail-body');
+      var sym = document.getElementById('hf-metric-symptom');
+      var bio = document.getElementById('hf-metric-bio');
+      var action = document.getElementById('hf-detail-action');
+      if (tag) tag.textContent = data.tag;
+      if (title) title.textContent = data.title;
+      if (body) body.textContent = data.body;
+      if (sym) sym.textContent = data.symptom;
+      if (bio) bio.textContent = data.bio;
+      if (action) action.textContent = data.action;
+    }
+
+    // 5. NHI Reimbursement Scenario Selector (Module 3)
+    var nhiScenarios = [
+      {
+        title: `情境 A：Metformin 未達標，加上 SGLT2i 或改用複方`,
+        body: `依現行健保規範，第 2 型糖尿病患者應優先使用 Metformin；若已使用最大耐受劑量仍未達個人化血糖控制目標，即可直接加上第二線藥物 SGLT2i，或直接換用 SGLT2i 與緩釋 Metformin 的單錠複方，兼顧降糖、減重與早發心腎初級保護。`,
+        note: `給付重點：不需等到蛋白尿或腎功能惡化，符合糖尿病二線給付即可提前啟動心腎防護。`
+      },
+      {
+        title: `情境 B：經 SDM 共決，將 DPP-4i 轉換為 SGLT2i（健保可給付）`,
+        body: `臨床常見患者使用「Metformin + DPP-4i」後 HbA1c 已降至 6.8% 且無蛋白尿，但合併肥胖、高血壓或高齡等心腎風險。經 SDM 醫病共決與患者討論及早護腎護心需求後，可將 DPP-4i 停用並轉換為 SGLT2i（單方或與 Metformin 的複方），健保可正常給付。`,
+        note: `健保注意：SGLT2i 與 DPP-4i 單方分開兩顆開立健保不予給付，請務必擇一或依規定使用複方轉換。`
+      },
+      {
+        title: `情境 C：升級為 SGLT2i + DPP-4i 單錠複方，強化雙機轉控糖`,
+        body: `若糖友已持續使用 SGLT2i（單方或與 Metformin 的複方）治療滿 6 個月，HbA1c 仍大於 7.5% 未達標時，可依健保規範及時升級轉換為 SGLT2i 與 DPP-4i 的單錠複方，一錠結合心腎保護與穩定降糖雙重效益。`,
+        note: `轉換規範：健保規定該類複方須由其所含 SGLT2i 成分之單方或與 Metformin 複方使用後，方可銜接升級轉換（限同成分前導路徑），實際條件依最新給付規範為準。`
+      }
+    ];
+
+    function selectNhiScenario(idx) {
+      var data = nhiScenarios[idx];
+      if (!data) return;
+      for (var i = 0; i < 3; i++) {
+        var tab = document.getElementById('nhi-tab-' + i);
+        if (tab) tab.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+      }
+      var title = document.getElementById('nhi-result-title');
+      var body = document.getElementById('nhi-result-body');
+      var note = document.getElementById('nhi-result-note');
+      if (title) title.textContent = data.title;
+      if (body) body.textContent = data.body;
+      if (note) note.textContent = data.note;
+    }
+
+    // 6. Subsidy Calculator (Dual-input sync)
+    function updateSubsidyDisplay(rawVal) {
+      var count = parseInt(rawVal, 10);
+      if (isNaN(count) || count < 0) count = 0;
+      if (count > 60) count = 60;
+      var total = count * 80;
+      var pct = Math.round((count / 60) * 100);
+      var remain = 60 - count;
+
+      var totalEl = document.getElementById('subsidy-total');
+      var statusEl = document.getElementById('subsidy-status-text');
+      if (totalEl) {
+        totalEl.textContent = `NT$ ${total.toLocaleString('zh-TW')}`;
+      }
+      if (statusEl) {
+        if (count === 60) {
+          statusEl.textContent = `已達每家診所最高上限 60 / 60 份（達成率 100%，全額補助 4,800 元）`;
+        } else {
+          statusEl.textContent = `已完成 ${count} / 60 份（達成率 ${pct}%，距離上限尚餘 ${remain} 份）`;
         }
-      });
-
-      const card = document.getElementById('checker-result-card');
-      const badge = document.getElementById('checker-badge');
-      const titleOut = document.getElementById('checker-title-out');
-      const summaryOut = document.getElementById('checker-summary-out');
-      const nextStep = document.getElementById('checker-next-step');
-      if (!card || !badge || !titleOut || !summaryOut || !nextStep) return;
-
-      if (!checkerState.hasT2D) {
-        card.setAttribute('data-status', 'info');
-        badge.setAttribute('data-status', 'info');
-        badge.textContent = `非第 2 型糖尿病族群`;
-        titleOut.textContent = `目前不符合本計畫篩檢條件，仍建議追蹤代謝健康`;
-        summaryOut.textContent = `「TACD 心腎預防先鋒計畫」主要服務已診斷第 2 型糖尿病、且尚未合併慢性腎臟病的患者。若您目前僅有高血壓、高血脂或肥胖等三高因子，仍建議定期健康檢查並留意空腹血糖與糖化血色素變化。`;
-        nextStep.textContent = `建議行動：可將本頁分享給身邊有糖尿病的親友或長輩，提醒他們一起重視心腎保護。`;
-        return;
       }
-
-      if (!checkerState.noCKD) {
-        card.setAttribute('data-status', 'watch');
-        badge.setAttribute('data-status', 'watch');
-        badge.textContent = `已有 CKD（進入治療與延緩惡化階段）`;
-        titleOut.textContent = `不屬於「無 CKD 初級預防」篩檢對象，但仍非常需要護腎治療`;
-        summaryOut.textContent = `本計畫聚焦在還沒有腎臟病變前的「初級預防」。您已確診慢性腎臟病（CKD），臨床上有專屬的「初期慢性腎臟病照護整合方案」或「Pre-ESRD 照護計畫」，以及對應的 CKD 健保用藥規範。`;
-        nextStep.textContent = `建議行動：回診時與醫師確認目前的 eGFR、UACR 數值與是否已納入腎臟整合照護計畫，並討論具實證護腎效益之藥物。`;
-        return;
-      }
-
-      if (selectedRisks.length === 0) {
-        card.setAttribute('data-status', 'info');
-        badge.setAttribute('data-status', 'info');
-        badge.textContent = `T2D 無 CKD（尚無勾選風險因子）`;
-        titleOut.textContent = `請檢視是否遺漏年齡、血脂或家族史等風險因子`;
-        summaryOut.textContent = `本計畫篩檢對象需同時至少具備 1 項心腎風險因子。臨床上糖友很少完全沒有任何風險因子；若確實均無，依據 2026 英國 NICE 最新指引，無共病之第 2 型糖尿病患亦建議及早考慮併用 SGLT2i 降低長期心血管風險。`;
-        nextStep.textContent = `建議行動：下次抽血報告出來時，可順便核對 LDL 膽固醇（是否 ≥100）、尿酸與血壓紀錄，並與醫師討論長期預防策略。`;
-        return;
-      }
-
-      card.setAttribute('data-status', 'ok');
-      badge.setAttribute('data-status', 'ok');
-      badge.textContent = `符合計畫初級預防對象（符合 ${selectedRisks.length} 項風險因子）`;
-      titleOut.textContent = `建議主動啟動心腎初級預防討論`;
-      summaryOut.textContent = `您已同時符合：第 2 型糖尿病、尚未合併慢性腎臟病，且具有 ${selectedRisks.length} 項心腎風險因子（${selectedRisks.join('、')}）。這正是本計畫最希望提前守住健康的關鍵族群！`;
-      nextStep.textContent = `下一步怎麼做：下次門診時，可向基層診所醫護人員索取「謹腎小心」衛教單張與識能問卷，了解血壓／血脂／腎臟的關聯，並與醫師進行 SDM 討論早期器官保護用藥。`;
     }
 
-    function selectSdmPath(idx) {
-      const path = sdmPaths[idx];
-      if (!path) return;
-      for (let i = 0; i < 3; i++) {
-        const t = document.getElementById(`sdm-tab-${i}`);
-        if (t) t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
-      }
-      const card = document.getElementById('sdm-output-card');
-      const badge = document.getElementById('sdm-badge');
-      const heading = document.getElementById('sdm-heading');
-      const desc = document.getElementById('sdm-desc');
-      if (card) card.setAttribute('data-status', path.status);
-      if (badge) {
-        badge.setAttribute('data-status', path.status);
-        badge.textContent = path.badge;
-      }
-      if (heading) heading.textContent = path.heading;
-      if (desc) desc.textContent = path.desc;
+    function syncSubsidyFromSlider(val) {
+      var numInput = document.getElementById('subsidy-number');
+      if (numInput) numInput.value = val;
+      updateSubsidyDisplay(val);
     }
 
-    function copyShareSummary() {
-      const feedback = document.getElementById('share-feedback');
-      const text = `【糖友護心腎小提醒｜TACD 心腎預防先鋒計畫】\n` +
-        `控糖不能只看血糖數字！研究顯示第 2 型糖尿病早期常有「高過濾假象」且缺乏明顯症狀，等出現蛋白尿或喘、腫、累時心腎可能已受損。\n` +
-        `2026/12/4 – 2027/3/31 全台 600 家基層診所推動「TACD 心腎預防先鋒計畫」，只要是「第 2 型糖尿病」＋「尚未合併慢性腎臟病」＋「有高血壓、高血脂、肥胖、65歲以上等任一風險因子」，回診時記得向診所索取『謹腎小心』衛教單張，並與醫師討論早期護心腎方案，及早守住腎臟與心臟健康！`;
+    function syncSubsidyFromNumber(val) {
+      var clamped = parseInt(val, 10);
+      if (isNaN(clamped)) clamped = 0;
+      if (clamped < 0) clamped = 0;
+      if (clamped > 60) clamped = 60;
+      var slider = document.getElementById('subsidy-slider');
+      if (slider) slider.value = clamped;
+      updateSubsidyDisplay(clamped);
+    }
 
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function() {
-          if (feedback) feedback.textContent = `已複製分享摘要，可直接貼上至 LINE 與糖友或家人分享。`;
-        }).catch(function() {
-          fallbackCopy(text, feedback);
-        });
+    // 7. FAQ Accordion
+    function toggleFaq(btn) {
+      if (!btn) return;
+      var controlsId = btn.getAttribute('aria-controls');
+      var panel = controlsId ? document.getElementById(controlsId) : null;
+      if (!panel) return;
+      var isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+      if (isExpanded) {
+        panel.setAttribute('hidden', '');
       } else {
-        fallbackCopy(text, feedback);
+        panel.removeAttribute('hidden');
       }
     }
 
-    function fallbackCopy(text, feedback) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.setAttribute('readonly', '');
-      ta.style.position = 'fixed';
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand('copy');
-        if (feedback) feedback.textContent = `已複製分享摘要，可直接貼上至 LINE 與糖友或家人分享。`;
-      } catch (e) {
-        if (feedback) feedback.textContent = `請手動選取頁面重點文字分享給糖友。`;
-      }
-      document.body.removeChild(ta);
-    }
-
-    function initRevealObserver() {
-      const items = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        items.forEach(function(el) { el.classList.add('is-visible'); });
-        return;
-      }
-      const io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      items.forEach(function(el) { io.observe(el); });
-    }
-
+    // 8. Initialize Lucide Icons
     document.addEventListener('DOMContentLoaded', function() {
-      if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
       }
-      initRevealObserver();
-      evaluateEligibility();
     });
   </script>
 </body>

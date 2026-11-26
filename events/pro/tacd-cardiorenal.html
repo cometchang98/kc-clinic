@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Figtree:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
   <style>
     :root {
       color-scheme: light;
@@ -705,13 +704,6 @@
       background-color: color-mix(in srgb, var(--primary-container) 45%, var(--background));
     }
 
-    /* Chart container */
-    .chart-box {
-      position: relative;
-      min-height: 300px;
-      width: 100%;
-    }
-
     /* Steps flow */
     .steps-grid {
       display: grid;
@@ -836,7 +828,7 @@
             <li><a href="#why-early">為何要提早預防</a></li>
             <li><a href="#program">計畫與自我檢核</a></li>
             <li><a href="#guidelines">國際指引趨勢</a></li>
-            <li><a href="#forxiga">為何選用 Forxiga</a></li>
+            <li><a href="#sglt2i">SGLT2i 心腎實證</a></li>
             <li><a href="#safety">用藥安心守則</a></li>
           </ul>
           <button type="button" class="btn btn-outline" id="copy-share-btn" onclick="copyShareSummary()">
@@ -879,7 +871,7 @@
               </li>
               <li>
                 <i data-lucide="heart-handshake" width="18" height="18" aria-hidden="true"></i>
-                <span><strong>早期器官保護：</strong>Forxiga 擁有最貼近台灣基層糖友的初級預防實證，亦是台灣目前唯一獲核准用於「預防新發生腎臟病」的 SGLT2i。</span>
+                <span><strong>早期器官保護：</strong>SGLT2i（排糖藥）類藥物在多項大型試驗中，一致顯示能降低心衰竭住院與腎病惡化風險，是糖友早期心腎保護的重要選項之一。</span>
               </li>
             </ul>
           </aside>
@@ -897,9 +889,9 @@
             <p class="metric-caption">T2D 合併慢性腎臟病大幅攀升；合併心衰竭亦增 +185%</p>
           </div>
           <div class="status-card" data-status="ok">
-            <span class="metric-label">Forxiga 初級預防實證</span>
-            <div class="metric-value">降低 49%</div>
-            <p class="metric-caption">降低腎臟惡化複合終點風險；心衰竭住院風險降低 36%</p>
+            <span class="metric-label">SGLT2i 類別實證</span>
+            <div class="metric-value">心 ＋ 腎</div>
+            <p class="metric-caption">多項大型試驗顯示可降低心衰竭住院與腎病惡化風險</p>
           </div>
         </div>
       </div>
@@ -1288,115 +1280,49 @@
         </div>
       </section>
 
-      <!-- Section 4: Why Forxiga -->
-      <section id="forxiga" class="band">
+      <!-- Section 4: SGLT2i class evidence -->
+      <section id="sglt2i" class="band">
         <div class="container">
           <div class="section-header reveal">
-            <p class="kicker">實證基礎與仿單核准差異</p>
-            <h2 class="section-title">為什麼本計畫建議以 Forxiga（福適佳）啟動早期器官保護？</h2>
+            <p class="kicker">SGLT2i 類別實證</p>
+            <h2 class="section-title">SGLT2i（排糖藥）為什麼能保護心與腎？</h2>
             <p class="lede">
-              同樣都是 SGLT2i 類藥物，各家大型臨床試驗收納的病人嚴重度並不相同。Forxiga（Dapagliflozin）的 DECLARE-TIMI 58 研究納入了最多腎功能仍良好、尚未出現蛋白尿的糖友，與台灣基層診所常見糖友最相近。
+              SGLT2i 的原理是讓腎臟把多餘的葡萄糖從尿液排出來降血糖。但在大型臨床試驗中，它對心臟與腎臟的好處並不只來自血糖下降，而是同一類藥物共通的保護作用。
             </p>
           </div>
 
-          <!-- 4A. DECLARE-TIMI 58 Chart + Narrative -->
-          <div class="asymmetric-grid reveal">
+          <div class="two-col reveal">
             <div class="white-card">
-              <h3 class="subhead">DECLARE-TIMI 58：近九成低中度風險糖友的初級預防實證</h3>
-              <p style="color: var(--on-surface-variant); margin-top: var(--space-sm);">
-                在 DECLARE-TIMI 58 試驗中，受試者基線特徵高度貼近台灣日常基層門診的糖友分布：
-              </p>
-              <div class="metrics-grid" style="margin-top: var(--space-md);">
-                <div class="status-card" data-status="info" style="box-shadow: none;">
-                  <span class="metric-label">基線 eGFR ≥ 60 mL/min</span>
-                  <div class="metric-value">91%</div>
-                  <p class="metric-caption">絕大多數受試者腎功能仍正常</p>
-                </div>
-                <div class="status-card" data-status="info" style="box-shadow: none;">
-                  <span class="metric-label">基線未出現蛋白尿</span>
-                  <div class="metric-value">69%</div>
-                  <p class="metric-caption">UACR &lt; 30 mg/g 占比將近七成</p>
-                </div>
-              </div>
-              <p style="margin-top: var(--space-md); margin-bottom: 0; color: var(--on-surface);">
-                針對這群「尚未發生重大心腎病變、具多重心血管風險因子（MRF）」的初級預防族群，Forxiga 證明能在疾病最早期就大幅降低惡化風險：<strong>腎臟複合終點（持續 ≥40% eGFR 下降至 &lt;60、末期腎病或腎死亡）相對風險降低 49%</strong>，且<strong>心衰竭住院風險降低 36%</strong>。
-              </p>
+              <span class="chip" data-status="info">作用機轉</span>
+              <h3 class="subhead" style="margin-top: var(--space-sm);">不只是降血糖</h3>
+              <ul style="margin: var(--space-sm) 0 0; padding-left: 1.25rem; color: var(--on-surface);">
+                <li><strong>排糖排鈉：</strong>抑制近端腎小管的 SGLT2，讓葡萄糖與鈉從尿液排出。</li>
+                <li><strong>降低腎絲球內壓：</strong>改善早期「高過濾」狀態，減緩腎功能的長期下滑。</li>
+                <li><strong>減輕心臟負荷：</strong>輕度利尿、降低血壓、體重略減，有助降低心衰竭風險。</li>
+                <li><strong>低血糖風險低：</strong>單用或搭配 Metformin 時不易低血糖。</li>
+              </ul>
             </div>
 
             <div class="white-card">
-              <h3 class="subhead" style="margin-bottom: var(--space-xs);">Forxiga 初級預防關鍵臨床數據一覽</h3>
-              <p style="margin: 0 0 var(--space-md); font-size: var(--label-size); color: var(--on-surface-variant);">
-                DECLARE-TIMI 58 受試者基線占比與多重風險因子族群相對風險降幅（RRR）
-              </p>
-              <div class="chart-box">
-                <canvas id="declareChart" aria-label="DECLARE-TIMI 58 臨床數據長條圖"></canvas>
-              </div>
+              <span class="chip" data-status="ok">大型試驗</span>
+              <h3 class="subhead" style="margin-top: var(--space-sm);">類別共通的臨床實證</h3>
+              <ul style="margin: var(--space-sm) 0 0; padding-left: 1.25rem; color: var(--on-surface);">
+                <li><strong>心血管結果試驗：</strong>EMPA-REG OUTCOME（empagliflozin）、CANVAS Program（canagliflozin）、DECLARE-TIMI 58（dapagliflozin），各試驗收納的病人風險程度不同，但一致觀察到降低心衰竭住院風險。</li>
+                <li><strong>腎臟結果試驗：</strong>CREDENCE（canagliflozin）、DAPA-CKD（dapagliflozin）、EMPA-KIDNEY（empagliflozin），在已有慢性腎臟病的族群顯示可延緩腎功能惡化。</li>
+                <li><strong>心衰竭試驗：</strong>DAPA-HF、EMPEROR-Reduced / Preserved、DELIVER 等，顯示可降低心衰竭惡化與住院。</li>
+              </ul>
             </div>
           </div>
 
-          <!-- 4B. Taiwan TFDA Approved Indications Comparison -->
-          <div style="margin-top: var(--space-2xl);" class="reveal">
-            <h3 class="subhead" style="margin-bottom: var(--space-sm);">台灣衛福部（TFDA）核准仿單適應症比較</h3>
-            <p style="margin: 0 0 var(--space-md); color: var(--on-surface-variant); max-width: 65ch;">
-              根據台灣食品藥物管理署仿單資料，<strong>Forxiga 是目前台灣唯一同時獲得「預防新發生慢性腎臟病（DKD）」與「降低多重心血管風險因子患者心衰竭住院風險」核准的 SGLT2i</strong>。
-            </p>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col">台灣核准適應症項目</th>
-                    <th scope="col" class="col-highlight">Forxiga (5mg, 10mg)</th>
-                    <th scope="col">Empagliflozin (10mg, 25mg)</th>
-                    <th scope="col">Canagliflozin (100mg)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>第二型糖尿病血糖控制</strong></td>
-                    <td class="col-highlight"><span class="chip" data-status="info">有核准</span></td>
-                    <td>有核准</td>
-                    <td>有核准</td>
-                  </tr>
-                  <tr>
-                    <td><strong>預防心血管事件</strong></td>
-                    <td class="col-highlight"><span class="chip" data-status="info">有核准</span></td>
-                    <td>有核准（限已有 CVD）</td>
-                    <td>有核准（限已有 CVD）</td>
-                  </tr>
-                  <tr>
-                    <td><strong>降低多重心血管風險因子患者心衰竭住院風險</strong></td>
-                    <td class="col-highlight"><span class="chip" data-status="ok">有核准（初級風險可用）</span></td>
-                    <td style="color: var(--on-surface-variant);">未列此族群</td>
-                    <td style="color: var(--on-surface-variant);">未列此族群</td>
-                  </tr>
-                  <tr>
-                    <td><strong>預防新發生慢性腎臟病（初級預防 DKD）</strong></td>
-                    <td class="col-highlight"><span class="chip" data-status="ok">唯一核准（預防新發生或惡化）</span></td>
-                    <td style="color: var(--on-surface-variant);">未核准</td>
-                    <td style="color: var(--on-surface-variant);">未核准</td>
-                  </tr>
-                  <tr>
-                    <td><strong>治療已發生之慢性腎臟病（CKD）</strong></td>
-                    <td class="col-highlight"><span class="chip" data-status="info">有核准</span></td>
-                    <td>有核准</td>
-                    <td>有核准（糖尿病腎病變巨量蛋白尿期）</td>
-                  </tr>
-                  <tr>
-                    <td><strong>治療心衰竭（HF）</strong></td>
-                    <td class="col-highlight"><span class="chip" data-status="info">有核准（含 rEF, pEF, impEF）</span></td>
-                    <td>有核准（NYHA II–IV rEF, pEF）</td>
-                    <td style="color: var(--on-surface-variant);">未核准</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="callout reveal" style="margin-top: var(--space-lg);">
+            <strong>適應症與給付以最新規範為準：</strong>各 SGLT2i 藥品的核准適應症（血糖控制、心血管事件預防、心衰竭、慢性腎臟病等）與健保給付條件並不相同，且會隨時間更新。開立前請查閱最新仿單與健保署給付規範，並與病人進行醫病共享決策。
           </div>
 
           <!-- 4C. Interactive NHI & Clinical SDM Pathway -->
           <div class="interactive-panel reveal" aria-labelledby="sdm-path-title">
             <h3 id="sdm-path-title" class="subhead">回診討論小幫手：健保規範下，糖友常見的用藥調整路徑</h3>
             <p style="margin: var(--space-xs) 0 var(--space-md); color: var(--on-surface-variant); font-size: 0.95rem;">
-              點選不同臨床情境，了解如何在台灣健保規範與醫病共享決策（SDM）中銜接 Forxiga 系列用藥：
+              點選不同臨床情境，了解如何在台灣健保規範與醫病共享決策（SDM）中銜接 SGLT2i 類藥物：
             </p>
             <div class="tab-row" role="tablist" aria-label="健保用藥情境切換">
               <button type="button" class="tab-btn" role="tab" id="sdm-tab-0" aria-selected="true" onclick="selectSdmPath(0)">情境 A：Metformin 後血糖未達標</button>
@@ -1407,8 +1333,7 @@
               <span class="chip" data-status="info" id="sdm-badge">單方或複方彈性起步</span>
               <h4 class="subhead" id="sdm-heading" style="margin-top: var(--space-sm);">Metformin 使用後仍未達理想血糖目標</h4>
               <p id="sdm-desc" style="margin: var(--space-sm) 0 0; color: var(--on-surface);">
-                依台灣健保規定，經最大耐受劑量 Metformin 治療仍未理想控制血糖時，可健保接續使用 <strong>Forxiga</strong>，或直接選用單錠長效複方 <strong>Xigduo XR（10mg Dapagliflozin + 1000mg 緩釋 Metformin）</strong>，一錠同時控糖並啟動心腎初級預防。
-              </p>
+                依台灣健保規定，經最大耐受劑量 Metformin 治療仍未理想控制血糖時，可健保接續使用 <strong>SGLT2i</strong>，或選用 SGLT2i 與 Metformin 的單錠長效複方，一錠同時控糖並啟動心腎初級預防。</p>
             </div>
           </div>
         </div>
@@ -1466,7 +1391,7 @@
                 <i data-lucide="chevron-down" width="18" height="18" aria-hidden="true"></i>
               </summary>
               <p style="margin: 0; color: var(--on-surface-variant);">
-                「TACD 心腎預防先鋒計畫」本次篩檢活動主要聚焦於<strong>尚未合併 CKD 的糖友（初級預防）</strong>。但若您已經合併 CKD 或心衰竭，Forxiga 同樣具備治療 CKD 與心衰竭的仿單適應症與健保給付規範（例如 CKD 需配合初期慢性腎臟病或 Pre-ESRD 照護計畫、穩定使用最大耐受劑量 ACEi/ARB 至少 4 週、eGFR 25–60 且 uACR 200–5000 mg/g 等），請直接請教您的主治醫師評估。
+                「TACD 心腎預防先鋒計畫」本次篩檢活動主要聚焦於<strong>尚未合併 CKD 的糖友（初級預防）</strong>。但若您已經合併 CKD 或心衰竭，部分 SGLT2i 藥品同樣具備治療 CKD 與心衰竭的仿單適應症與健保給付規範（例如 CKD 需配合初期慢性腎臟病或 Pre-ESRD 照護計畫、穩定使用最大耐受劑量 ACEi/ARB 至少 4 週、eGFR 25–60 且 uACR 200–5000 mg/g 等，實際條件依各藥品最新規範為準），請直接請教您的主治醫師評估。
               </p>
             </details>
 
@@ -1489,7 +1414,7 @@
         資料來源與衛教聲明
       </p>
       <p style="margin: 0 0 var(--space-sm);">
-        內容整理自「TACD 心腎預防先鋒計畫」醫師說明會資料、張凱傑醫師臨床衛教簡報、衛生福利部 113 年國人死因統計、臺灣糖尿病年鑑（中華民國糖尿病衛教學會）、Circulation 2023 CKM 症候群共識、REACTION 研究（Front Endocrinol 2021）、DECLARE-TIMI 58 研究（NEJM 2019 / Diabetes Care 2021）、2026 ADA 糖尿病照護標準、2026 英國 NICE NG28 指引、2025 KDIGO 指引、2022 AHA/ACC/HFSA 心衰竭指引，以及台灣衛福部食藥署（TFDA）藥品仿單與健保署給付規範。
+        內容整理自「TACD 心腎預防先鋒計畫」醫師說明會資料、張凱傑醫師臨床衛教簡報、衛生福利部 113 年國人死因統計、臺灣糖尿病年鑑（中華民國糖尿病衛教學會）、Circulation 2023 CKM 症候群共識、REACTION 研究（Front Endocrinol 2021）、SGLT2i 主要心腎結果試驗（EMPA-REG OUTCOME、CANVAS、DECLARE-TIMI 58、CREDENCE、DAPA-CKD、EMPA-KIDNEY 等）、2026 ADA 糖尿病照護標準、2026 英國 NICE NG28 指引、2025 KDIGO 指引、2022 AHA/ACC/HFSA 心衰竭指引，以及台灣衛福部食藥署（TFDA）藥品仿單與健保署給付規範。
       </p>
       <p style="margin: 0;">
         免責聲明：本網頁內容僅供大眾健康知識與醫病溝通衛教參考，不能取代專業醫師之診斷與處方；實際檢查數值判讀、計畫參與資格與用藥調整，請務必於門診與您的主治醫師共同討論決定。
@@ -1594,19 +1519,19 @@
         badge: `單方或複方彈性起步`,
         status: `info`,
         heading: `Metformin 使用後仍未達理想血糖目標`,
-        desc: `依台灣健保規定，經最大耐受劑量 Metformin 治療仍未理想控制血糖時，可健保接續使用 Forxiga，或直接選用單錠長效複方 Xigduo XR（10mg Dapagliflozin + 1000mg 緩釋 Metformin），一錠同時控糖並啟動心腎初級預防。`
+        desc: `依台灣健保規定，經最大耐受劑量 Metformin 治療仍未理想控制血糖時，可健保接續使用 SGLT2i，或選用 SGLT2i 與 Metformin 的單錠長效複方，一錠同時控糖並啟動心腎初級預防。`
       },
       {
         badge: `SDM 共決轉換器官保護`,
         status: `ok`,
         heading: `已用 DPP-4i + Metformin 血糖達標（如 HbA1c 6.8%），但具心腎風險`,
-        desc: `雖然糖化血色素已小於 7%，但若糖友合併肥胖、高血壓、高血脂等風險因子，經醫病共享決策（SDM）充分討論並認同早期心腎保護的價值後，可依健保規範將 DPP-4i 轉換為 SGLT2i（Forxiga 或 Xigduo XR），讓控糖同時兼顧護心護腎。`
+        desc: `雖然糖化血色素已小於 7%，但若糖友合併肥胖、高血壓、高血脂等風險因子，經醫病共享決策（SDM）充分討論並認同早期心腎保護的價值後，可依健保規範將 DPP-4i 轉換為 SGLT2i（單方或與 Metformin 的複方），讓控糖同時兼顧護心護腎。`
       },
       {
         badge: `雙效一錠 · 控糖兼降 GTI 風險`,
         status: `info`,
-        heading: `使用 Forxiga / Xigduo 持續 6 個月後，HbA1c 仍大於 7.5%`,
-        desc: `依健保給付路徑，使用 Forxiga 或 Xigduo 滿 6 個月若 HbA1c 仍大於 7.5%，可升級為複方 Qtern（SGLT2i + DPP-4i）。研究顯示一錠雙效降糖效力可比擬約 37.9 單位胰島素，且併用 DPP-4i 相較單用 SGLT2i 有較低生殖道感染（GTI）發生風險（提醒：健保規定 SGLT2i 與 DPP-4i 不可分開兩顆單方處方，需循同一品牌系列銜接）。`
+        heading: `使用 SGLT2i 持續 6 個月後，HbA1c 仍大於 7.5%`,
+        desc: `依健保給付路徑，使用 SGLT2i 滿 6 個月若 HbA1c 仍大於 7.5%，可與醫師討論改用 SGLT2i 加 DPP-4i 的固定劑量複方（一錠雙效）。併用 DPP-4i 相較單用 SGLT2i 有較低的生殖道感染（GTI）發生風險（提醒：健保規定 SGLT2i 與 DPP-4i 不可分開開立兩顆單方，需改用複方製劑）。`
       }
     ];
 
@@ -1798,7 +1723,7 @@
       badge.textContent = `符合計畫初級預防對象（符合 ${selectedRisks.length} 項風險因子）`;
       titleOut.textContent = `建議主動啟動心腎初級預防討論`;
       summaryOut.textContent = `您已同時符合：第 2 型糖尿病、尚未合併慢性腎臟病，且具有 ${selectedRisks.length} 項心腎風險因子（${selectedRisks.join('、')}）。這正是本計畫最希望提前守住健康的關鍵族群！`;
-      nextStep.textContent = `下一步怎麼做：下次門診時，可向基層診所醫護人員索取「謹腎小心」衛教單張與識能問卷，了解血壓／血脂／腎臟的關聯，並與醫師進行 SDM 討論早期器官保護用藥（如 Forxiga）。`;
+      nextStep.textContent = `下一步怎麼做：下次門診時，可向基層診所醫護人員索取「謹腎小心」衛教單張與識能問卷，了解血壓／血脂／腎臟的關聯，並與醫師進行 SDM 討論早期器官保護用藥。`;
     }
 
     function selectSdmPath(idx) {
@@ -1825,7 +1750,7 @@
       const feedback = document.getElementById('share-feedback');
       const text = `【糖友護心腎小提醒｜TACD 心腎預防先鋒計畫】\n` +
         `控糖不能只看血糖數字！研究顯示第 2 型糖尿病早期常有「高過濾假象」且缺乏明顯症狀，等出現蛋白尿或喘、腫、累時心腎可能已受損。\n` +
-        `2026/12/4 – 2027/3/31 全台 600 家基層診所推動「TACD 心腎預防先鋒計畫」，只要是「第 2 型糖尿病」＋「尚未合併慢性腎臟病」＋「有高血壓、高血脂、肥胖、65歲以上等任一風險因子」，回診時記得向診所索取『謹腎小心』衛教單張，並與醫師討論如 Forxiga 等早期護心腎方案，及早守住腎臟與心臟健康！`;
+        `2026/12/4 – 2027/3/31 全台 600 家基層診所推動「TACD 心腎預防先鋒計畫」，只要是「第 2 型糖尿病」＋「尚未合併慢性腎臟病」＋「有高血壓、高血脂、肥胖、65歲以上等任一風險因子」，回診時記得向診所索取『謹腎小心』衛教單張，並與醫師討論早期護心腎方案，及早守住腎臟與心臟健康！`;
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function() {
@@ -1855,70 +1780,6 @@
       document.body.removeChild(ta);
     }
 
-    function initDeclareChart() {
-      const canvas = document.getElementById('declareChart');
-      if (!canvas || typeof Chart === 'undefined') return;
-
-      const styles = getComputedStyle(document.documentElement);
-      const cPrimary = styles.getPropertyValue('--data-1').trim();
-      const cPositive = styles.getPropertyValue('--data-2').trim();
-      const cText = styles.getPropertyValue('--on-surface').trim();
-      const cMuted = styles.getPropertyValue('--on-surface-variant').trim();
-      const cGrid = styles.getPropertyValue('--outline-variant').trim();
-
-      new Chart(canvas, {
-        type: 'bar',
-        data: {
-          labels: [
-            `受試者腎功能正常 (eGFR ≥60)`,
-            `受試者無蛋白尿 (UACR <30)`,
-            `腎臟複合終點風險降幅 (RRR)`,
-            `心衰竭住院風險降幅 (RRR)`
-          ],
-          datasets: [{
-            label: `百分比 (%)`,
-            data: [91, 69, 49, 36],
-            backgroundColor: [cPrimary, cPrimary, cPositive, cPositive],
-            borderRadius: 4,
-            barThickness: 26
-          }]
-        },
-        options: {
-          indexAxis: 'y',
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: function(ctx) {
-                  return ` ${ctx.parsed.x}%`;
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              beginAtZero: true,
-              max: 100,
-              grid: { color: cGrid },
-              ticks: {
-                color: cMuted,
-                callback: function(val) { return val + '%'; }
-              }
-            },
-            y: {
-              grid: { display: false },
-              ticks: {
-                color: cText,
-                font: { size: 12, weight: '600' }
-              }
-            }
-          }
-        }
-      });
-    }
-
     function initRevealObserver() {
       const items = document.querySelectorAll('.reveal');
       if (!('IntersectionObserver' in window)) {
@@ -1940,7 +1801,6 @@
       if (window.lucide && typeof window.lucide.createIcons === 'function') {
         window.lucide.createIcons();
       }
-      initDeclareChart();
       initRevealObserver();
       evaluateEligibility();
     });
